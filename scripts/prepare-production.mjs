@@ -20,6 +20,23 @@ fs.cpSync(source, output, { recursive: true });
 
 const runtimePatch = '<script>(function(){if(!location.hostname.endsWith("github.io"))return;var prefix="/stiltz-preview";function patch(node,attr){var value=node.getAttribute(attr);if(value&&value.charAt(0)==="/"&&value.indexOf(prefix+"/")!==0)node.setAttribute(attr,prefix+value)}function scan(root){if(!root.querySelectorAll)return;root.querySelectorAll("a[href],img[src],source[src],script[src]").forEach(function(node){patch(node,node.tagName==="A"?"href":"src")})}document.addEventListener("DOMContentLoaded",function(){scan(document);new MutationObserver(function(records){records.forEach(function(record){if(record.type==="attributes")patch(record.target,record.attributeName);else record.addedNodes.forEach(scan)})}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["href","src"]})})}())</script>';
 
+const navigationFile = path.join(output, 'static-navigation.js');
+if (fs.existsSync(navigationFile)) {
+  let navigation = fs.readFileSync(navigationFile, 'utf8');
+  navigation = navigation.replace('const navigationGroups = [', `const sitePathname = () => {
+  const pathname = location.hostname.endsWith('github.io')
+    ? (location.pathname.startsWith('/stiltz-preview/')
+      ? location.pathname.slice('/stiltz-preview'.length)
+      : (location.pathname === '/stiltz-preview' ? '/' : location.pathname))
+    : location.pathname;
+  return pathname.endsWith('/') ? pathname : pathname + '/';
+};
+
+const navigationGroups = [`);
+  navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
+  fs.writeFileSync(navigationFile, navigation);
+}
+
 const routes = [];
 for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   const relative = path.relative(output, file).split(path.sep).join('/');
