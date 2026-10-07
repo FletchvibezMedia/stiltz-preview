@@ -35,7 +35,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   html = html.replace(/\b(href|src|action)=("|')\/(?!\/)([^"']*)\2/gi, (_match, name, quote, url) => `${name}=${quote}${url || './'}${quote}`);
   html = html.replace('<head>', '<head><script>(function(){var b=document.createElement("base");b.href=location.hostname.endsWith("github.io")?"/stiltz-preview/":"/";document.head.appendChild(b)}())</script>');
   html = html.replace(/(<script src=(\"|')static-navigation\.js[^>]*><\/script>)/i, `$1${runtimePatch}`);
-  html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\\n</head>`);
+  html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }
 
@@ -45,8 +45,8 @@ fs.writeFileSync(path.join(output, 'sitemap.xml'), [
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ...routes.sort().map((route) => `  <url><loc>${origin}${route}</loc><lastmod>${lastmod}</lastmod></url>`),
   '</urlset>', ''
-].join('\\n'));
-fs.writeFileSync(path.join(output, 'robots.txt'), `User-agent: *\\nAllow: /\\nSitemap: ${origin}/sitemap.xml\\n`);
-fs.writeFileSync(path.join(output, 'CNAME'), 'stiltzofflorida.com\\n');
+].join('\n'));
+fs.writeFileSync(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+fs.writeFileSync(path.join(output, 'CNAME'), 'stiltzofflorida.com\n');
 fs.writeFileSync(path.join(output, '.nojekyll'), '');
 console.log(JSON.stringify({ output, pages: routes.length }, null, 2));
