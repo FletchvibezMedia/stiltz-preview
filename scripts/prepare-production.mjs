@@ -18,10 +18,12 @@ function walk(dir, files = []) {
 fs.rmSync(output, { recursive: true, force: true });
 fs.cpSync(source, output, { recursive: true });
 
+const runtimePatch = '<script>(function(){if(!location.hostname.endsWith("github.io"))return;var prefix="/stiltz-preview";function patch(node,attr){var value=node.getAttribute(attr);if(value&&value.charAt(0)==="/"&&value.indexOf(prefix+"/")!==0)node.setAttribute(attr,prefix+value)}function scan(root){if(!root.querySelectorAll)return;root.querySelectorAll("a[href],img[src],source[src],script[src]").forEach(function(node){patch(node,node.tagName==="A"?"href":"src")})}document.addEventListener("DOMContentLoaded",function(){scan(document);new MutationObserver(function(records){records.forEach(function(record){if(record.type==="attributes")patch(record.target,record.attributeName);else record.addedNodes.forEach(scan)})}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["href","src"]})})}())</script>';
+
 const routes = [];
 for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   const relative = path.relative(output, file).split(path.sep).join('/');
-  const route = relative === 'index.html' ? '/' : `/${relative.replace(/index\\.html$/, '')}`;
+  const route = relative === 'index.html' ? '/' : `/${relative.replace(/index\.html$/, '')}`;
   const canonical = `${origin}${route}`;
   routes.push(route);
   let html = fs.readFileSync(file, 'utf8');
@@ -32,6 +34,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // from the custom domain root. Relative URLs follow this runtime base.
   html = html.replace(/\b(href|src|action)=("|')\/(?!\/)([^"']*)\2/gi, (_match, name, quote, url) => `${name}=${quote}${url || './'}${quote}`);
   html = html.replace('<head>', '<head><script>(function(){var b=document.createElement("base");b.href=location.hostname.endsWith("github.io")?"/stiltz-preview/":"/";document.head.appendChild(b)}())</script>');
+  html = html.replace(/(<script src=(\"|')static-navigation\\.js[^>]*><\\/script>)/i, `$1${runtimePatch}`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\\n</head>`);
   fs.writeFileSync(file, html);
 }
