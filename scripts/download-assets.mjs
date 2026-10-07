@@ -6,6 +6,7 @@ const origin = process.argv[3] ?? 'https://stiltz-florida-rescue-replica.carolin
 const prefixes = ['/_next/', '/images/', '/videos/', '/brochures/', '/favicon', '/rescue-overrides', '/static-navigation'];
 const queue = [];
 const seen = new Set();
+const unavailable = [];
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -35,9 +36,12 @@ for (let index = 0; index < queue.length; index += 1) {
   if (!fs.existsSync(destination)) {
     fs.mkdirSync(path.dirname(destination), { recursive: true });
     const response = await fetch(new URL(asset, origin));
-    if (!response.ok) throw new Error(`Could not download ${asset}: ${response.status}`);
+    if (!response.ok) {
+      unavailable.push({ asset, status: response.status });
+      continue;
+    }
     fs.writeFileSync(destination, Buffer.from(await response.arrayBuffer()));
   }
   discover(destination);
 }
-console.log(JSON.stringify({ assetsMirrored: seen.size }, null, 2));
+console.log(JSON.stringify({ assetsMirrored: seen.size, unavailable }, null, 2));
