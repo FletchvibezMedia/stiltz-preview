@@ -34,7 +34,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // from the custom domain root. Relative URLs follow this runtime base.
   html = html.replace(/\b(href|src|action)=("|')\/(?!\/)([^"']*)\2/gi, (_match, name, quote, url) => `${name}=${quote}${url || './'}${quote}`);
   html = html.replace('<head>', '<head><script>(function(){var b=document.createElement("base");b.href=location.hostname.endsWith("github.io")?"/stiltz-preview/":"/";document.head.appendChild(b)}())</script>');
-  html = html.replace(/(<script src=(\"|')static-navigation\\.js[^>]*><\\/script>)/i, `$1${runtimePatch}`);
+  html = html.replace(/(<script src=(\"|')static-navigation\.js[^>]*><\/script>)/i, `$1${runtimePatch}`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\\n</head>`);
   fs.writeFileSync(file, html);
 }
