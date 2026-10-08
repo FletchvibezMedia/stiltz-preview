@@ -92,3 +92,45 @@ main figure img,
     padding: 14px !important;
   }
 }
+
+/* Give the About-page principles and team invitation a clear, warm visual
+   structure. White cards on a white canvas read like missing content. */
+.about-page {
+  background: #f6f7f3 !important;
+}
+
+.about-principles {
+  background: #e7efea !important;
+  gap: 18px !important;
+  max-width: 1148px !important;
+  margin: 0 auto !important;
+  padding: 22px !important;
+}
+
+.about-principles article {
+  background: #f8faf8 !important;
+  border: 1px solid #cfddd5 !important;
+  border-radius: 24px !important;
+  box-shadow: 0 14px 28px rgba(42, 55, 51, .08) !important;
+}
+
+.about-principles article:nth-child(2) {
+  background: #383c3f !important;
+  border-color: #383c3f !important;
+}
+
+.about-principles article:nth-child(3) {
+  background: #edf4f5 !important;
+  border-color: #cbdce0 !important;
+}
+
+.about-team-link > div {
+  background: #e7efea !important;
+}
+
+@media (max-width: 900px) {
+  .about-principles {
+    margin-inline: 16px !important;
+    padding: 14px !important;
+  }
+}
