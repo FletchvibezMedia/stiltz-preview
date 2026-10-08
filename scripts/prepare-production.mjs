@@ -25,6 +25,7 @@ const approvedAssetOverrides = [
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
+  ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/trio-alta-feature.jpg'],
   ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
   ['assets/landing/5132.jpg', 'images/installations/landing/5132.jpg'],
   ['assets/landing/5133.jpg', 'images/installations/landing/5133.jpg'],
@@ -129,6 +130,11 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   const canonical = `${origin}${route}`;
   routes.push(route);
   let html = fs.readFileSync(file, 'utf8');
+  // Give the cleaned Trio Alta photo its own URL so visitors are not held to
+  // an older cached version of the same filename.
+  html = html
+    .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/trio-alta-feature.jpg')
+    .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/trio-alta-feature.jpg');
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
   // release. Point directly at that MP4 instead of the new static origin,
