@@ -49,6 +49,16 @@ if (fs.existsSync(navigationFile)) {
 
 const navigationGroups = [`);
   navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
+  navigation += `
+
+// A normal static-page navigation should never leave a desktop <details>
+// menu visually open while the browser moves to its next document.
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('.desktop-nav details a[href]');
+  if (!link) return;
+  document.querySelectorAll('.desktop-nav details[open]').forEach((menu) => { menu.open = false; });
+}, true);
+`;
   fs.writeFileSync(navigationFile, navigation);
 }
 
@@ -61,6 +71,10 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   routes.push(route);
   let html = fs.readFileSync(file, 'utf8');
   html = html.split(rescueOrigin).join(origin);
+  // The rescue export's financing video is hosted on the retained staging
+  // release. Point directly at that MP4 instead of the new static origin,
+  // where an unknown /videos route would return the homepage HTML.
+  html = html.replaceAll(`${origin}/videos/stiltz-financing-overview.mp4`, `${rescueOrigin}/videos/stiltz-financing-overview.mp4`);
   html = html.replaceAll('content="noindex, nofollow"', 'content="index, follow"');
   html = html.replace(/<meta property="og:url" content="[^"]*"[^>]*>/gi, `<meta property="og:url" content="${canonical}">`);
   // Serve the same artifact both from the GitHub project preview and, later,
