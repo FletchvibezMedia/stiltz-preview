@@ -93,6 +93,91 @@ main figure img,
   }
 }
 
+/* Final gallery polish: model photos and installed-home carousels need one
+   consistent rounded frame, never a black letterbox or an empty fixed-height
+   shell around a perfectly valid portrait photo. */
+.model-photo-carousel figure {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding: 10px !important;
+  background: #e8f0eb !important;
+  border: 2px solid #9caf9f !important;
+  border-radius: 28px !important;
+  box-shadow: 0 14px 28px rgba(42, 55, 51, .12) !important;
+}
+
+.model-photo-carousel figure img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 18px !important;
+  background: transparent !important;
+}
+
+.installation-page--landing .installation-carousel figure,
+.installation-page--builddown .installation-carousel figure {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  overflow: hidden !important;
+}
+
+.installation-page--landing .installation-carousel img,
+.installation-page--builddown .installation-carousel img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Home model cards are meant to read as finished cards, not loose images
+   floating inside a second white rectangle. */
+.brand-model {
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  box-shadow: 0 14px 28px rgba(42, 55, 51, .12) !important;
+}
+
+.brand-model > img {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  clip-path: none !important;
+  border-radius: 0 !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+/* FAQ filters and answer groups now follow the same soft, deliberate card
+   language as the rest of the finished site. */
+.faq-topic-buttons button {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 16px rgba(42, 55, 51, .08) !important;
+}
+
+.faq-list details {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.faq-list details summary {
+  border-radius: 18px !important;
+}
+
 /* Landing and build-down are supplied in mixed portrait and landscape ratios.
    Frame them consistently, but never crop a finished installation just to
    force every photo into the same box. */
