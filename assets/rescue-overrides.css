@@ -100,18 +100,18 @@ main figure img,
 }
 
 .about-principles {
-  background: #e7efea !important;
+  background: transparent !important;
   gap: 18px !important;
   max-width: 1148px !important;
   margin: 0 auto !important;
-  padding: 22px !important;
+  padding: 22px 0 !important;
 }
 
 .about-principles article {
-  background: #f8faf8 !important;
-  border: 1px solid #cfddd5 !important;
+  background: #edf3e7 !important;
+  border: 1px solid #c9d8c2 !important;
   border-radius: 24px !important;
-  box-shadow: 0 14px 28px rgba(42, 55, 51, .08) !important;
+  box-shadow: 0 14px 28px rgba(42, 55, 51, .10) !important;
 }
 
 .about-principles article:nth-child(2) {
@@ -120,17 +120,44 @@ main figure img,
 }
 
 .about-principles article:nth-child(3) {
-  background: #edf4f5 !important;
-  border-color: #cbdce0 !important;
+  background: #e7f0f4 !important;
+  border-color: #c4d9e1 !important;
+}
+
+.about-credentials {
+  background: transparent !important;
+  gap: 16px !important;
+  padding: 18px 0 8px !important;
+}
+
+.about-credentials article {
+  border: 1px solid #d7ddd5 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 22px rgba(42, 55, 51, .08) !important;
+}
+
+.about-credentials article:nth-child(1) { background: #eef4e9 !important; }
+.about-credentials article:nth-child(2) { background: #e7f0f4 !important; }
+.about-credentials article:nth-child(3) { background: #f5eee2 !important; }
+.about-credentials article:nth-child(4) { background: #e9f1ed !important; }
+
+.about-team-link {
+  border-radius: 28px !important;
+  overflow: hidden !important;
 }
 
 .about-team-link > div {
-  background: #e7efea !important;
+  background: #dfece4 !important;
 }
 
 @media (max-width: 900px) {
   .about-principles {
     margin-inline: 16px !important;
-    padding: 14px !important;
+    padding: 14px 0 !important;
+  }
+
+  .about-credentials {
+    margin-inline: 16px !important;
+    padding-inline: 0 !important;
   }
 }
