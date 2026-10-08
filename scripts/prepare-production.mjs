@@ -131,6 +131,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!menu.open) return;
     menus.forEach((other) => { if (other !== menu) other.open = false; });
   }));
+
+  // The captured page markup contains a desktop Explore menu on every page.
+  // Add the new entry here as well, so its label stays in lockstep with the
+  // mobile navigation even when the upstream release markup is refreshed.
+  document.querySelectorAll('.desktop-nav a').forEach((link) => {
+    if (link.textContent.trim() !== 'Videos' || link.previousElementSibling?.textContent.trim() === 'Custom Paint') return;
+    const customPaint = document.createElement('a');
+    customPaint.href = '/custom-colors/';
+    customPaint.textContent = 'Custom Paint';
+    link.before(customPaint);
+  });
 });
 `;
   fs.writeFileSync(navigationFile, navigation);
