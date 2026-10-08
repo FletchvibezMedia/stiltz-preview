@@ -1,0 +1,94 @@
+.staging-bar {
+  display: none !important;
+}
+
+main figure img,
+.model-photo-carousel img,
+.installation-carousel img,
+.gallery img,
+.curated-gallery img,
+.real-homes-gallery img {
+  cursor: zoom-in;
+}
+
+/* Final rescue QA: keep source photography whole instead of forcing it into
+   a fixed, cropped card. */
+.variant-page .variant-media figure,
+.duo-classic-page .duo-classic-media figure,
+.three-story-enclosure-gallery figure {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.variant-page .variant-media img,
+.duo-classic-page .duo-classic-media img,
+.three-story-enclosure-gallery img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #edf1ef !important;
+}
+
+/* The factory disclaimer remains visible without the stray orange rule. */
+.factory-brochures-disclaimer p {
+  border-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Keep Heather's portrait truly circular, including the green backdrop. */
+.about-hero img {
+  width: min(68%, 360px) !important;
+  height: min(68vw, 360px) !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 50% !important;
+}
+
+/* Desktop About page: keep the founder caption visually tied to the portrait
+   and trim the oversized team/contact block below it. */
+@media (min-width: 901px) {
+  .about-hero figcaption {
+    right: max(24px, calc(50% - 180px)) !important;
+    bottom: max(42px, calc(50% - 205px)) !important;
+  }
+
+  .about-team-link {
+    max-width: 1148px !important;
+    margin: 0 auto 76px !important;
+    overflow: hidden !important;
+    border-radius: 0 0 28px 28px !important;
+  }
+
+  .about-team-link > div {
+    padding-block: 76px !important;
+  }
+
+  .about-team-link aside {
+    padding: 48px !important;
+  }
+}
+
+/* Gallery framing should be a quiet neutral, never a stray black edge. */
+.alta-page .model-photo-carousel figure,
+.three-story-enclosure-gallery figure {
+  background: #edf1ef !important;
+}
+
+/* On narrow screens this is a stacked feature, not a squeezed two-column card. */
+@media (max-width: 900px) {
+  .duo-classic-page .duo-classic-install {
+    grid-template-columns: 1fr !important;
+    width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+  }
+
+  .duo-classic-page .duo-classic-install figure {
+    padding: 14px !important;
+  }
+}

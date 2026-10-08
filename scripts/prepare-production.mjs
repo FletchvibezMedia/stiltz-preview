@@ -21,6 +21,7 @@ fs.cpSync(source, output, { recursive: true });
 // Keep approved production-only photo replacements stable even though the
 // source release is re-mirrored on every GitHub Pages deployment.
 const approvedAssetOverrides = [
+  ['assets/rescue-overrides.css', 'rescue-overrides.css'],
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
   ['assets/landing/5132.jpg', 'images/installations/landing/5132.jpg'],
@@ -106,6 +107,14 @@ document.addEventListener('click', (event) => {
   if (!link) return;
   document.querySelectorAll('.desktop-nav details[open]').forEach((menu) => { menu.open = false; });
 }, true);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menus = [...document.querySelectorAll('.desktop-nav details')];
+  menus.forEach((menu) => menu.addEventListener('toggle', () => {
+    if (!menu.open) return;
+    menus.forEach((other) => { if (other !== menu) other.open = false; });
+  }));
+});
 `;
   fs.writeFileSync(navigationFile, navigation);
 }
