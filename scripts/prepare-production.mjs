@@ -22,6 +22,14 @@ fs.cpSync(source, output, { recursive: true });
 // source release is re-mirrored on every GitHub Pages deployment.
 const approvedAssetOverrides = [
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
+  ['assets/build-down/5123.png', 'images/installations/build-down/5123.png'],
+  ['assets/build-down/5124.png', 'images/installations/build-down/5124.png'],
+  ['assets/build-down/5125.jpg', 'images/installations/build-down/5125.jpg'],
+  ['assets/build-down/5126.jpg', 'images/installations/build-down/5126.jpg'],
+  ['assets/build-down/5127.jpg', 'images/installations/build-down/5127.jpg'],
+  ['assets/build-down/5128.jpg', 'images/installations/build-down/5128.jpg'],
+  ['assets/build-down/5129.jpg', 'images/installations/build-down/5129.jpg'],
+  ['assets/build-down/5130.jpg', 'images/installations/build-down/5130.jpg'],
 ];
 for (const [from, to] of approvedAssetOverrides) {
   const sourceAsset = path.resolve(from);
@@ -49,6 +57,12 @@ if (fs.existsSync(navigationFile)) {
 
 const navigationGroups = [`);
   navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
+  navigation = navigation.replace(/const buildDownImages = \[[\s\S]*?\n\];/, `const buildDownImages = [
+  '/images/installations/build-down/5123.png', '/images/installations/build-down/5124.png',
+  '/images/installations/build-down/5125.jpg', '/images/installations/build-down/5126.jpg',
+  '/images/installations/build-down/5127.jpg', '/images/installations/build-down/5128.jpg',
+  '/images/installations/build-down/5129.jpg', '/images/installations/build-down/5130.jpg',
+];`);
   navigation += `
 
 // A normal static-page navigation should never leave a desktop <details>
