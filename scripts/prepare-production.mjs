@@ -25,8 +25,8 @@ const approvedAssetOverrides = [
   ['assets/duo-alta/duo-alta-thru-car-straight.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/duo-thru-car/duo-thru-car-hero-straight.jpg', 'images/models/duo-thru-car/verified-hero.jpg'],
   ['assets/duo-classic/duo-classic-hero-straight.jpg', 'images/models/duo-classic/drive-hero.jpg'],
-  ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
-  ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
+  ['assets/trio-alta/trio-alta-feature-web.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
+  ['assets/trio-alta/trio-alta-feature-web.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
   ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
   ['assets/landing/5132.jpg', 'images/installations/landing/5132.jpg'],
   ['assets/landing/5133.jpg', 'images/installations/landing/5133.jpg'],
@@ -136,8 +136,8 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   html = html
     .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
     .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
-    .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v2')
-    .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v2')
+    .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
+    .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v3')
     .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4');
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
