@@ -168,13 +168,13 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
       .replaceAll('custom-colored', 'custom-painted')
       .replace('A lift can match the character of the home.', 'Custom Paint makes the lift part of the home.')
       .replace('These completed projects show how custom-painted Stiltz lifts can be integrated into a home with more intention. Available finishes are confirmed with the Stiltz of Florida team for the selected model and project.', 'These completed Florida projects show how a custom-painted Stiltz lift can be tailored to the home around it. Color and finish availability are confirmed with the Stiltz of Florida team for the selected model and project.')
-      .replace('Real custom-paint installations', 'Real Custom Paint installations')
+      .replace('Real custom-color installations', 'Real Custom Paint installations')
       .replace('Use the arrows to explore the full-color collection. Every image is a real installation—not a mocked-up finish.', 'Use the arrows to explore real Custom Paint installations. Every image is a completed Florida home—not a mocked-up finish.')
       .replace('aria-label="Custom Paint home lift photo gallery"', 'aria-label="Custom Paint home lift photo gallery"');
   }
   html = html.replace(
-    '<a href="videos/">Videos</a>',
-    '<a href="custom-colors/">Custom Paint</a><a href="videos/">Videos</a>',
+    /(<a href=("|')(?:\.\/)?videos\/\2>Videos<\/a>)/,
+    '<a href="custom-colors/">Custom Paint</a>$1',
   );
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
