@@ -23,7 +23,7 @@ fs.cpSync(source, output, { recursive: true });
 const approvedAssetOverrides = [
   ['assets/rescue-overrides.css', 'rescue-overrides.css'],
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
-  ['assets/duo-classic/duo-classic-hero-portrait.jpg', 'images/models/duo-classic/drive-hero.jpg'],
+  ['assets/duo-classic/duo-classic-hero-straight.jpg', 'images/models/duo-classic/drive-hero.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
   ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
@@ -135,7 +135,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   html = html
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v2')
     .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v2')
-    .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v2');
+    .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v3');
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
   // release. Point directly at that MP4 instead of the new static origin,
