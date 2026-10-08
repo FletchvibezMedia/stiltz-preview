@@ -170,12 +170,30 @@ main figure img,
 }
 
 .faq-list details {
-  border-radius: 18px !important;
+  margin: 0 0 14px !important;
+  background: #f8faf8 !important;
+  border: 1px solid #b5c5bd !important;
+  border-radius: 20px !important;
   overflow: hidden !important;
+  box-shadow: 0 10px 22px rgba(42, 55, 51, .08) !important;
 }
 
 .faq-list details summary {
-  border-radius: 18px !important;
+  min-height: 0 !important;
+  padding: 22px 24px !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: #f8faf8 !important;
+}
+
+.faq-list details[open] summary {
+  border-radius: 20px 20px 0 0 !important;
+  border-bottom: 1px solid #d7e0da !important;
+}
+
+.faq-list .faq-answer {
+  padding: 0 24px 22px !important;
+  background: #f8faf8 !important;
 }
 
 /* Landing and build-down are supplied in mixed portrait and landscape ratios.
