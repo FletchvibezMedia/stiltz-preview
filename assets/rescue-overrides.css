@@ -121,6 +121,90 @@ main figure img,
   border-radius: 18px !important;
 }
 
+/* Trio Alta galleries: let the frame follow the actual photo rather than
+   leaving a tall, empty shell around a portrait or landscape installation. */
+.alta-page .alta-gallery .model-photo-carousel figure,
+.alta-page .trio-full-door-option .model-photo-carousel figure {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+  padding: 12px !important;
+  overflow: hidden !important;
+  border: 2px solid #b5c5bd !important;
+  border-radius: 28px !important;
+  box-shadow: 0 14px 30px rgba(25, 42, 36, .15) !important;
+}
+
+.alta-page .alta-gallery .model-photo-carousel figure {
+  background: #53665e !important;
+}
+
+.alta-page .trio-full-door-option .model-photo-carousel figure {
+  background: #f8faf8 !important;
+  border-color: #a8bbc3 !important;
+}
+
+.alta-page .alta-gallery .model-photo-carousel img,
+.alta-page .trio-full-door-option .model-photo-carousel img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+}
+
+/* The lower About blocks are distinct conversations, not invisible white
+   sections on a white canvas. */
+.about-team-link {
+  max-width: 1148px !important;
+  margin: 22px auto 34px !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 34px rgba(42, 55, 51, .12) !important;
+}
+
+.about-team-link > div {
+  background: #e5efe7 !important;
+}
+
+.about-team-link aside {
+  background: #383c3f !important;
+}
+
+.about-cta {
+  max-width: 1148px !important;
+  margin: 0 auto 76px !important;
+  padding: clamp(64px, 8vw, 104px) 24px !important;
+  background: #e7f0f4 !important;
+  border: 1px solid #bfd3dc !important;
+  border-radius: 28px !important;
+  box-shadow: 0 14px 30px rgba(42, 55, 51, .10) !important;
+}
+
+/* Keep the top of Heather's hair inside the circular frame. */
+.about-hero img {
+  object-position: center 20% !important;
+}
+
+@media (max-width: 900px) {
+  .about-team-link,
+  .about-cta {
+    margin-inline: 16px !important;
+  }
+
+  .about-team-link {
+    margin-bottom: 26px !important;
+  }
+
+  .about-cta {
+    margin-bottom: 46px !important;
+  }
+}
+
 /* Give the About-page principles and team invitation a clear, warm visual
    structure. White cards on a white canvas read like missing content. */
 .about-page {
