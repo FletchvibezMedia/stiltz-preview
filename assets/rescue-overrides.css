@@ -180,58 +180,6 @@ main figure img,
   margin: 0 auto 76px !important;
   padding: clamp(64px, 8vw, 104px) 24px !important;
   background: #e7f0f4 !important;
-
-
-/* Duo Alta final desktop pass: preserve the complete hero photograph and let
-   each gallery frame follow its photograph instead of stretching a portrait
-   image to fill a generic tall card. */
-.alta-page .alta-hero > img {
-  object-fit: contain !important;
-  object-position: center center !important;
-  background: #f3f5f3 !important;
-}
-
-@media (min-width: 851px) {
-  .alta-page .alta-gallery .model-photo-carousel,
-  .alta-page .duo-white-finish-option .model-photo-carousel {
-    align-self: start !important;
-  }
-
-  .alta-page .alta-gallery .model-photo-carousel figure,
-  .alta-page .duo-white-finish-option .model-photo-carousel figure {
-    width: fit-content !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    justify-self: center !important;
-    padding: 12px !important;
-  }
-
-  .alta-page .alta-gallery .model-photo-carousel img,
-  .alta-page .duo-white-finish-option .model-photo-carousel img {
-    display: block !important;
-    width: auto !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: min(72vh, 680px) !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-  }
-}
-
-/* Keep the white-finish gallery visibly framed against its pale section,
-   matching the intentional gallery treatment used elsewhere on the page. */
-.alta-page .duo-white-finish-option .model-photo-carousel figure {
-  background: #f8faf8 !important;
-  border: 2px solid #b5c5bd !important;
-  border-radius: 28px !important;
-  box-shadow: 0 14px 30px rgba(25, 42, 36, .15) !important;
-}
-
-.alta-page .duo-white-finish-option .model-photo-carousel img {
-  border-radius: 18px !important;
-  box-shadow: none !important;
-}
   border: 1px solid #bfd3dc !important;
   border-radius: 28px !important;
   box-shadow: 0 14px 30px rgba(42, 55, 51, .10) !important;
@@ -240,6 +188,20 @@ main figure img,
 /* Keep the top of Heather's hair inside the circular frame. */
 .about-hero img {
   object-position: center 20% !important;
+}
+
+/* Duo Vista's portrait hero must remain whole on desktop; it is not a
+   decorative background image to be clipped into a fixed-height cover. */
+.variant-page .variant-hero > img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f3f5f3 !important;
+  border-radius: 22px !important;
 }
 
 @media (max-width: 900px) {
@@ -324,16 +286,4 @@ main figure img,
     margin-inline: 16px !important;
     padding-inline: 0 !important;
   }
-}
-
-/* Duo Alta galleries use the same softened photo treatment at every viewport. */
-.alta-page .alta-gallery .model-photo-carousel figure,
-.alta-page .duo-white-finish-option .model-photo-carousel figure {
-  border-radius: 28px !important;
-  overflow: hidden !important;
-}
-
-.alta-page .alta-gallery .model-photo-carousel img,
-.alta-page .duo-white-finish-option .model-photo-carousel img {
-  border-radius: 18px !important;
 }
