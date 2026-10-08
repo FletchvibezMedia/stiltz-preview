@@ -64,6 +64,10 @@ const approvedAssetOverrides = [
   ['assets/build-down/5128.jpg', 'images/installations/build-down/5128.jpg'],
   ['assets/build-down/5129.jpg', 'images/installations/build-down/5129.jpg'],
   ['assets/build-down/5130.jpg', 'images/installations/build-down/5130.jpg'],
+  ...Array.from({ length: 17 }, (_, index) => [
+    `assets/custom-paint/custom-paint-${String(index + 1).padStart(2, '0')}.jpg`,
+    `images/installations/finishes/custom-paint/custom-paint-${String(index + 1).padStart(2, '0')}.jpg`,
+  ]),
 ];
 for (const [from, to] of approvedAssetOverrides) {
   const sourceAsset = path.resolve(from);
@@ -80,6 +84,10 @@ const runtimePatch = '<script>(function(){if(!location.hostname.endsWith("github
 const navigationFile = path.join(output, 'static-navigation.js');
 if (fs.existsSync(navigationFile)) {
   let navigation = fs.readFileSync(navigationFile, 'utf8');
+  navigation = navigation.replace(
+    "['Testimonials', '/testimonials/'], ['Videos', '/videos/'], ['Stiltz news', '/stiltz-news/'],",
+    "['Testimonials', '/testimonials/'], ['Custom Paint', '/custom-colors/'], ['Videos', '/videos/'], ['Stiltz news', '/stiltz-news/'],",
+  );
   navigation = navigation.replace('const navigationGroups = [', `const sitePathname = () => {
   const pathname = location.hostname.endsWith('github.io')
     ? (location.pathname.startsWith('/stiltz-preview/')
@@ -102,6 +110,11 @@ const navigationGroups = [`);
   '/images/installations/build-down/5127.jpg', '/images/installations/build-down/5128.jpg',
   '/images/installations/build-down/5129.jpg', '/images/installations/build-down/5130.jpg',
 ];`);
+  navigation = navigation.replace(/const customColorImages = \[[\s\S]*?\n\]\.(?:map\([^\n]*\))?;/, `const customPaintImages = Array.from({ length: 17 }, (_, index) =>
+  \`/images/installations/finishes/custom-paint/custom-paint-\${String(index + 1).padStart(2, '0')}.jpg\`);`);
+  navigation = navigation
+    .replace("'/stiltz-duo-alta-new-model/': [duoImages, whiteDuoImages],", "'/stiltz-duo-alta-new-model/': [duoImages],")
+    .replace("'/custom-colors/': [customColorImages],", "'/custom-colors/': [customPaintImages],");
   navigation += `
 
 // A normal static-page navigation should never leave a desktop <details>
@@ -134,12 +147,35 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // Version the cleaned Trio Alta photo URLs so visitors are not held to an
   // older cached version of the same filenames.
   html = html
-    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=final-gallery-qa-v2')
+    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=custom-paint-v1')
     .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
     .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
     .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v3')
     .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4');
+  if (route === '/stiltz-duo-alta-new-model/') {
+    html = html
+      .replace(/<section class="duo-white-finish-option">[\s\S]*?<\/section>(?=<section class="alta-story">)/, '')
+      .replace(
+        'Available in gray and white. White was recently added, and custom paint is available.',
+        'The standard factory finish is gray. Custom Paint is available as part of your project plan.',
+      );
+  }
+  if (route === '/custom-colors/') {
+    html = html
+      .replaceAll('Custom colors', 'Custom Paint')
+      .replaceAll('Custom-color', 'Custom Paint')
+      .replaceAll('custom-colored', 'custom-painted')
+      .replace('A lift can match the character of the home.', 'Custom Paint makes the lift part of the home.')
+      .replace('These completed projects show how custom-painted Stiltz lifts can be integrated into a home with more intention. Available finishes are confirmed with the Stiltz of Florida team for the selected model and project.', 'These completed Florida projects show how a custom-painted Stiltz lift can be tailored to the home around it. Color and finish availability are confirmed with the Stiltz of Florida team for the selected model and project.')
+      .replace('Real custom-paint installations', 'Real Custom Paint installations')
+      .replace('Use the arrows to explore the full-color collection. Every image is a real installation—not a mocked-up finish.', 'Use the arrows to explore real Custom Paint installations. Every image is a completed Florida home—not a mocked-up finish.')
+      .replace('aria-label="Custom Paint home lift photo gallery"', 'aria-label="Custom Paint home lift photo gallery"');
+  }
+  html = html.replace(
+    '<a href="videos/">Videos</a>',
+    '<a href="custom-colors/">Custom Paint</a><a href="videos/">Videos</a>',
+  );
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
   // release. Point directly at that MP4 instead of the new static origin,
