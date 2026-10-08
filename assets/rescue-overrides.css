@@ -325,3 +325,15 @@ main figure img,
     padding-inline: 0 !important;
   }
 }
+
+/* Duo Alta galleries use the same softened photo treatment at every viewport. */
+.alta-page .alta-gallery .model-photo-carousel figure,
+.alta-page .duo-white-finish-option .model-photo-carousel figure {
+  border-radius: 28px !important;
+  overflow: hidden !important;
+}
+
+.alta-page .alta-gallery .model-photo-carousel img,
+.alta-page .duo-white-finish-option .model-photo-carousel img {
+  border-radius: 18px !important;
+}
