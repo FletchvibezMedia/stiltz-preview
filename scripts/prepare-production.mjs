@@ -22,7 +22,7 @@ fs.cpSync(source, output, { recursive: true });
 // source release is re-mirrored on every GitHub Pages deployment.
 const approvedAssetOverrides = [
   ['assets/rescue-overrides.css', 'rescue-overrides.css'],
-  ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
+  ['assets/duo-alta/duo-alta-thru-car-straight.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/duo-classic/duo-classic-hero-straight.jpg', 'images/models/duo-classic/drive-hero.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
@@ -133,6 +133,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // Version the cleaned Trio Alta photo URLs so visitors are not held to an
   // older cached version of the same filenames.
   html = html
+    .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v2')
     .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v2')
     .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4');
