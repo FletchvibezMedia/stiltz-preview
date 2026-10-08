@@ -134,7 +134,8 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // older cached version of the same filenames.
   html = html
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v2')
-    .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v2');
+    .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v2')
+    .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v2');
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
   // release. Point directly at that MP4 instead of the new static origin,
