@@ -23,6 +23,8 @@ fs.cpSync(source, output, { recursive: true });
 const approvedAssetOverrides = [
   ['assets/rescue-overrides.css', 'rescue-overrides.css'],
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
+  ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
+  ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
   ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
   ['assets/landing/5132.jpg', 'images/installations/landing/5132.jpg'],
   ['assets/landing/5133.jpg', 'images/installations/landing/5133.jpg'],
