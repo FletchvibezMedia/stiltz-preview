@@ -22,6 +22,35 @@ fs.cpSync(source, output, { recursive: true });
 // source release is re-mirrored on every GitHub Pages deployment.
 const approvedAssetOverrides = [
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
+  ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
+  ['assets/landing/5132.jpg', 'images/installations/landing/5132.jpg'],
+  ['assets/landing/5133.jpg', 'images/installations/landing/5133.jpg'],
+  ['assets/landing/5134.jpg', 'images/installations/landing/5134.jpg'],
+  ['assets/landing/5135.jpg', 'images/installations/landing/5135.jpg'],
+  ['assets/landing/5136.png', 'images/installations/landing/5136.png'],
+  ['assets/landing/5137.jpg', 'images/installations/landing/5137.jpg'],
+  ['assets/landing/5138.jpg', 'images/installations/landing/5138.jpg'],
+  ['assets/landing/5139.jpg', 'images/installations/landing/5139.jpg'],
+  ['assets/landing/5140.jpg', 'images/installations/landing/5140.jpg'],
+  ['assets/landing/5141.jpg', 'images/installations/landing/5141.jpg'],
+  ['assets/landing/5142.jpg', 'images/installations/landing/5142.jpg'],
+  ['assets/landing/5143.jpg', 'images/installations/landing/5143.jpg'],
+  ['assets/landing/5144.jpg', 'images/installations/landing/5144.jpg'],
+  ['assets/landing/5145.jpg', 'images/installations/landing/5145.jpg'],
+  ['assets/landing/5146.jpg', 'images/installations/landing/5146.jpg'],
+  ['assets/landing/5147.jpg', 'images/installations/landing/5147.jpg'],
+  ['assets/landing/5148.jpg', 'images/installations/landing/5148.jpg'],
+  ['assets/landing/5149.jpg', 'images/installations/landing/5149.jpg'],
+  ['assets/landing/5150.jpg', 'images/installations/landing/5150.jpg'],
+  ['assets/landing/5151.jpg', 'images/installations/landing/5151.jpg'],
+  ['assets/landing/5152.jpg', 'images/installations/landing/5152.jpg'],
+  ['assets/landing/5153.jpg', 'images/installations/landing/5153.jpg'],
+  ['assets/landing/5154.jpg', 'images/installations/landing/5154.jpg'],
+  ['assets/landing/5155.jpg', 'images/installations/landing/5155.jpg'],
+  ['assets/landing/5156.jpg', 'images/installations/landing/5156.jpg'],
+  ['assets/landing/5157.jpg', 'images/installations/landing/5157.jpg'],
+  ['assets/landing/5158.jpg', 'images/installations/landing/5158.jpg'],
+  ['assets/landing/5159.jpg', 'images/installations/landing/5159.jpg'],
   ['assets/build-down/5123.png', 'images/installations/build-down/5123.png'],
   ['assets/build-down/5124.png', 'images/installations/build-down/5124.png'],
   ['assets/build-down/5125.jpg', 'images/installations/build-down/5125.jpg'],
@@ -57,6 +86,11 @@ if (fs.existsSync(navigationFile)) {
 
 const navigationGroups = [`);
   navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
+  navigation = navigation.replace(/const landingImages = \[[\s\S]*?\n\]\.map\(\(file\) => `\/images\/installations\/landing\/\$\{file\}`\);/, `const landingImages = [
+  '5131.jpg', '5132.jpg', '5133.jpg', '5134.jpg', '5135.jpg', '5136.png', '5137.jpg', '5138.jpg', '5139.jpg', '5140.jpg',
+  '5141.jpg', '5142.jpg', '5143.jpg', '5144.jpg', '5145.jpg', '5146.jpg', '5147.jpg', '5148.jpg', '5149.jpg', '5150.jpg',
+  '5151.jpg', '5152.jpg', '5153.jpg', '5154.jpg', '5155.jpg', '5156.jpg', '5157.jpg', '5158.jpg', '5159.jpg',
+].map((file) => \`/images/installations/landing/\${file}\`);`);
   navigation = navigation.replace(/const buildDownImages = \[[\s\S]*?\n\];/, `const buildDownImages = [
   '/images/installations/build-down/5123.png', '/images/installations/build-down/5124.png',
   '/images/installations/build-down/5125.jpg', '/images/installations/build-down/5126.jpg',
