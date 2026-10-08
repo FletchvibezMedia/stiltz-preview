@@ -93,6 +93,34 @@ main figure img,
   }
 }
 
+/* Landing and build-down are supplied in mixed portrait and landscape ratios.
+   Frame them consistently, but never crop a finished installation just to
+   force every photo into the same box. */
+.installation-page--landing .installation-carousel figure,
+.installation-page--builddown .installation-carousel figure {
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  box-sizing: border-box !important;
+  padding: 10px !important;
+  overflow: hidden !important;
+  background: #e8f0eb !important;
+  border: 2px solid #9caf9f !important;
+  border-radius: 28px !important;
+  box-shadow: 0 14px 28px rgba(42, 55, 51, .12) !important;
+}
+
+.installation-page--landing .installation-carousel img,
+.installation-page--builddown .installation-carousel img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: min(72vh, 820px) !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 18px !important;
+}
+
 /* Give the About-page principles and team invitation a clear, warm visual
    structure. White cards on a white canvas read like missing content. */
 .about-page {

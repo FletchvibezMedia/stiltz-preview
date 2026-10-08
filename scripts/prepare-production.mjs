@@ -45,7 +45,7 @@ const approvedAssetOverrides = [
   ['assets/landing/5150.jpg', 'images/installations/landing/5150.jpg'],
   ['assets/landing/5151.jpg', 'images/installations/landing/5151.jpg'],
   ['assets/landing/5152.jpg', 'images/installations/landing/5152.jpg'],
-  ['assets/landing/5153.jpg', 'images/installations/landing/5153.jpg'],
+  ['assets/landing/5153-clean.jpg', 'images/installations/landing/5153.jpg'],
   ['assets/landing/5154.jpg', 'images/installations/landing/5154.jpg'],
   ['assets/landing/5155.jpg', 'images/installations/landing/5155.jpg'],
   ['assets/landing/5156.jpg', 'images/installations/landing/5156.jpg'],
