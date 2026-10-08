@@ -26,6 +26,8 @@ jobs:
         run: bash scripts/pull-release.sh release-source
       - name: Build production export
         run: node scripts/prepare-production.mjs release-source _site
+      - name: Ensure custom domain file
+        run: printf 'stiltzofflorida.com\n' > _site/CNAME
       - name: Verify production export
         run: |
           test -f _site/CNAME
@@ -41,7 +43,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
