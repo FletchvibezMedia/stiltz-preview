@@ -204,6 +204,26 @@ main figure img,
   border-radius: 22px !important;
 }
 
+/* The Duo Classic deserves a real product hero, not a small landscape room
+   shot. Use the complete portrait installation at an intentional desktop size. */
+@media (min-width: 801px) {
+  .duo-classic-page .duo-classic-hero > img {
+    width: 100% !important;
+    height: clamp(620px, 56vw, 760px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #f3f5f3 !important;
+    border-radius: 22px !important;
+  }
+
+  .duo-classic-page .duo-classic-hero {
+    min-height: 0 !important;
+    align-items: center !important;
+  }
+}
+
 @media (max-width: 900px) {
   .about-team-link,
   .about-cta {

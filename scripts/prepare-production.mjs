@@ -23,6 +23,7 @@ fs.cpSync(source, output, { recursive: true });
 const approvedAssetOverrides = [
   ['assets/rescue-overrides.css', 'rescue-overrides.css'],
   ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
+  ['assets/duo-classic/duo-classic-hero-portrait.jpg', 'images/models/duo-classic/drive-hero.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
   ['assets/trio-alta/trio-alta-feature.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
   ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
@@ -126,27 +127,6 @@ const routes = [];
 for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   const relative = path.relative(output, file).split(path.sep).join('/');
   const route = relative === 'index.html' ? '/' : `/${relative.replace(/index\.html$/, '')}`;
-
-
-// Performance post-process: only preload the first meaningful image and wait
-// to load the third-party Instagram feed until it approaches the viewport.
-for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
-  let html = fs.readFileSync(file, 'utf8');
-  let retainedImagePreload = false;
-  html = html.replace(/<link\b[^>]*>/gi, (tag) => {
-    if (!/\brel="preload"/i.test(tag) || !/\bas="image"/i.test(tag)) return tag;
-    const href = tag.match(/\bhref="([^"]+)"/i)?.[1] || '';
-    if (href.includes('stiltz-of-florida-logo') || retainedImagePreload) return '';
-    retainedImagePreload = true;
-    return tag;
-  });
-  if (html.includes('<behold-widget')) {
-    html = html.replace(/<script[^>]+src=["']https:\/\/w\.behold\.so\/widget\.js["'][^>]*><\/script>/gi, '');
-    const loader = '<script data-behold-lazy-loader>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.type="module";s.src="https://w.behold.so/widget.js";document.head.appendChild(s)}function ready(){var widget=document.querySelector("behold-widget");if(!widget)return;var target=widget.closest("section,div")||widget;if("IntersectionObserver"in window){var o=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){o.disconnect();load()}},{rootMargin:"500px 0px"});o.observe(target)}else setTimeout(load,1200)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready,{once:true});else ready()})()<\/script>';
-    if (!html.includes('data-behold-lazy-loader')) html = html.replace('</body>', loader + '</body>');
-  }
-  fs.writeFileSync(file, html);
-}
   const canonical = `${origin}${route}`;
   routes.push(route);
   let html = fs.readFileSync(file, 'utf8');
