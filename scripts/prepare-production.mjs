@@ -85,8 +85,8 @@ const navigationFile = path.join(output, 'static-navigation.js');
 if (fs.existsSync(navigationFile)) {
   let navigation = fs.readFileSync(navigationFile, 'utf8');
   navigation = navigation.replace(
-    "['Testimonials', '/testimonials/'], ['Videos', '/videos/'], ['Stiltz news', '/stiltz-news/'],",
-    "['Testimonials', '/testimonials/'], ['Custom Paint', '/custom-colors/'], ['Videos', '/videos/'], ['Stiltz news', '/stiltz-news/'],",
+    "['Trio Alta 3-Story', '/trio-alta-three-story/'], ['Lift finishes', '/lift-finishes/'],",
+    "['Trio Alta 3-Story', '/trio-alta-three-story/'], ['Custom Paint', '/custom-colors/'],",
   );
   navigation = navigation.replace('const navigationGroups = [', `const sitePathname = () => {
   const pathname = location.hostname.endsWith('github.io')
@@ -132,16 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menus.forEach((other) => { if (other !== menu) other.open = false; });
   }));
 
-  // The captured page markup contains a desktop Explore menu on every page.
-  // Add the new entry here as well, so its label stays in lockstep with the
-  // mobile navigation even when the upstream release markup is refreshed.
-  document.querySelectorAll('.desktop-nav a').forEach((link) => {
-    if (link.textContent.trim() !== 'Videos' || link.previousElementSibling?.textContent.trim() === 'Custom Paint') return;
-    const customPaint = document.createElement('a');
-    customPaint.href = '/custom-colors/';
-    customPaint.textContent = 'Custom Paint';
-    link.before(customPaint);
-  });
 });
 `;
   fs.writeFileSync(navigationFile, navigation);
@@ -184,8 +174,8 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
       .replace('aria-label="Custom Paint home lift photo gallery"', 'aria-label="Custom Paint home lift photo gallery"');
   }
   html = html.replace(
-    /(<a href=("|')(?:\.\/)?videos\/\2>Videos<\/a>)/,
-    '<a href="custom-colors/">Custom Paint</a>$1',
+    /<a href=("|')(?:\.\/)?lift-finishes\/\1>Lift finishes<\/a>/,
+    '<a href="custom-colors/">Custom Paint</a>',
   );
   html = html.split(rescueOrigin).join(origin);
   // The rescue export's financing video is hosted on the retained staging
