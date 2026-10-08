@@ -18,6 +18,21 @@ function walk(dir, files = []) {
 fs.rmSync(output, { recursive: true, force: true });
 fs.cpSync(source, output, { recursive: true });
 
+// Keep approved production-only photo replacements stable even though the
+// source release is re-mirrored on every GitHub Pages deployment.
+const approvedAssetOverrides = [
+  ['assets/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg'],
+];
+for (const [from, to] of approvedAssetOverrides) {
+  const sourceAsset = path.resolve(from);
+  if (!fs.existsSync(sourceAsset)) {
+    throw new Error(`Missing approved asset override: ${from}`);
+  }
+  const destinationAsset = path.join(output, to);
+  fs.mkdirSync(path.dirname(destinationAsset), { recursive: true });
+  fs.copyFileSync(sourceAsset, destinationAsset);
+}
+
 const runtimePatch = '<script>(function(){if(!location.hostname.endsWith("github.io"))return;var prefix="/stiltz-preview";function patch(node,attr){var value=node.getAttribute(attr);if(value&&value.charAt(0)==="/"&&value.indexOf(prefix+"/")!==0)node.setAttribute(attr,prefix+value)}function scan(root){if(!root.querySelectorAll)return;root.querySelectorAll("a[href],img[src],source[src],script[src]").forEach(function(node){patch(node,node.tagName==="A"?"href":"src")})}document.addEventListener("DOMContentLoaded",function(){scan(document);new MutationObserver(function(records){records.forEach(function(record){if(record.type==="attributes")patch(record.target,record.attributeName);else record.addedNodes.forEach(scan)})}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["href","src"]})})}())</script>';
 
 const navigationFile = path.join(output, 'static-navigation.js');
@@ -54,6 +69,9 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   html = html.replace('<head>', '<head><script>(function(){var b=document.createElement("base");b.href=location.hostname.endsWith("github.io")?"/stiltz-preview/":"/";document.head.appendChild(b)}())</script>');
   html = html.replace(/static-navigation\.js\?v=[^"']+/i, `static-navigation.js?v=${buildStamp}`);
   html = html.replace(/(<script src=(\"|')static-navigation\.js[^>]*><\/script>)/i, `$1${runtimePatch}`);
+  if (html.includes('<behold-widget')) {
+    html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#fff;border:1px solid #ced9d4;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
+  }
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }
