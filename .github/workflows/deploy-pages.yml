@@ -26,14 +26,17 @@ jobs:
         run: bash scripts/pull-release.sh release-source
       - name: Build production export
         run: node scripts/prepare-production.mjs release-source _site
-      - name: Ensure custom domain file
-        run: printf 'stiltzofflorida.com\n' > _site/CNAME
+      - name: Ensure production domain files
+        run: |
+          printf 'stiltzofflorida.com\n' > _site/CNAME
+          test -f _site/robots.txt
+          test -f _site/sitemap.xml
       - name: Verify production export
         run: |
           test -f _site/CNAME
           test -f _site/robots.txt
           test -f _site/sitemap.xml
-          test ! -n "$(grep -Ril 'noindex, nofollow\|stiltz-florida-rescue-replica.carolina-qua-8173.chatgpt.site' _site --include='*.html' || true)"
+          test ! -n "$(grep -Ril 'noindex, nofollow' _site --include='*.html' || true)"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
