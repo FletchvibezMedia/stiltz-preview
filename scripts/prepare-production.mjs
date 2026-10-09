@@ -180,7 +180,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // Version the cleaned Trio Alta photo URLs so visitors are not held to an
   // older cached version of the same filenames.
   html = html
-    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=good-housekeeping-mobile-v1')
+    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=model-layout-repair-v1')
     .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
     .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
