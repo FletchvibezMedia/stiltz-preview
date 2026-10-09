@@ -7,6 +7,37 @@ const origin = 'https://stiltzofflorida.com';
 const rescueOrigin = 'https://stiltz-florida-rescue-replica.carolina-qua-8173.chatgpt.site';
 const projectPath = '/stiltz-preview/';
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[character]));
+}
+
+function newsDate(value) {
+  return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    .format(new Date(value));
+}
+
+function loadOfficialNews() {
+  const fallback = { source: 'https://www.stiltzlifts.com/stiltz-news/', fetchedAt: '', items: [] };
+  const feedFile = path.resolve('assets/stiltz-news-feed.json');
+  if (!fs.existsSync(feedFile)) return fallback;
+  try {
+    const feed = JSON.parse(fs.readFileSync(feedFile, 'utf8'));
+    return Array.isArray(feed.items) ? feed : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function renderOfficialNews(feed) {
+  const cards = feed.items.map((item) => `<a class="news-card news-card--official" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer"><div><p>Stiltz Lifts USA <span>·</span> ${escapeHtml(newsDate(item.date))}</p><h3>${escapeHtml(item.title)}</h3><span>${escapeHtml(item.excerpt)}</span></div><span class="news-card-action">Read at Stiltz <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>`).join('');
+  const updated = feed.fetchedAt ? `Last refreshed ${escapeHtml(newsDate(feed.fetchedAt))}.` : '';
+  return `<main class="news-page"><section class="news-hero"><p class="eyebrow">Official Stiltz News</p><div><h1>What’s happening<br/><em>at Stiltz.</em></h1><p>Current product, planning and home-mobility news from Stiltz Lifts USA, selected for Florida homeowners.</p></div></section><section class="news-list"><div class="news-list-intro"><p class="eyebrow">Latest updates</p><h2>Direct from the Stiltz newsroom.</h2><p>This page refreshes automatically from the official Stiltz News feed. Articles open at the original source.</p></div><div class="news-feed">${cards}</div><p class="news-source-note">${updated} <a href="${escapeHtml(feed.source)}" target="_blank" rel="noopener noreferrer">View all official Stiltz News</a>.</p></section></main>`;
+}
+
+const officialNews = loadOfficialNews();
+
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const file = path.join(dir, entry.name);
@@ -172,6 +203,9 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
       .replace('Real custom-color installations', 'Real Custom Paint installations')
       .replace('Use the arrows to explore the full-color collection. Every image is a real installation—not a mocked-up finish.', 'Use the arrows to explore real Custom Paint installations. Every image is a completed Florida home—not a mocked-up finish.')
       .replace('aria-label="Custom Paint home lift photo gallery"', 'aria-label="Custom Paint home lift photo gallery"');
+  }
+  if (route === '/stiltz-news/') {
+    html = html.replace(/<main class="news-page">[\s\S]*?<\/main>(?=<footer)/, renderOfficialNews(officialNews));
   }
   html = html.replace(
     /<a href=("|')(?:\.\/)?lift-finishes\/\1>Lift finishes<\/a>/,

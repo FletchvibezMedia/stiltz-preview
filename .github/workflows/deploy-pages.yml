@@ -3,10 +3,12 @@ name: Deploy Stiltz of Florida
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '23 09 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -22,21 +24,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Refresh official Stiltz News feed
+        run: node scripts/refresh-stiltz-news.mjs
+      - name: Save refreshed news feed
+        if: github.event_name == 'schedule'
+        run: |
+          if git diff --quiet -- assets/stiltz-news-feed.json; then exit 0; fi
+          git config user.name "Stiltz of Florida News Sync"
+          git config user.email "news-sync@stiltzofflorida.com"
+          git add assets/stiltz-news-feed.json
+          git commit -m "Refresh official Stiltz News feed"
+          git push
       - name: Mirror approved Version 15 release
         run: bash scripts/pull-release.sh release-source
       - name: Build production export
         run: node scripts/prepare-production.mjs release-source _site
-      - name: Ensure production domain files
-        run: |
-          printf 'stiltzofflorida.com\n' > _site/CNAME
-          test -f _site/robots.txt
-          test -f _site/sitemap.xml
       - name: Verify production export
         run: |
           test -f _site/CNAME
           test -f _site/robots.txt
           test -f _site/sitemap.xml
-          test ! -n "$(grep -Ril 'noindex, nofollow' _site --include='*.html' || true)"
+          test ! -n "$(grep -Ril 'noindex, nofollow\|stiltz-florida-rescue-replica.carolina-qua-8173.chatgpt.site' _site --include='*.html' || true)"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -46,6 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
