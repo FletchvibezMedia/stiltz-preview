@@ -410,3 +410,38 @@ main figure img,
     padding-inline: 0 !important;
   }
 }
+
+/* Good Housekeeping: the source desktop grid lets the first promise card
+   intrude into the heading on a phone. Make this section a deliberate vertical
+   sequence at mobile sizes so the statement has room to breathe. */
+@media (max-width: 700px) {
+  .gh-page .gh-meaning {
+    display: block !important;
+    padding: 72px 40px 48px !important;
+  }
+
+  .gh-page .gh-meaning > header {
+    position: relative !important;
+    z-index: 1 !important;
+    display: block !important;
+    margin: 0 0 34px !important;
+    padding: 0 !important;
+  }
+
+  .gh-page .gh-meaning > header h2 {
+    margin: 14px 0 0 !important;
+    line-height: 1.04 !important;
+  }
+
+  .gh-page .gh-meaning > div {
+    position: relative !important;
+    z-index: 1 !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .gh-page .gh-meaning > div > article {
+    position: relative !important;
+    margin: 0 !important;
+  }
+}
