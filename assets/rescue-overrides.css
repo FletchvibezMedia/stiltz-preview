@@ -310,7 +310,20 @@ main figure img,
 /* The Duo Classic deserves a real product hero, not a small landscape room
    shot. Use the complete portrait installation at an intentional desktop size. */
 @media (min-width: 801px) {
-  .duo-classic-page .duo-classic-hero > img {
+  /* The original fixed-height hero let the portrait run into the following
+     intro on desktop. Give the figure its real height so the next section
+     starts after the image, rather than on top of it. */
+  .duo-classic-page .duo-classic-hero {
+    height: auto !important;
+    min-height: clamp(700px, 64vw, 860px) !important;
+  }
+
+  .duo-classic-page .duo-classic-hero > figure {
+    height: clamp(700px, 64vw, 860px) !important;
+    margin: 0 !important;
+  }
+
+  .duo-classic-page .duo-classic-hero > figure > img {
     width: 100% !important;
     height: clamp(620px, 56vw, 760px) !important;
     min-height: 0 !important;
@@ -322,8 +335,38 @@ main figure img,
   }
 
   .duo-classic-page .duo-classic-hero {
+    align-items: center !important;
+  }
+
+  /* Preserve the entire Trio Alta portrait in the hero instead of clipping
+     the lower landing to fit a decorative fixed-height panel. */
+  .alta-page .alta-hero {
+    height: auto !important;
     min-height: 0 !important;
     align-items: center !important;
+  }
+
+  .alta-page .alta-hero > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #f3f5f3 !important;
+    border-radius: 22px !important;
+  }
+
+  /* The third Duo Thru-Car installation is a different portrait ratio. Let
+     it size from its own photo rather than inherit a center-cropping panel. */
+  .variant-page .variant-media > div:last-child > figure:nth-child(3),
+  .variant-page .variant-media > div:last-child > figure:nth-child(3) img {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
   }
 }
 
