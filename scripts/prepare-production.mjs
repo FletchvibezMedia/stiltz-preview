@@ -1,1 +1,252 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éí×Şyí:-jZ.¶›­–)Ş³v–×÷'Bg2g&öÒvæöFS¦g2s°¦–×÷'BF‚g&öÒvæöFS§F‚s° ¦6öç7B6÷W&6RÒF‚ç&W6öÇfR‡&ö6W72æ&we³%Òóòw&VÆV6R×6÷W&6Rr“°¦6öç7B÷WGWBÒF‚ç&W6öÇfR‡&ö6W72æ&we³5Òóòu÷6—FRr“°¦6öç7B÷&–v–âÒv‡GG3¢ò÷7F–ÇG¦öffÆ÷&–Fæ6öÒs°¦6öç7B&W67VT÷&–v–âÒv‡GG3¢ò÷7F–ÇG¢ÖfÆ÷&–F×&W67VR×&WÆ–6æ6&öÆ–æ×VÓƒs2æ6†FwBç6—FRs°¦6öç7B&ö¦V7EF‚Òr÷7F–ÇG¢×&Wf–Wròs° ¦gVæ7F–öâW66T‡FÖÂ‡fÇVR’°¢&WGW&â7G&–ær‡fÇVR’ç&WÆ6R‚õ²cÃâ"uÒörÂ†6†&7FW"’Óâ‡°¢rbs¢rf×²rÂsÂs¢rfÇC²rÂsâs¢rfwC²rÂr"s¢rgV÷C²rÂ"r#¢rb33“²rÀ¢Õ¶6†&7FW%Ò’“°§Ğ ¦gVæ7F–öâæWw4FFR‡fÇVR’°¢&WGW&âæWr–çFÂäFFUF–ÖTf÷&ÖB‚vVâÕU2rÂ²ÖöçFƒ¢vÆöærrÂF“¢vçVÖW&–2rÂ–V#¢vçVÖW&–2rÒ¢æf÷&ÖB†æWrFFR‡fÇVR’“°§Ğ ¦gVæ7F–öâÆöDöff–6–ÄæWw2‚’°¢6öç7BfÆÆ&6²Ò²6÷W&6S¢v‡GG3¢ò÷wwrç7F–ÇG¦Æ–gG2æ6öÒ÷7F–ÇG¢ÖæWw2òrÂfWF6†VDC¢rrÂ—FV×3¢µÒÓ°¢6öç7BfVVDf–ÆRÒF‚ç&W6öÇfR‚v76WG2÷7F–ÇG¢ÖæWw2ÖfVVBæ§6öâr“°¢–b‚g2æW†—7G57–æ2†fVVDf–ÆR’’&WGW&âfÆÆ&6³°¢G'’°¢6öç7BfVVBÒ¥4ôâç'6R†g2ç&VDf–ÆU7–æ2†fVVDf–ÆRÂwWFc‚r’“°¢&WGW&â'&’æ—4'&’†fVVBæ—FV×2’òfVVB¢fÆÆ&6³°¢Ò6F6‚°¢&WGW&âfÆÆ&6³°¢Ğ§Ğ ¦gVæ7F–öâ&VæFW$öff–6–ÄæWw2†fVVB’°¢6öç7B6&G2ÒfVVBæ—FV×2æÖ‚†—FVÒ’ÓâÆ6Æ73Ò&æWw2Ö6&BæWw2Ö6&BÒÖöff–6–Â"‡&VcÒ"G¶W66T‡FÖÂ†—FVÒçW&Â—Ò"F&vWCÒ%ö&Ææ²"&VÃÒ&æö÷VæW"æ÷&VfW'&W"#ãÆF—cãÇå7F–ÇG¢Æ–gG2U4Ç7ãì+sÂ÷7ãâG¶W66T‡FÖÂ†æWw4FFR†—FVÒæFFR’—ÓÂ÷ãÆƒ3âG¶W66T‡FÖÂ†—FVÒçF—FÆR—ÓÂöƒ3ãÇ7ãâG¶W66T‡FÖÂ†—FVÒæW†6W'B—ÓÂ÷7ããÂöF—cãÇ7â6Æ73Ò&æWw2Ö6&BÖ7F–öâ#å&VBB7F–ÇG¢Ç7fr†ÖÆç3Ò&‡GG¢ò÷wwrçs2æ÷&ró#÷7fr"v–GFƒÒ#b"†V–v‡CÒ#b"f–Wt&÷ƒÒ##B#B"f–ÆÃÒ&æöæR"7G&ö¶SÒ&7W'&VçD6öÆ÷""7G&ö¶R×v–GFƒÒ#""7G&ö¶RÖÆ–æV6Ò'&÷VæB"7G&ö¶RÖÆ–æV¦ö–ãÒ'&÷VæB"&–Ö†–FFVãÒ'G'VR#ãÇF‚CÒ$ÓR&ƒB#ãÂ÷FƒãÇF‚CÒ&Ó"RrrÓrr#ãÂ÷FƒãÂ÷7fsãÂ÷7ããÂöæ’æ¦ö–â‚rr“°¢6öç7BWFFVBÒfVVBæfWF6†VDBòÆ7B&Vg&W6†VBG¶W66T‡FÖÂ†æWw4FFR†fVVBæfWF6†VDB’—Òæ¢rs°¢&WGW&âÆÖ–â6Æ73Ò&æWw2×vR#ãÇ6V7F–öâ6Æ73Ò&æWw2Ö†W&ò#ãÇ6Æ73Ò&W–V'&÷r#äöff–6–Â7F–ÇG¢æWw3Â÷ãÆF—cãÆƒåv†N(	—2†Væ–æsÆ'"óãÆVÓæB7F–ÇG¢ãÂöVÓãÂöƒãÇä7W'&VçB&öGV7BÂÆææ–æræB†öÖRÖÖö&–Æ—G’æWw2g&öÒ7F–ÇG¢Æ–gG2U4Â6VÆV7FVBf÷"fÆ÷&–F†öÖV÷væW'2ãÂ÷ãÂöF—cãÂ÷6V7F–öããÇ6V7F–öâ6Æ73Ò&æWw2ÖÆ—7B#ãÆF—b6Æ73Ò&æWw2ÖÆ—7BÖ–çG&ò#ãÇ6Æ73Ò&W–V'&÷r#äÆFW7BWFFW3Â÷ãÆƒ#äF—&V7Bg&öÒF†R7F–ÇG¢æWw7&ööÒãÂöƒ#ãÇåF†—2vR&Vg&W6†W2WFöÖF–6ÆÇ’g&öÒF†Röff–6–Â7F–ÇG¢æWw2fVVBâ'F–6ÆW2÷VâBF†R÷&–v–æÂ6÷W&6RãÂ÷ãÂöF—cãÆF—b6Æ73Ò&æWw2ÖfVVB#âG¶6&G7ÓÂöF—cãÇ6Æ73Ò&æWw2×6÷W&6RÖæ÷FR#âG·WFFVGÒÆ‡&VcÒ"G¶W66T‡FÖÂ†fVVBç6÷W&6R—Ò"F&vWCÒ%ö&Ææ²"&VÃÒ&æö÷VæW"æ÷&VfW'&W"#åf–WrÆÂöff–6–Â7F–ÇG¢æWw3ÂöâãÂ÷ãÂ÷6V7F–öããÂöÖ–ãæ°§Ğ ¦6öç7Böff–6–ÄæWw2ÒÆöDöff–6–ÄæWw2‚“° ¦gVæ7F–öâvÆ²†F—"Âf–ÆW2ÒµÒ’°¢f÷"†6öç7BVçG'’öbg2ç&VFF—%7–æ2†F—"Â²v—F„f–ÆUG—W3¢G'VRÒ’’°¢6öç7Bf–ÆRÒF‚æ¦ö–â†F—"ÂVçG'’ææÖR“°¢VçG'’æ—4F—&V7F÷'’‚’òvÆ²†f–ÆRÂf–ÆW2’¢f–ÆW2çW6‚†f–ÆR“°¢Ğ¢&WGW&âf–ÆW3°§Ğ ¦g2ç&Õ7–æ2†÷WGWBÂ²&V7W'6—fS¢G'VRÂf÷&6S¢G'VRÒ“°¦g2æ77–æ2‡6÷W&6RÂ÷WGWBÂ²&V7W'6—fS¢G'VRÒ“° ¢òò¶VW&÷fVB&öGV7F–öâÖöæÇ’†÷Fò&WÆ6VÖVçG27F&ÆRWfVâF†÷Vv‚F†P¢òò6÷W&6R&VÆV6R—2&RÖÖ—'&÷&VBöâWfW'’v—D‡V"vW2FWÆ÷–ÖVçBà¦6öç7B&÷fVD76WD÷fW'&–FW2Ò°¢²v76WG2÷&W67VRÖ÷fW'&–FW2æ772rÂw&W67VRÖ÷fW'&–FW2æ772uÒÀ¢²v76WG2÷FVÒö&–ÆÂÖ&VÆÂæ§rrÂv–ÖvW2÷FVÒö7W'&VçBö&–ÆÂÖ&VÆÂæ§ruÒÀ¢²v76WG2öGVòÖÇFöGVòÖÇF×F‡'RÖ6"×7G&–v‡Bæ§rrÂv–ÖvW2öÖöFVÇ2öGVòÖÇF÷&öfW76–öæÂÓ"æ§ruÒÀ¢²v76WG2öGVò×F‡'RÖ6"öGVò×F‡'RÖ6"Ö†W&ò×7G&–v‡Bæ§rrÂv–ÖvW2öÖöFVÇ2öGVò×F‡'RÖ6"÷fW&–f–VBÖ†W&òæ§ruÒÀ¢²v76WG2öGVòÖ6Æ76–2öGVòÖ6Æ76–2Ö†W&ò×7G&–v‡Bæ§rrÂv–ÖvW2öÖöFVÇ2öGVòÖ6Æ76–2öG&—fRÖ†W&òæ§ruÒÀ¢²v76WG2÷G&–òÖÇF÷G&–òÖÇFÖfVGW&R×vV"æ§rrÂv–ÖvW2öÖöFVÇ2÷G&–òÖÇFöG&—fRÖ†W&òÖw&’æ§ruÒÀ¢²v76WG2÷G&–òÖÇF÷G&–òÖÇFÖfVGW&R×vV"æ§rrÂv–ÖvW2öÖöFVÇ2÷G&–òÖÇF÷&öfW76–öæÂ×v†—FRÓæ§ruÒÀ¢²v76WG2öÆæF–æróS3æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3æ§ruÒÀ¢²v76WG2öÆæF–æróS3"æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3"æ§ruÒÀ¢²v76WG2öÆæF–æróS32æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS32æ§ruÒÀ¢²v76WG2öÆæF–æróS3Bæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3Bæ§ruÒÀ¢²v76WG2öÆæF–æróS3Ræ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3Ræ§ruÒÀ¢²v76WG2öÆæF–æróS3bçærrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3bçæruÒÀ¢²v76WG2öÆæF–æróS3ræ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3ræ§ruÒÀ¢²v76WG2öÆæF–æróS3‚æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3‚æ§ruÒÀ¢²v76WG2öÆæF–æróS3’æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróS3’æ§ruÒÀ¢²v76WG2öÆæF–æróSCæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSCæ§ruÒÀ¢²v76WG2öÆæF–æróSCæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSCæ§ruÒÀ¢²v76WG2öÆæF–æróSC"æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSC"æ§ruÒÀ¢²v76WG2öÆæF–æróSC2æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSC2æ§ruÒÀ¢²v76WG2öÆæF–æróSCBæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSCBæ§ruÒÀ¢²v76WG2öÆæF–æróSCRæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSCRæ§ruÒÀ¢²v76WG2öÆæF–æróSCbæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSCbæ§ruÒÀ¢²v76WG2öÆæF–æróSCræ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSCræ§ruÒÀ¢²v76WG2öÆæF–æróSC‚æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSC‚æ§ruÒÀ¢²v76WG2öÆæF–æróSC’æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSC’æ§ruÒÀ¢²v76WG2öÆæF–æróSSæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSSæ§ruÒÀ¢²v76WG2öÆæF–æróSSæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSSæ§ruÒÀ¢²v76WG2öÆæF–æróSS"æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSS"æ§ruÒÀ¢²v76WG2öÆæF–æróSS2Ö6ÆVâæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSS2æ§ruÒÀ¢²v76WG2öÆæF–æróSSBæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSSBæ§ruÒÀ¢²v76WG2öÆæF–æróSSRæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSSRæ§ruÒÀ¢²v76WG2öÆæF–æróSSbæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSSbæ§ruÒÀ¢²v76WG2öÆæF–æróSSræ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSSræ§ruÒÀ¢²v76WG2öÆæF–æróSS‚æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSS‚æ§ruÒÀ¢²v76WG2öÆæF–æróSS’æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2öÆæF–æróSS’æ§ruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#2çærrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#2çæruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#BçærrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#BçæruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#Ræ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#Ræ§ruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#bæ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#bæ§ruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#ræ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#ræ§ruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#‚æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#‚æ§ruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS#’æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#’æ§ruÒÀ¢²v76WG2ö'V–ÆBÖF÷vâóS3æ§rrÂv–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS3æ§ruÒÀ¢ââä'&’æg&öÒ‡²ÆVæwFƒ¢rÒÂ…òÂ–æFW‚’Óâ°¢76WG2ö7W7FöÒ×–çBö7W7FöÒ×–çBÒGµ7G&–ær†–æFW‚²’çE7F'Bƒ"Âsr—Òæ§vÀ¢–ÖvW2ö–ç7FÆÆF–öç2öf–æ—6†W2ö7W7FöÒ×–çBö7W7FöÒ×–çBÒGµ7G&–ær†–æFW‚²’çE7F'Bƒ"Âsr—Òæ§vÀ¢Ò’À¥Ó°¦f÷"†6öç7B¶g&öÒÂFõÒöb&÷fVD76WD÷fW'&–FW2’°¢6öç7B6÷W&6T76WBÒF‚ç&W6öÇfR†g&öÒ“°¢–b‚g2æW†—7G57–æ2‡6÷W&6T76WB’’°¢F‡&÷ræWrW'&÷"†Ö—76–ær&÷fVB76WB÷fW'&–FS¢G¶g&ö×Ö“°¢Ğ¢6öç7BFW7F–æF–öä76WBÒF‚æ¦ö–â†÷WGWBÂFò“°¢g2æÖ¶F—%7–æ2‡F‚æF—&æÖR†FW7F–æF–öä76WB’Â²&V7W'6—fS¢G'VRÒ“°¢g2æ6÷”f–ÆU7–æ2‡6÷W&6T76WBÂFW7F–æF–öä76WB“°§Ğ ¦6öç7B'VçF–ÖUF6‚ÒsÇ67&—Câ†gVæ7F–öâ‚—¶–b‚Æö6F–öâæ†÷7FæÖRæVæG5v—F‚‚&v—F‡V"æ–ò"’—&WGW&ã·f"&Vf—ƒÒ"÷7F–ÇG¢×&Wf–Wr#¶gVæ7F–öâF6‚†æöFRÆGG"—·f"fÇVSÖæöFRævWDGG&–'WFR†GG"“¶–b‡fÇVRbgfÇVRæ6†$Bƒ“ÓÓÒ"ò"bgfÇVRæ–æFW„öb‡&Vf—‚²"ò"’ÓÓ–æöFRç6WDGG&–'WFR†GG"Ç&Vf—‚·fÇVR—ÖgVæ7F–öâ66â‡&ö÷B—¶–b‚&ö÷BçVW'•6VÆV7F÷$ÆÂ—&WGW&ã·&ö÷BçVW'•6VÆV7F÷$ÆÂ‚&¶‡&VeÒÆ–Öu·7&5ÒÇ6÷W&6U·7&5ÒÇ67&—E·7&5Ò"’æf÷$V6‚†gVæ7F–öâ†æöFR—·F6‚†æöFRÆæöFRçFtæÖSÓÓÒ$#ò&‡&Vb#¢'7&2"—Ò—ÖFö7VÖVçBæFDWfVçDÆ—7FVæW"‚$DôÔ6öçFVçDÆöFVB"ÆgVæ7F–öâ‚—·66â†Fö7VÖVçB“¶æWr×WFF–öäö'6W'fW"†gVæ7F–öâ‡&V6÷&G2—·&V6÷&G2æf÷$V6‚†gVæ7F–öâ‡&V6÷&B—¶–b‡&V6÷&BçG—SÓÓÒ&GG&–'WFW2"—F6‚‡&V6÷&BçF&vWBÇ&V6÷&BæGG&–'WFTæÖR“¶VÇ6R&V6÷&BæFFVDæöFW2æf÷$V6‚‡66â—Ò—Ò’æö'6W'fR†Fö7VÖVçBæFö7VÖVçDVÆVÖVçBÇ·7V'G&VS§G'VRÆ6†–ÆDÆ—7C§G'VRÆGG&–'WFW3§G'VRÆGG&–'WFTf–ÇFW#¥²&‡&Vb"Â'7&2%×Ò—Ò—Ò‚’“Â÷67&—Câs° ¦6öç7Bæf–vF–öäf–ÆRÒF‚æ¦ö–â†÷WGWBÂw7FF–2Öæf–vF–öâæ§2r“°¦–b†g2æW†—7G57–æ2†æf–vF–öäf–ÆR’’°¢ÆWBæf–vF–öâÒg2ç&VDf–ÆU7–æ2†æf–vF–öäf–ÆRÂwWFc‚r“°¢æf–vF–öâÒæf–vF–öâç&WÆ6R€¢%²uG&–òÇF2Õ7F÷'’rÂr÷G&–òÖÇF×F‡&VR×7F÷'’òuÒÂ²tÆ–gBf–æ—6†W2rÂröÆ–gBÖf–æ—6†W2òuÒÂ"À¢%²uG&–òÇF2Õ7F÷'’rÂr÷G&–òÖÇF×F‡&VR×7F÷'’òuÒÂ²t7W7FöÒ–çBrÂrö7W7FöÒÖ6öÆ÷'2òuÒÂ"À¢“°¢æf–vF–öâÒæf–vF–öâç&WÆ6R‚v6öç7Bæf–vF–öäw&÷W2Ò²rÂ6öç7B6—FUF†æÖRÒ‚’Óâ°¢6öç7BF†æÖRÒÆö6F–öâæ†÷7FæÖRæVæG5v—F‚‚vv—F‡V"æ–òr¢ò†Æö6F–öâçF†æÖRç7F'G5v—F‚‚r÷7F–ÇG¢×&Wf–Wròr¢òÆö6F–öâçF†æÖRç6Æ–6R‚r÷7F–ÇG¢×&Wf–WrræÆVæwF‚¢¢†Æö6F–öâçF†æÖRÓÓÒr÷7F–ÇG¢×&Wf–Wrròròr¢Æö6F–öâçF†æÖR’¢¢Æö6F–öâçF†æÖS°¢&WGW&âF†æÖRæVæG5v—F‚‚ròr’òF†æÖR¢F†æÖR²ròs°§Ó° ¦6öç7Bæf–vF–öäw&÷W2Ò¶“°¢æf–vF–öâÒæf–vF–öâç&WÆ6TÆÂ‚&6öç7BF‚Òv–æF÷ræÆö6F–öâçF†æÖRæVæG5v—F‚‚ròr’òv–æF÷ræÆö6F–öâçF†æÖR¢G·v–æF÷ræÆö6F–öâçF†æÖWÒö²"Âv6öç7BF‚Ò6—FUF†æÖR‚“²r“°¢æf–vF–öâÒæf–vF–öâç&WÆ6R‚ö6öç7BÆæF–æt–ÖvW2ÒÅµµÇ5Å5Ò£õÆåÅÕÂæÖÂ…Â†f–ÆUÂ’ÓâÂö–ÖvW5Âö–ç7FÆÆF–öç5ÂöÆæF–æuÂõÂEÇ¶f–ÆUÇÖÂ“²òÂ6öç7BÆæF–æt–ÖvW2Ò°¢sS3æ§rrÂsS3"æ§rrÂsS32æ§rrÂsS3Bæ§rrÂsS3Ræ§rrÂsS3bçærrÂsS3ræ§rrÂsS3‚æ§rrÂsS3’æ§rrÂsSCæ§rrÀ¢sSCæ§rrÂsSC"æ§rrÂsSC2æ§rrÂsSCBæ§rrÂsSCRæ§rrÂsSCbæ§rrÂsSCræ§rrÂsSC‚æ§rrÂsSC’æ§rrÂsSSæ§rrÀ¢sSSæ§rrÂsSS"æ§rrÂsSS2æ§rrÂsSSBæ§rrÂsSSRæ§rrÂsSSbæ§rrÂsSSræ§rrÂsSS‚æ§rrÂsSS’æ§rrÀ¥ÒæÖ‚†f–ÆR’ÓâÆö–ÖvW2ö–ç7FÆÆF–öç2öÆæF–ærõÂG¶f–ÆWÕÆ“¶“°¢æf–vF–öâÒæf–vF–öâç&WÆ6R‚ö6öç7B'V–ÆDF÷vä–ÖvW2ÒÅµµÇ5Å5Ò£õÆåÅÓ²òÂ6öç7B'V–ÆDF÷vä–ÖvW2Ò°¢rö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#2çærrÂrö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#BçærrÀ¢rö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#Ræ§rrÂrö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#bæ§rrÀ¢rö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#ræ§rrÂrö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#‚æ§rrÀ¢rö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS#’æ§rrÂrö–ÖvW2ö–ç7FÆÆF–öç2ö'V–ÆBÖF÷vâóS3æ§rrÀ¥Ó¶“°¢æf–vF–öâÒæf–vF–öâç&WÆ6R‚ö6öç7B7W7FöÔ6öÆ÷$–ÖvW2ÒÅµµÇ5Å5Ò£õÆåÅÕÂâƒó¦ÖÂ…µåÆåÒ¥Â’“ó²òÂ6öç7B7W7FöÕ–çD–ÖvW2Ò'&’æg&öÒ‡²ÆVæwFƒ¢rÒÂ…òÂ–æFW‚’Óà¢Æö–ÖvW2ö–ç7FÆÆF–öç2öf–æ—6†W2ö7W7FöÒ×–çBö7W7FöÒ×–çBÕÂGµ7G&–ær†–æFW‚²’çE7F'Bƒ"Âsr—Òæ§uÆ“¶“°¢æf–vF–öâÒæf–vF–öà¢ç&WÆ6R‚"r÷7F–ÇG¢ÖGVòÖÇFÖæWrÖÖöFVÂòs¢¶GVô–ÖvW2Âv†—FTGVô–ÖvW5ÒÂ"Â"r÷7F–ÇG¢ÖGVòÖÇFÖæWrÖÖöFVÂòs¢¶GVô–ÖvW5ÒÂ"¢ç&WÆ6R‚"rö7W7FöÒÖ6öÆ÷'2òs¢¶7W7FöÔ6öÆ÷$–ÖvW5ÒÂ"Â"rö7W7FöÒÖ6öÆ÷'2òs¢¶7W7FöÕ–çD–ÖvW5ÒÂ"“°¢æf–vF–öâ³Ò  ¢òòæ÷&ÖÂ7FF–2×vRæf–vF–öâ6†÷VÆBæWfW"ÆVfRFW6·F÷ÆFWF–Ç3à¢òòÖVçRf—7VÆÇ’÷Vâv†–ÆRF†R'&÷w6W"Ö÷fW2Fò—G2æW‡BFö7VÖVçBà¦Fö7VÖVçBæFDWfVçDÆ—7FVæW"‚v6Æ–6²rÂ†WfVçB’Óâ°¢6öç7BÆ–æ²ÒWfVçBçF&vWBæ6Æ÷6W7B‚ræFW6·F÷ÖæbFWF–Ç2¶‡&VeÒr“°¢–b‚Æ–æ²’&WGW&ã°¢Fö7VÖVçBçVW'•6VÆV7F÷$ÆÂ‚ræFW6·F÷ÖæbFWF–Ç5¶÷VåÒr’æf÷$V6‚‚†ÖVçR’Óâ²ÖVçRæ÷VâÒfÇ6S²Ò“°§ÒÂG'VR“° ¦Fö7VÖVçBæFDWfVçDÆ—7FVæW"‚tDôÔ6öçFVçDÆöFVBrÂ‚’Óâ°¢6öç7BÖVçW2Ò²ââæFö7VÖVçBçVW'•6VÆV7F÷$ÆÂ‚ræFW6·F÷ÖæbFWF–Ç2r•Ó°¢ÖVçW2æf÷$V6‚‚†ÖVçR’ÓâÖVçRæFDWfVçDÆ—7FVæW"‚wFövvÆRrÂ‚’Óâ°¢–b‚ÖVçRæ÷Vâ’&WGW&ã°¢ÖVçW2æf÷$V6‚‚†÷F†W"’Óâ²–b†÷F†W"ÓÒÖVçR’÷F†W"æ÷VâÒfÇ6S²Ò“°¢Ò’“° §Ò“°¦°¢g2çw&—FTf–ÆU7–æ2†æf–vF–öäf–ÆRÂæf–vF–öâ“°§Ğ ¦6öç7B'V–ÆE7F×ÒFFRææ÷r‚’çFõ7G&–ær‚“°¦6öç7B&÷WFW2ÒµÓ°¦f÷"†6öç7Bf–ÆRöbvÆ²†÷WGWB’æf–ÇFW"‚†f–ÆR’Óâf–ÆRæVæG5v—F‚‚v–æFW‚æ‡FÖÂr’’’°¢6öç7B&VÆF—fRÒF‚ç&VÆF—fR†÷WGWBÂf–ÆR’ç7Æ—B‡F‚ç6W’æ¦ö–â‚ròr“°¢6öç7B&÷WFRÒ&VÆF—fRÓÓÒv–æFW‚æ‡FÖÂròròr¢òG·&VÆF—fRç&WÆ6R‚ö–æFW…Âæ‡FÖÂBòÂrr—Ö°¢6öç7B6æöæ–6ÂÒG¶÷&–v–çÒG·&÷WFWÖ°¢&÷WFW2çW6‚‡&÷WFR“°¢ÆWB‡FÖÂÒg2ç&VDf–ÆU7–æ2†f–ÆRÂwWFc‚r“°¢òòfW'6–öâF†R6ÆVæVBG&–òÇF†÷FòU$Ç26òf—6—F÷'2&Ræ÷B†VÆBFòà¢òòöÆFW"66†VBfW'6–öâöbF†R6ÖRf–ÆVæÖW2à¢‡FÖÂÒ‡FÖÀ¢ç&WÆ6TÆÂ‚w&W67VRÖ÷fW'&–FW2æ772rÂw&W67VRÖ÷fW'&–FW2æ773÷cÖvööBÖ†÷W6V¶VW–ærÖÖö&–ÆR×cr¢ç&WÆ6TÆÂ‚v–ÖvW2öÖöFVÇ2öGVòÖÇF÷&öfW76–öæÂÓ"æ§rrÂv–ÖvW2öÖöFVÇ2öGVòÖÇF÷&öfW76–öæÂÓ"æ§s÷cÖGVòÖÇF×7G&–v‡B×cr¢ç&WÆ6TÆÂ‚v–ÖvW2öÖöFVÇ2öGVò×F‡'RÖ6"÷fW&–f–VBÖ†W&òæ§rrÂv–ÖvW2öÖöFVÇ2öGVò×F‡'RÖ6"÷fW&–f–VBÖ†W&òæ§s÷cÖGVò×F‡'RÖ6"×7G&–v‡B×cr¢ç&WÆ6TÆÂ‚v–ÖvW2öÖöFVÇ2÷G&–òÖÇFöG&—fRÖ†W&òÖw&’æ§rrÂv–ÖvW2öÖöFVÇ2÷G&–òÖÇFöG&—fRÖ†W&òÖw&’æ§s÷c×G&–òÖ6ÆVâ×c2r¢ç&WÆ6TÆÂ‚v–ÖvW2öÖöFVÇ2÷G&–òÖÇF÷&öfW76–öæÂ×v†—FRÓæ§rrÂv–ÖvW2öÖöFVÇ2÷G&–òÖÇF÷&öfW76–öæÂ×v†—FRÓæ§s÷c×G&–òÖ6ÆVâ×c2r¢ç&WÆ6TÆÂ‚v–ÖvW2öÖöFVÇ2öGVòÖ6Æ76–2öG&—fRÖ†W&òæ§rrÂv–ÖvW2öÖöFVÇ2öGVòÖ6Æ76–2öG&—fRÖ†W&òæ§s÷cÖ6Æ76–2×÷'G&—B×cBr“°¢–b‡&÷WFRÓÓÒr÷7F–ÇG¢ÖGVòÖÇFÖæWrÖÖöFVÂòr’°¢‡FÖÂÒ‡FÖÀ¢ç&WÆ6R‚óÇ6V7F–öâ6Æ73Ò&GVò×v†—FRÖf–æ—6‚Ö÷F–öâ#åµÇ5Å5Ò£óÅÂ÷6V7F–öãâƒóÓÇ6V7F–öâ6Æ73Ò&ÇF×7F÷'’#â’òÂrr¢ç&WÆ6R€¢tf–Æ&ÆR–âw&’æBv†—FRâv†—FRv2&V6VçFÇ’FFVBÂæB7W7FöÒ–çB—2f–Æ&ÆRârÀ¢uF†R7FæF&Bf7F÷'’f–æ—6‚—2w&’â7W7FöÒ–çB—2f–Æ&ÆR2'Böb–÷W"&ö¦V7BÆâârÀ¢“°¢Ğ¢–b‡&÷WFRÓÓÒrö7W7FöÒÖ6öÆ÷'2òr’°¢‡FÖÂÒ‡FÖÀ¢ç&WÆ6TÆÂ‚t7W7FöÒ6öÆ÷'2rÂt7W7FöÒ–çBr¢ç&WÆ6TÆÂ‚t7W7FöÒÖ6öÆ÷"rÂt7W7FöÒ–çBr¢ç&WÆ6TÆÂ‚v7W7FöÒÖ6öÆ÷&VBrÂv7W7FöÒ×–çFVBr¢ç&WÆ6R‚tÆ–gB6âÖF6‚F†R6†&7FW"öbF†R†öÖRârÂt7W7FöÒ–çBÖ¶W2F†RÆ–gB'BöbF†R†öÖRâr¢ç&WÆ6R‚uF†W6R6ö×ÆWFVB&ö¦V7G26†÷r†÷r7W7FöÒ×–çFVB7F–ÇG¢Æ–gG26â&R–çFVw&FVB–çFò†öÖRv—F‚Ö÷&R–çFVçF–öââf–Æ&ÆRf–æ—6†W2&R6öæf—&ÖVBv—F‚F†R7F–ÇG¢öbfÆ÷&–FFVÒf÷"F†R6VÆV7FVBÖöFVÂæB&ö¦V7BârÂuF†W6R6ö×ÆWFVBfÆ÷&–F&ö¦V7G26†÷r†÷r7W7FöÒ×–çFVB7F–ÇG¢Æ–gB6â&RF–Æ÷&VBFòF†R†öÖR&÷VæB—Bâ6öÆ÷"æBf–æ—6‚f–Æ&–Æ—G’&R6öæf—&ÖVBv—F‚F†R7F–ÇG¢öbfÆ÷&–FFVÒf÷"F†R6VÆV7FVBÖöFVÂæB&ö¦V7Bâr¢ç&WÆ6R‚u&VÂ7W7FöÒÖ6öÆ÷"–ç7FÆÆF–öç2rÂu&VÂ7W7FöÒ–çB–ç7FÆÆF–öç2r¢ç&WÆ6R‚uW6RF†R'&÷w2FòW‡Æ÷&RF†RgVÆÂÖ6öÆ÷"6öÆÆV7F–öââWfW'’–ÖvR—2&VÂ–ç7FÆÆF–öî(	Fæ÷BÖö6¶VB×Wf–æ—6‚ârÂuW6RF†R'&÷w2FòW‡Æ÷&R&VÂ7W7FöÒ–çB–ç7FÆÆF–öç2âWfW'’–ÖvR—26ö×ÆWFVBfÆ÷&–F†öÖ^(	Fæ÷BÖö6¶VB×Wf–æ—6‚âr¢ç&WÆ6R‚v&–ÖÆ&VÃÒ$7W7FöÒ–çB†öÖRÆ–gB†÷FòvÆÆW'’"rÂv&–ÖÆ&VÃÒ$7W7FöÒ–çB†öÖRÆ–gB†÷FòvÆÆW'’"r“°¢Ğ¢–b‡&÷WFRÓÓÒröÖVWB×F†R×FVÒòr’°¢6öç7B&–ÆÄ6&BÒsÆ'F–6ÆR6Æ73Ò'FVÒÖ6&B#ãÆF—b6Æ73Ò'FVÒ×÷'G&—B#ãÆ–Ör7&3Ò&–ÖvW2÷FVÒö7W'&VçBö&–ÆÂÖ&VÆÂæ§r"ÇCÒ$&–ÆÂ&VÆÂÂ6W'F–f–VB7V"6öçG&7F÷"Â7F–ÇG¢öbfÆ÷&–F"ÆöF–æsÒ&Æ§’"óãÂöF—cãÆF—b6Æ73Ò'FVÒÖ6&BÖ6F–öâ#ãÆƒ3ä&–ÆÂ&VÆÃÂöƒ3ãÇä6W'F–f–VB7V"6öçG&7F÷#Â÷ãÂöF—cãÂö'F–6ÆSâs°¢‡FÖÂÒ‡FÖÂç&WÆ6R€¢òƒÇ6V7F–öâ6Æ73Ò'FVÒÖw&÷W#ãÆƒ3ä6öç7G'V7F–öãÅÂöƒ3ãÆF—b6Æ73Ò'FVÒÖw&–B#åµÇ5Å5Ò£ò’ƒÅÂöF—cãÅÂ÷6V7F–öãâ’òÀ¢CG¶&–ÆÄ6&GÒC&À¢“°¢Ğ¢–b‡&÷WFRÓÓÒr÷7F–ÇG¢ÖæWw2òr’°¢‡FÖÂÒ‡FÖÂç&WÆ6R‚óÆÖ–â6Æ73Ò&æWw2×vR#åµÇ5Å5Ò£óÅÂöÖ–ãâƒóÓÆfö÷FW"’òÂ&VæFW$öff–6–ÄæWw2†öff–6–ÄæWw2’“°¢Ğ¢‡FÖÂÒ‡FÖÂç&WÆ6R€¢óÆ‡&VcÒ‚'Âr’ƒó¥ÂåÂò“öÆ–gBÖf–æ—6†W5ÂõÃäÆ–gBf–æ—6†W3ÅÂöâòÀ¢sÆ‡&VcÒ&7W7FöÒÖ6öÆ÷'2ò#ä7W7FöÒ–çCÂöârÀ¢“°¢‡FÖÂÒ‡FÖÂç7Æ—B‡&W67VT÷&–v–â’æ¦ö–â†÷&–v–â“°¢òòF†R&W67VRW‡÷'Bw2f–ææ6–ærf–FVò—2†÷7FVBöâF†R&WF–æVB7Fv–æp¢òò&VÆV6Râö–çBF—&V7FÇ’BF†BÕB–ç7FVBöbF†RæWr7FF–2÷&–v–âÀ¢òòv†W&RâVæ¶æ÷vâ÷f–FV÷2&÷WFRv÷VÆB&WGW&âF†R†öÖWvR…DÔÂà¢‡FÖÂÒ‡FÖÂç&WÆ6TÆÂ†G¶÷&–v–çÒ÷f–FV÷2÷7F–ÇG¢Öf–ææ6–ærÖ÷fW'f–Wræ×FÂG·&W67VT÷&–v–çÒ÷f–FV÷2÷7F–ÇG¢Öf–ææ6–ærÖ÷fW'f–Wræ×F“°¢‡FÖÂÒ‡FÖÂç&WÆ6TÆÂ‚v6öçFVçCÒ&æö–æFW‚ÂæöföÆÆ÷r"rÂv6öçFVçCÒ&–æFW‚ÂföÆÆ÷r"r“°¢‡FÖÂÒ‡FÖÂç&WÆ6R‚óÆÖWF&÷W'G“Ò&ös§W&Â"6öçFVçCÒ%µâ%Ò¢%µãåÒ£âöv’ÂÆÖWF&÷W'G“Ò&ös§W&Â"6öçFVçCÒ"G¶6æöæ–6ÇÒ#æ“°¢òò6W'fRF†R6ÖR'F–f7B&÷F‚g&öÒF†Rv—D‡V"&ö¦V7B&Wf–WræBÂÆFW"À¢òòg&öÒF†R7W7FöÒFöÖ–â&ö÷Bâ&VÆF—fRU$Ç2föÆÆ÷rF†—2'VçF–ÖR&6Rà¢‡FÖÂÒ‡FÖÂç&WÆ6R‚õÆ"†‡&VgÇ7&7Æ7F–öâ“Ò‚'Âr•ÂòƒòÂò’…µâ"uÒ¢•Ã"öv’Â…öÖF6‚ÂæÖRÂV÷FRÂW&Â’ÓâG¶æÖWÓÒG·V÷FWÒG·W&ÂÇÂrâòwÒG·V÷FWÖ“°¢‡FÖÂÒ‡FÖÂç&WÆ6R‚sÆ†VCârÂsÆ†VCãÇ67&—Câ†gVæ7F–öâ‚—·f"#ÖFö7VÖVçBæ7&VFTVÆVÖVçB‚&&6R"“¶"æ‡&VcÖÆö6F–öâæ†÷7FæÖRæVæG5v—F‚‚&v—F‡V"æ–ò"“ò"÷7F–ÇG¢×&Wf–Wrò#¢"ò#¶Fö7VÖVçBæ†VBæVæD6†–ÆB†"—Ò‚’“Â÷67&—Câr“°¢‡FÖÂÒ‡FÖÂç&WÆ6R‚÷7FF–2Öæf–vF–öåÂæ§5Ã÷cÕµâ"uÒ²ö’Â7FF–2Öæf–vF–öâæ§3÷cÒG¶'V–ÆE7F×Ö“°¢‡FÖÂÒ‡FÖÂç&WÆ6R‚òƒÇ67&—B7&3Ò…Â'Âr—7FF–2Öæf–vF–öåÂæ§5µãåÒ£ãÅÂ÷67&—Câ’ö’ÂCG·'VçF–ÖUF6‡Ö“°¢–b†‡FÖÂæ–æ6ÇVFW2‚sÆ&V†öÆB×v–FvWBr’’°¢‡FÖÂÒ‡FÖÂç&WÆ6R‚sÂö†VCârÂÇ67&—BG—SÒ&ÖöGVÆR"7&3Ò&‡GG3¢ò÷ræ&V†öÆBç6ò÷v–FvWBæ§2"FFÖ&V†öÆB×v–FvWCãÂ÷67&—CåÆãÇ7G–ÆSâæ–ç7Fw&ÒÖfVVB×v–FvWG¶&6¶w&÷VæC¢6ffc¶&÷&FW#£‚6öÆ–B66VC–CC¶&÷&FW"×&F—W3£#‡ƒ·FF–æs£#ƒ¶&÷‚×6†F÷s£g‚3‡‚&v&ƒ3rÃC‚ÃCrÂã“¶÷fW&fÆ÷s¦†–FFVçÒæ–ç7Fw&ÒÖfVVB×v–FvWB&V†öÆB×v–FvWG¶F—7Æ“¦&Æö6³·v–GFƒ£S¶Ö–âÖ†V–v‡C£3‡ÔÖVF–†Ö‚×v–GFƒ£cC‚—²æ–ç7Fw&ÒÖfVVB×v–FvWG¶&÷&FW"×&F—W3£#'ƒ·FF–æs£'‡×ÓÂ÷7G–ÆSåÆãÂö†VCæ“°¢Ğ¢‡FÖÂÒ‡FÖÂç&WÆ6R‚sÂö†VCârÂÆÆ–æ²&VÃÒ&6æöæ–6Â"‡&VcÒ"G¶6æöæ–6ÇÒ#åÆãÂö†VCæ“°¢g2çw&—FTf–ÆU7–æ2†f–ÆRÂ‡FÖÂ“°§Ğ ¦6öç7BÆ7FÖöBÒæWrFFR‚’çFô•4õ7G&–ær‚’ç6Æ–6RƒÂ“°¦g2çw&—FTf–ÆU7–æ2‡F‚æ¦ö–â†÷WGWBÂw6—FVÖç†ÖÂr’Â°¢sÃ÷†ÖÂfW'6–öãÒ#ã"Væ6öF–æsÒ%UDbÓ‚#óârÀ¢sÇW&Ç6WB†ÖÆç3Ò&‡GG¢ò÷wwrç6—FVÖ2æ÷&r÷66†VÖ2÷6—FVÖóã’#ârÀ¢ââç&÷WFW2ç6÷'B‚’æÖ‚‡&÷WFR’ÓâÇW&ÃãÆÆö3âG¶÷&–v–çÒG·&÷WFWÓÂöÆö3ãÆÆ7FÖöCâG¶Æ7FÖöGÓÂöÆ7FÖöCãÂ÷W&Ãæ’À¢sÂ÷W&Ç6WCârÂrp¥Òæ¦ö–â‚uÆâr’“°¦g2çw&—FTf–ÆU7–æ2‡F‚æ¦ö–â†÷WGWBÂw&ö&÷G2çG‡Br’ÂW6W"ÖvVçC¢¥ÆäÆÆ÷s¢õÆå6—FVÖ¢G¶÷&–v–çÒ÷6—FVÖç†ÖÅÆæ“°¦g2çw&—FTf–ÆU7–æ2‡F‚æ¦ö–â†÷WGWBÂt4äÔRr’Âw7F–ÇG¦öffÆ÷&–Fæ6öÕÆâr“°¦g2çw&—FTf–ÆU7–æ2‡F‚æ¦ö–â†÷WGWBÂrææö¦V·–ÆÂr’Ârr“°¦6öç6öÆRæÆör„¥4ôâç7G&–æv–g’‡²÷WGWBÂvW3¢&÷WFW2æÆVæwF‚ÒÂçVÆÂÂ"’“° 
+import fs from 'node:fs';
+import path from 'node:path';
+
+const source = path.resolve(process.argv[2] ?? 'release-source');
+const output = path.resolve(process.argv[3] ?? '_site');
+const origin = 'https://stiltzofflorida.com';
+const rescueOrigin = 'https://stiltz-florida-rescue-replica.carolina-qua-8173.chatgpt.site';
+const projectPath = '/stiltz-preview/';
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[character]));
+}
+
+function newsDate(value) {
+  return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    .format(new Date(value));
+}
+
+function loadOfficialNews() {
+  const fallback = { source: 'https://www.stiltzlifts.com/stiltz-news/', fetchedAt: '', items: [] };
+  const feedFile = path.resolve('assets/stiltz-news-feed.json');
+  if (!fs.existsSync(feedFile)) return fallback;
+  try {
+    const feed = JSON.parse(fs.readFileSync(feedFile, 'utf8'));
+    return Array.isArray(feed.items) ? feed : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function renderOfficialNews(feed) {
+  const cards = feed.items.map((item) => `<a class="news-card news-card--official" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer"><div><p>Stiltz Lifts USA <span>Â·</span> ${escapeHtml(newsDate(item.date))}</p><h3>${escapeHtml(item.title)}</h3><span>${escapeHtml(item.excerpt)}</span></div><span class="news-card-action">Read at Stiltz <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>`).join('');
+  const updated = feed.fetchedAt ? `Last refreshed ${escapeHtml(newsDate(feed.fetchedAt))}.` : '';
+  return `<main class="news-page"><section class="news-hero"><p class="eyebrow">Official Stiltz News</p><div><h1>Whatâ€™s happening<br/><em>at Stiltz.</em></h1><p>Current product, planning and home-mobility news from Stiltz Lifts USA, selected for Florida homeowners.</p></div></section><section class="news-list"><div class="news-list-intro"><p class="eyebrow">Latest updates</p><h2>Direct from the Stiltz newsroom.</h2><p>This page refreshes automatically from the official Stiltz News feed. Articles open at the original source.</p></div><div class="news-feed">${cards}</div><p class="news-source-note">${updated} <a href="${escapeHtml(feed.source)}" target="_blank" rel="noopener noreferrer">View all official Stiltz News</a>.</p></section></main>`;
+}
+
+const officialNews = loadOfficialNews();
+
+function walk(dir, files = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const file = path.join(dir, entry.name);
+    entry.isDirectory() ? walk(file, files) : files.push(file);
+  }
+  return files;
+}
+
+fs.rmSync(output, { recursive: true, force: true });
+fs.cpSync(source, output, { recursive: true });
+
+// Keep approved production-only photo replacements stable even though the
+// source release is re-mirrored on every GitHub Pages deployment.
+const approvedAssetOverrides = [
+  ['assets/rescue-overrides.css', 'rescue-overrides.css'],
+  ['assets/team/bill-bell.jpg', 'images/team/current/bill-bell.jpg'],
+  ['assets/duo-alta/duo-alta-thru-car-straight.jpg', 'images/models/duo-alta/professional-02.jpg'],
+  ['assets/duo-thru-car/duo-thru-car-hero-straight.jpg', 'images/models/duo-thru-car/verified-hero.jpg'],
+  ['assets/duo-classic/duo-classic-hero-straight.jpg', 'images/models/duo-classic/drive-hero.jpg'],
+  ['assets/trio-alta/trio-alta-feature-web.jpg', 'images/models/trio-alta/drive-hero-gray.jpg'],
+  ['assets/trio-alta/trio-alta-feature-web.jpg', 'images/models/trio-alta/professional-white-01.jpg'],
+  ['assets/landing/5131.jpg', 'images/installations/landing/5131.jpg'],
+  ['assets/landing/5132.jpg', 'images/installations/landing/5132.jpg'],
+  ['assets/landing/5133.jpg', 'images/installations/landing/5133.jpg'],
+  ['assets/landing/5134.jpg', 'images/installations/landing/5134.jpg'],
+  ['assets/landing/5135.jpg', 'images/installations/landing/5135.jpg'],
+  ['assets/landing/5136.png', 'images/installations/landing/5136.png'],
+  ['assets/landing/5137.jpg', 'images/installations/landing/5137.jpg'],
+  ['assets/landing/5138.jpg', 'images/installations/landing/5138.jpg'],
+  ['assets/landing/5139.jpg', 'images/installations/landing/5139.jpg'],
+  ['assets/landing/5140.jpg', 'images/installations/landing/5140.jpg'],
+  ['assets/landing/5141.jpg', 'images/installations/landing/5141.jpg'],
+  ['assets/landing/5142.jpg', 'images/installations/landing/5142.jpg'],
+  ['assets/landing/5143.jpg', 'images/installations/landing/5143.jpg'],
+  ['assets/landing/5144.jpg', 'images/installations/landing/5144.jpg'],
+  ['assets/landing/5145.jpg', 'images/installations/landing/5145.jpg'],
+  ['assets/landing/5146.jpg', 'images/installations/landing/5146.jpg'],
+  ['assets/landing/5147.jpg', 'images/installations/landing/5147.jpg'],
+  ['assets/landing/5148.jpg', 'images/installations/landing/5148.jpg'],
+  ['assets/landing/5149.jpg', 'images/installations/landing/5149.jpg'],
+  ['assets/landing/5150.jpg', 'images/installations/landing/5150.jpg'],
+  ['assets/landing/5151.jpg', 'images/installations/landing/5151.jpg'],
+  ['assets/landing/5152.jpg', 'images/installations/landing/5152.jpg'],
+  ['assets/landing/5153-clean.jpg', 'images/installations/landing/5153.jpg'],
+  ['assets/landing/5154.jpg', 'images/installations/landing/5154.jpg'],
+  ['assets/landing/5155.jpg', 'images/installations/landing/5155.jpg'],
+  ['assets/landing/5156.jpg', 'images/installations/landing/5156.jpg'],
+  ['assets/landing/5157.jpg', 'images/installations/landing/5157.jpg'],
+  ['assets/landing/5158.jpg', 'images/installations/landing/5158.jpg'],
+  ['assets/landing/5159.jpg', 'images/installations/landing/5159.jpg'],
+  ['assets/build-down/5123.png', 'images/installations/build-down/5123.png'],
+  ['assets/build-down/5124.png', 'images/installations/build-down/5124.png'],
+  ['assets/build-down/5125.jpg', 'images/installations/build-down/5125.jpg'],
+  ['assets/build-down/5126.jpg', 'images/installations/build-down/5126.jpg'],
+  ['assets/build-down/5127.jpg', 'images/installations/build-down/5127.jpg'],
+  ['assets/build-down/5128.jpg', 'images/installations/build-down/5128.jpg'],
+  ['assets/build-down/5129.jpg', 'images/installations/build-down/5129.jpg'],
+  ['assets/build-down/5130.jpg', 'images/installations/build-down/5130.jpg'],
+  ...Array.from({ length: 17 }, (_, index) => [
+    `assets/custom-paint/custom-paint-${String(index + 1).padStart(2, '0')}.jpg`,
+    `images/installations/finishes/custom-paint/custom-paint-${String(index + 1).padStart(2, '0')}.jpg`,
+  ]),
+];
+for (const [from, to] of approvedAssetOverrides) {
+  const sourceAsset = path.resolve(from);
+  if (!fs.existsSync(sourceAsset)) {
+    throw new Error(`Missing approved asset override: ${from}`);
+  }
+  const destinationAsset = path.join(output, to);
+  fs.mkdirSync(path.dirname(destinationAsset), { recursive: true });
+  fs.copyFileSync(sourceAsset, destinationAsset);
+}
+
+const runtimePatch = '<script>(function(){if(!location.hostname.endsWith("github.io"))return;var prefix="/stiltz-preview";function patch(node,attr){var value=node.getAttribute(attr);if(value&&value.charAt(0)==="/"&&value.indexOf(prefix+"/")!==0)node.setAttribute(attr,prefix+value)}function scan(root){if(!root.querySelectorAll)return;root.querySelectorAll("a[href],img[src],source[src],script[src]").forEach(function(node){patch(node,node.tagName==="A"?"href":"src")})}document.addEventListener("DOMContentLoaded",function(){scan(document);new MutationObserver(function(records){records.forEach(function(record){if(record.type==="attributes")patch(record.target,record.attributeName);else record.addedNodes.forEach(scan)})}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["href","src"]})})}())</script>';
+
+const navigationFile = path.join(output, 'static-navigation.js');
+if (fs.existsSync(navigationFile)) {
+  let navigation = fs.readFileSync(navigationFile, 'utf8');
+  navigation = navigation.replace(
+    "['Trio Alta 3-Story', '/trio-alta-three-story/'], ['Lift finishes', '/lift-finishes/'],",
+    "['Trio Alta 3-Story', '/trio-alta-three-story/'], ['Custom Paint', '/custom-colors/'],",
+  );
+  navigation = navigation.replace('const navigationGroups = [', `const sitePathname = () => {
+  const pathname = location.hostname.endsWith('github.io')
+    ? (location.pathname.startsWith('/stiltz-preview/')
+      ? location.pathname.slice('/stiltz-preview'.length)
+      : (location.pathname === '/stiltz-preview' ? '/' : location.pathname))
+    : location.pathname;
+  return pathname.endsWith('/') ? pathname : pathname + '/';
+};
+
+const navigationGroups = [`);
+  navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
+  navigation = navigation.replace(/const landingImages = \[[\s\S]*?\n\]\.map\(\(file\) => `\/images\/installations\/landing\/\$\{file\}`\);/, `const landingImages = [
+  '5131.jpg', '5132.jpg', '5133.jpg', '5134.jpg', '5135.jpg', '5136.png', '5137.jpg', '5138.jpg', '5139.jpg', '5140.jpg',
+  '5141.jpg', '5142.jpg', '5143.jpg', '5144.jpg', '5145.jpg', '5146.jpg', '5147.jpg', '5148.jpg', '5149.jpg', '5150.jpg',
+  '5151.jpg', '5152.jpg', '5153.jpg', '5154.jpg', '5155.jpg', '5156.jpg', '5157.jpg', '5158.jpg', '5159.jpg',
+].map((file) => \`/images/installations/landing/\${file}\`);`);
+  navigation = navigation.replace(/const buildDownImages = \[[\s\S]*?\n\];/, `const buildDownImages = [
+  '/images/installations/build-down/5123.png', '/images/installations/build-down/5124.png',
+  '/images/installations/build-down/5125.jpg', '/images/installations/build-down/5126.jpg',
+  '/images/installations/build-down/5127.jpg', '/images/installations/build-down/5128.jpg',
+  '/images/installations/build-down/5129.jpg', '/images/installations/build-down/5130.jpg',
+];`);
+  navigation = navigation.replace(/const customColorImages = \[[\s\S]*?\n\]\.(?:map\([^\n]*\))?;/, `const customPaintImages = Array.from({ length: 17 }, (_, index) =>
+  \`/images/installations/finishes/custom-paint/custom-paint-\${String(index + 1).padStart(2, '0')}.jpg\`);`);
+  navigation = navigation
+    .replace("'/stiltz-duo-alta-new-model/': [duoImages, whiteDuoImages],", "'/stiltz-duo-alta-new-model/': [duoImages],")
+    .replace("'/custom-colors/': [customColorImages],", "'/custom-colors/': [customPaintImages],");
+  navigation += `
+
+// A normal static-page navigation should never leave a desktop <details>
+// menu visually open while the browser moves to its next document.
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('.desktop-nav details a[href]');
+  if (!link) return;
+  document.querySelectorAll('.desktop-nav details[open]').forEach((menu) => { menu.open = false; });
+}, true);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menus = [...document.querySelectorAll('.desktop-nav details')];
+  menus.forEach((menu) => menu.addEventListener('toggle', () => {
+    if (!menu.open) return;
+    menus.forEach((other) => { if (other !== menu) other.open = false; });
+  }));
+
+});
+`;
+  fs.writeFileSync(navigationFile, navigation);
+}
+
+const buildStamp = Date.now().toString();
+const routes = [];
+for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
+  const relative = path.relative(output, file).split(path.sep).join('/');
+  const route = relative === 'index.html' ? '/' : `/${relative.replace(/index\.html$/, '')}`;
+  const canonical = `${origin}${route}`;
+  routes.push(route);
+  let html = fs.readFileSync(file, 'utf8');
+  // Version the cleaned Trio Alta photo URLs so visitors are not held to an
+  // older cached version of the same filenames.
+  html = html
+    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=good-housekeeping-mobile-v1')
+    .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
+    .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
+    .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
+    .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v3')
+    .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4');
+  if (route === '/stiltz-duo-alta-new-model/') {
+    html = html
+      .replace(/<section class="duo-white-finish-option">[\s\S]*?<\/section>(?=<section class="alta-story">)/, '')
+      .replace(
+        'Available in gray and white. White was recently added, and custom paint is available.',
+        'The standard factory finish is gray. Custom Paint is available as part of your project plan.',
+      );
+  }
+  if (route === '/custom-colors/') {
+    html = html
+      .replaceAll('Custom colors', 'Custom Paint')
+      .replaceAll('Custom-color', 'Custom Paint')
+      .replaceAll('custom-colored', 'custom-painted')
+      .replace('A lift can match the character of the home.', 'Custom Paint makes the lift part of the home.')
+      .replace('These completed projects show how custom-painted Stiltz lifts can be integrated into a home with more intention. Available finishes are confirmed with the Stiltz of Florida team for the selected model and project.', 'These completed Florida projects show how a custom-painted Stiltz lift can be tailored to the home around it. Color and finish availability are confirmed with the Stiltz of Florida team for the selected model and project.')
+      .replace('Real custom-color installations', 'Real Custom Paint installations')
+      .replace('Use the arrows to explore the full-color collection. Every image is a real installationâ€”not a mocked-up finish.', 'Use the arrows to explore real Custom Paint installations. Every image is a completed Florida homeâ€”not a mocked-up finish.')
+      .replace('aria-label="Custom Paint home lift photo gallery"', 'aria-label="Custom Paint home lift photo gallery"');
+  }
+  if (route === '/meet-the-team/') {
+    const billCard = '<article class="team-card"><div class="team-portrait"><img src="images/team/current/bill-bell.jpg" alt="Bill Bell, Certified Sub Contractor, Stiltz of Florida" loading="lazy"/></div><div class="team-card-caption"><h3>Bill Bell</h3><p>Certified Sub Contractor</p></div></article>';
+    html = html.replace(
+      /(<section class="team-group"><h3>Construction<\/h3><div class="team-grid">[\s\S]*?)(<\/div><\/section>)/,
+      `$1${billCard}$2`,
+    );
+  }
+  if (route === '/stiltz-news/') {
+    html = html.replace(/<main class="news-page">[\s\S]*?<\/main>(?=<footer)/, renderOfficialNews(officialNews));
+  }
+  html = html.replace(
+    /<a href=("|')(?:\.\/)?lift-finishes\/\1>Lift finishes<\/a>/,
+    '<a href="custom-colors/">Custom Paint</a>',
+  );
+  html = html.split(rescueOrigin).join(origin);
+  // The rescue export's financing video is hosted on the retained staging
+  // release. Point directly at that MP4 instead of the new static origin,
+  // where an unknown /videos route would return the homepage HTML.
+  html = html.replaceAll(`${origin}/videos/stiltz-financing-overview.mp4`, `${rescueOrigin}/videos/stiltz-financing-overview.mp4`);
+  html = html.replaceAll('content="noindex, nofollow"', 'content="index, follow"');
+  html = html.replace(/<meta property="og:url" content="[^"]*"[^>]*>/gi, `<meta property="og:url" content="${canonical}">`);
+  // Serve the same artifact both from the GitHub project preview and, later,
+  // from the custom domain root. Relative URLs follow this runtime base.
+  html = html.replace(/\b(href|src|action)=("|')\/(?!\/)([^"']*)\2/gi, (_match, name, quote, url) => `${name}=${quote}${url || './'}${quote}`);
+  html = html.replace('<head>', '<head><script>(function(){var b=document.createElement("base");b.href=location.hostname.endsWith("github.io")?"/stiltz-preview/":"/";document.head.appendChild(b)}())</script>');
+  html = html.replace(/static-navigation\.js\?v=[^"']+/i, `static-navigation.js?v=${buildStamp}`);
+  html = html.replace(/(<script src=(\"|')static-navigation\.js[^>]*><\/script>)/i, `$1${runtimePatch}`);
+  if (html.includes('<behold-widget')) {
+    html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#fff;border:1px solid #ced9d4;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
+  }
+  html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
+  fs.writeFileSync(file, html);
+}
+
+const lastmod = new Date().toISOString().slice(0, 10);
+fs.writeFileSync(path.join(output, 'sitemap.xml'), [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...routes.sort().map((route) => `  <url><loc>${origin}${route}</loc><lastmod>${lastmod}</lastmod></url>`),
+  '</urlset>', ''
+].join('\n'));
+fs.writeFileSync(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+fs.writeFileSync(path.join(output, 'CNAME'), 'stiltzofflorida.com\n');
+fs.writeFileSync(path.join(output, '.nojekyll'), '');
+console.log(JSON.stringify({ output, pages: routes.length }, null, 2));
