@@ -894,3 +894,41 @@ main figure img,
     border-radius: 16px !important;
   }
 }
+
+
+/* Duo Alta lower-page rhythm: bring the testimonial and comparison decision
+   back into the same reading sequence as the gallery, rather than leaving
+   isolated copy adrift in vertical space. */
+@media (min-width: 901px) {
+  .alta-page .alta-story {
+    width: min(calc(100% - 96px), 860px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 58px !important;
+    padding: 52px 56px !important;
+    box-sizing: border-box !important;
+    border-radius: 26px !important;
+  }
+
+  .alta-page .alta-story blockquote,
+  .alta-page .alta-story > p:first-child {
+    max-width: 660px !important;
+    margin-inline: auto !important;
+  }
+
+  .alta-page .alta-next {
+    width: min(calc(100% - 48px), 1120px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 64px !important;
+    padding: 52px 58px !important;
+    box-sizing: border-box !important;
+    border-radius: 28px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .alta-page .alta-story,
+  .alta-page .alta-next {
+    min-height: 0 !important;
+    margin-bottom: 40px !important;
+  }
+}
