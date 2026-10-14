@@ -1005,3 +1005,63 @@ main figure img,
     margin-bottom: 22px !important;
   }
 }
+
+
+/* Duo Alta: compact closing decision card, with an actual call to action
+   instead of a large empty white phone panel. */
+@media (min-width: 901px) {
+  .alta-page .alta-hero {
+    height: 390px !important;
+  }
+
+  .alta-page .alta-hero > img {
+    height: calc(100% - 36px) !important;
+    margin: 18px 22px 18px 0 !important;
+    padding: 0 !important;
+    align-self: center !important;
+    object-fit: contain !important;
+    border-radius: 20px !important;
+  }
+
+  .alta-page .alta-next {
+    width: min(calc(100% - 48px), 1040px) !important;
+    min-height: 0 !important;
+    margin-bottom: 56px !important;
+    padding: 36px 38px !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(270px, .72fr) !important;
+    gap: 30px !important;
+    background: #e7f0f4 !important;
+  }
+
+  .alta-page .alta-next h2 {
+    margin: 10px 0 12px !important;
+    font-size: clamp(38px, 3.2vw, 50px) !important;
+    line-height: .98 !important;
+  }
+
+  .alta-page .alta-next aside {
+    display: flex !important;
+    min-height: 0 !important;
+    padding: 30px !important;
+    box-sizing: border-box !important;
+    align-self: stretch !important;
+    justify-content: center !important;
+    background: #9cb800 !important;
+    border: 0 !important;
+    border-radius: 22px !important;
+    color: #fff !important;
+  }
+
+  .alta-page .alta-next aside :is(p, a, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+
+  .alta-page .alta-next .alta-next-callout {
+    max-width: 225px !important;
+    margin: 0 0 16px !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.24 !important;
+  }
+}
