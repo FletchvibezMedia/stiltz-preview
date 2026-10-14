@@ -180,19 +180,27 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // Version the cleaned Trio Alta photo URLs so visitors are not held to an
   // older cached version of the same filenames.
   html = html
-    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=footer-social-polish-v1')
+    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=duo-alta-grid-v1')
     .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
     .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
     .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v3')
     .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4');
   if (route === '/stiltz-duo-alta-new-model/') {
+    const duoAltaGrid = '<div class="duo-alta-photo-grid" aria-label="Duo Alta installation gallery">' +
+      Array.from({ length: 8 }, (_, index) => {
+        const view = index + 1;
+        const file = String(view).padStart(2, '0');
+        return '<figure><img src="images/models/duo-alta/gray-living-' + file + '.jpg" alt="Duo Alta installation, view ' + view + '" loading="lazy"></figure>';
+      }).join('') +
+      '</div>';
     html = html
       .replace(/<section class="duo-white-finish-option">[\s\S]*?<\/section>(?=<section class="alta-story">)/, '')
       .replace(
         'Available in gray and white. White was recently added, and custom paint is available.',
         'The standard factory finish is gray. Custom Paint is available as part of your project plan.',
-      );
+      )
+      .replace(/<div class="model-photo-carousel" aria-label="Duo Alta installation gallery">[\s\S]*?<\/div>\s*<\/section>/, duoAltaGrid + '</section>');
   }
   if (route === '/custom-colors/') {
     html = html
