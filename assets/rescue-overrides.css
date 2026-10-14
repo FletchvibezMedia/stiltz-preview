@@ -1141,3 +1141,294 @@ main figure img,
     border-radius: 24px !important;
   }
 }
+
+
+/* Model-page consistency pass: every standard Duo/Trio variant now uses the
+   same contained, rounded image treatment and a compact reading rhythm. */
+@media (min-width: 901px) {
+  .variant-page {
+    padding-bottom: 8px !important;
+  }
+
+  .variant-page .variant-hero {
+    width: min(calc(100% - 48px), 1240px) !important;
+    min-height: 420px !important;
+    height: 420px !important;
+    margin: 26px auto 52px !important;
+    grid-template-columns: minmax(350px, .88fr) minmax(420px, 1.12fr) !important;
+    overflow: hidden !important;
+    border-radius: 28px !important;
+    background: #f2f5f1 !important;
+    box-shadow: 0 16px 34px rgba(35, 48, 43, .11) !important;
+  }
+
+  .variant-page .variant-hero > div {
+    box-sizing: border-box !important;
+    height: 100% !important;
+    padding: 46px 50px !important;
+    justify-content: center !important;
+  }
+
+  .variant-page .variant-hero figure {
+    display: flex !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 16px 22px 16px 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    background: #e7f0f4 !important;
+  }
+
+  .variant-page .variant-hero figure img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 22px !important;
+  }
+
+  .variant-page .variant-intro {
+    width: min(calc(100% - 96px), 1120px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 36px !important;
+    padding: 0 !important;
+  }
+
+  .variant-page .variant-facts {
+    width: min(calc(100% - 48px), 1240px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 52px !important;
+    padding: 0 !important;
+    gap: 16px !important;
+  }
+
+  .variant-page .variant-facts article {
+    min-height: 212px !important;
+    box-sizing: border-box !important;
+    padding: 30px !important;
+    border: 1px solid #adc0b2 !important;
+    border-radius: 24px !important;
+    background: #e7f0eb !important;
+    box-shadow: 0 12px 26px rgba(35, 48, 43, .09) !important;
+  }
+
+  .variant-page .variant-facts article:nth-child(2) {
+    background: #383c3f !important;
+    border-color: #383c3f !important;
+  }
+
+  .variant-page .variant-facts article:nth-child(3) {
+    background: #f8e4cf !important;
+    border-color: #dfa66f !important;
+  }
+
+  .variant-page .variant-facts article:nth-child(2) :is(h3, p, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+
+  .variant-page .variant-media {
+    width: min(calc(100% - 48px), 1240px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 52px !important;
+    padding: 42px !important;
+    box-sizing: border-box !important;
+    border-radius: 28px !important;
+    background: #e7f0f4 !important;
+    box-shadow: 0 16px 34px rgba(35, 48, 43, .10) !important;
+  }
+
+  .variant-page .variant-media > div:last-child {
+    gap: 16px !important;
+  }
+
+  .variant-page .variant-media figure {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border: 2px solid rgba(111, 143, 156, .45) !important;
+    border-radius: 22px !important;
+    background: #f9fbfb !important;
+  }
+
+  .variant-page .variant-media figure img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 250px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 20px !important;
+    background: #f9fbfb !important;
+  }
+
+  .variant-page .variant-callout {
+    width: min(calc(100% - 96px), 900px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 46px !important;
+    padding: 48px 54px !important;
+    box-sizing: border-box !important;
+    border: 1px solid #adc0b2 !important;
+    border-radius: 26px !important;
+    background: #f5f7f2 !important;
+  }
+
+  .variant-page .variant-callout blockquote {
+    margin: 0 auto 20px !important;
+    max-width: 700px !important;
+  }
+
+  .variant-page .variant-next {
+    width: min(calc(100% - 48px), 1040px) !important;
+    min-height: 0 !important;
+    margin: 0 auto 58px !important;
+    padding: 36px 38px !important;
+    grid-template-columns: minmax(0, 1.12fr) minmax(260px, .7fr) !important;
+    gap: 30px !important;
+    box-sizing: border-box !important;
+    border: 1px solid #d7a774 !important;
+    border-radius: 28px !important;
+    background: #f8e4cf !important;
+    box-shadow: 0 16px 34px rgba(35, 48, 43, .10) !important;
+  }
+
+  .variant-page .variant-next h2 {
+    margin: 10px 0 12px !important;
+    font-size: clamp(38px, 3.2vw, 50px) !important;
+    line-height: .98 !important;
+  }
+
+  .variant-page .variant-next aside {
+    display: flex !important;
+    min-height: 0 !important;
+    padding: 30px !important;
+    box-sizing: border-box !important;
+    align-self: stretch !important;
+    justify-content: center !important;
+    border: 0 !important;
+    border-radius: 22px !important;
+    background: #383c3f !important;
+    color: #fff !important;
+  }
+
+  .variant-page .variant-next aside :is(p, a, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .variant-page .variant-hero {
+    margin-inline: 16px !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    background: #f2f5f1 !important;
+  }
+
+  .variant-page .variant-hero figure {
+    margin: 0 !important;
+    padding: 10px !important;
+    overflow: hidden !important;
+    border-radius: 20px !important;
+    background: #e7f0f4 !important;
+  }
+
+  .variant-page .variant-hero figure img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    object-fit: contain !important;
+    border-radius: 16px !important;
+    background: #e7f0f4 !important;
+  }
+
+  .variant-page .variant-facts {
+    margin-inline: 16px !important;
+    gap: 12px !important;
+  }
+
+  .variant-page .variant-facts article {
+    border: 1px solid #adc0b2 !important;
+    border-radius: 20px !important;
+    background: #e7f0eb !important;
+  }
+
+  .variant-page .variant-facts article:nth-child(2) {
+    background: #383c3f !important;
+    border-color: #383c3f !important;
+  }
+
+  .variant-page .variant-facts article:nth-child(3) {
+    background: #f8e4cf !important;
+    border-color: #dfa66f !important;
+  }
+
+  .variant-page .variant-facts article:nth-child(2) :is(h3, p, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+
+  .variant-page .variant-media,
+  .variant-page .variant-callout,
+  .variant-page .variant-next {
+    min-height: 0 !important;
+    margin-inline: 16px !important;
+    border-radius: 24px !important;
+  }
+
+  .variant-page .variant-media {
+    padding: 28px 20px !important;
+    background: #e7f0f4 !important;
+  }
+
+  .variant-page .variant-media figure {
+    overflow: hidden !important;
+    border: 2px solid rgba(111, 143, 156, .45) !important;
+    border-radius: 18px !important;
+    background: #f9fbfb !important;
+  }
+
+  .variant-page .variant-media figure img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    border-radius: 16px !important;
+    background: #f9fbfb !important;
+  }
+
+  .variant-page .variant-callout {
+    margin-bottom: 36px !important;
+    padding: 34px 24px !important;
+    background: #f5f7f2 !important;
+    border: 1px solid #adc0b2 !important;
+  }
+
+  .variant-page .variant-next {
+    margin-bottom: 42px !important;
+    padding: 32px 24px !important;
+    background: #f8e4cf !important;
+    border: 1px solid #d7a774 !important;
+  }
+
+  .variant-page .variant-next aside {
+    margin-top: 22px !important;
+    padding: 26px !important;
+    border: 0 !important;
+    border-radius: 20px !important;
+    background: #383c3f !important;
+    color: #fff !important;
+  }
+
+  .variant-page .variant-next aside :is(p, a, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+}
