@@ -780,3 +780,117 @@ main figure img,
     color: #fff !important;
   }
 }
+
+
+/* Duo Alta: the page now reads as a single, practical product story. Keep the
+   equipment visible without allowing the hero or editorial gallery to become
+   oversized independent panels. */
+@media (min-width: 901px) {
+  .alta-page .alta-hero {
+    width: min(calc(100% - 48px), 1240px) !important;
+    height: 440px !important;
+    min-height: 0 !important;
+    margin: 26px auto 58px !important;
+    grid-template-columns: minmax(360px, .82fr) minmax(430px, 1.18fr) !important;
+    border-radius: 28px !important;
+    overflow: hidden !important;
+    background: #f2f5f1 !important;
+    box-shadow: 0 16px 32px rgba(35, 48, 43, .11) !important;
+  }
+
+  .alta-page .alta-hero > div {
+    box-sizing: border-box !important;
+    height: 100% !important;
+    padding: clamp(42px, 4.5vw, 66px) !important;
+    justify-content: center !important;
+  }
+
+  .alta-page .alta-hero > img {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 16px 22px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #f2f5f1 !important;
+    border-radius: 0 !important;
+  }
+
+  .alta-page .alta-intro {
+    width: min(calc(100% - 96px), 1120px) !important;
+    margin: 0 auto 70px !important;
+    padding: 0 !important;
+  }
+
+  .alta-page .alta-gallery {
+    width: min(calc(100% - 48px), 1240px) !important;
+    margin: 0 auto 72px !important;
+    padding: clamp(34px, 4vw, 56px) !important;
+    box-sizing: border-box !important;
+    border-radius: 28px !important;
+    background: #e8f0eb !important;
+    box-shadow: 0 16px 34px rgba(35, 48, 43, .10) !important;
+  }
+
+  .alta-page .alta-gallery > div:first-child {
+    max-width: 720px !important;
+    margin-bottom: 28px !important;
+  }
+}
+
+.duo-alta-photo-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  width: 100% !important;
+}
+
+.duo-alta-photo-grid figure {
+  display: block !important;
+  margin: 0 !important;
+  aspect-ratio: 3 / 4 !important;
+  overflow: hidden !important;
+  border: 2px solid rgba(83, 102, 94, .34) !important;
+  border-radius: 20px !important;
+  background: #f8faf8 !important;
+  box-shadow: 0 10px 20px rgba(35, 48, 43, .11) !important;
+}
+
+.duo-alta-photo-grid img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 18px !important;
+}
+
+@media (max-width: 900px) {
+  .alta-page .alta-hero {
+    margin-bottom: 42px !important;
+  }
+
+  .alta-page .alta-hero > img {
+    max-height: 520px !important;
+    padding: 10px !important;
+  }
+
+  .alta-page .alta-gallery {
+    margin-inline: 16px !important;
+    padding: 28px 20px !important;
+    border-radius: 24px !important;
+  }
+
+  .duo-alta-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .duo-alta-photo-grid figure {
+    border-radius: 18px !important;
+  }
+
+  .duo-alta-photo-grid img {
+    border-radius: 16px !important;
+  }
+}
