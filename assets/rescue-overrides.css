@@ -596,3 +596,37 @@ main figure img,
     padding-bottom: 60px !important;
   }
 }
+
+
+/* Desktop homepage: preserve the full elevator in both the first impression
+   and the closing consultation panel. The panels stay compact; the photo
+   simply letterboxes against the existing soft neutral instead of cutting
+   the equipment in half. */
+@media (min-width: 901px) {
+  .brand-hero > figure {
+    background: #f3f5f3 !important;
+  }
+
+  .brand-hero > figure img {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .brand-cta > figure,
+  .home-cta > figure,
+  .brand-callout > figure {
+    background: #f3f5f3 !important;
+    overflow: hidden !important;
+  }
+
+  .brand-cta > figure img,
+  .home-cta > figure img,
+  .brand-callout > figure img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #f3f5f3 !important;
+  }
+}
