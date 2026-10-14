@@ -932,3 +932,56 @@ main figure img,
     margin-bottom: 40px !important;
   }
 }
+
+
+/* Duo Alta final structure: move the only useful product explanation into
+   the hero and remove the disconnected editorial heading beneath it. */
+.alta-page .duo-alta-hero-copy {
+  max-width: 380px !important;
+  margin: 18px 0 24px !important;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+}
+
+@media (min-width: 901px) {
+  .alta-page .alta-hero > img {
+    border-radius: 20px !important;
+  }
+
+  .alta-page .alta-features {
+    width: min(calc(100% - 48px), 1240px) !important;
+    margin: 0 auto 34px !important;
+    box-sizing: border-box !important;
+    gap: 16px !important;
+  }
+
+  .alta-page .alta-features > article {
+    min-height: 220px !important;
+    box-sizing: border-box !important;
+    border-radius: 24px !important;
+  }
+
+  .alta-page .alta-next {
+    background: #e7f0f4 !important;
+    border: 1px solid #aec7d2 !important;
+    box-shadow: 0 16px 34px rgba(35, 48, 43, .10) !important;
+  }
+
+  .alta-page .alta-next > div:last-child {
+    border-left: 1px solid #aec7d2 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .alta-page .duo-alta-hero-copy {
+    font-size: 15px !important;
+  }
+
+  .alta-page .alta-next {
+    margin-inline: 16px !important;
+    padding: 34px 24px !important;
+    border-radius: 24px !important;
+    background: #e7f0f4 !important;
+    border: 1px solid #aec7d2 !important;
+  }
+}
