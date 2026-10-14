@@ -200,7 +200,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
         'Available in gray and white. White was recently added, and custom paint is available.',
         'The standard factory finish is gray. Custom Paint is available as part of your project plan.',
       )
-      .replace(/<div class="model-photo-carousel" aria-label="Duo Alta installation gallery">[\s\S]*?<\/div>\s*<\/section>/, duoAltaGrid + '</section>');
+      .replace(/<div class="model-photo-carousel" aria-label="Duo Alta installation gallery">[\s\S]*?<\/section>/, duoAltaGrid + '</section>');
   }
   if (route === '/custom-colors/') {
     html = html
