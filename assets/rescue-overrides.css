@@ -729,3 +729,54 @@ main figure img,
     border-color: #8ebeb1 !important;
   }
 }
+
+
+/* Keep the compact final card, but let its full call to action stay inside it. */
+@media (min-width: 901px) {
+  main section:has(img[alt*="bright Florida interior"]) > div h2 {
+    font-size: clamp(42px, 3.45vw, 54px) !important;
+    line-height: .98 !important;
+    margin: 12px 0 16px !important;
+  }
+
+  main section:has(img[alt*="bright Florida interior"]) > div p {
+    margin: 0 0 20px !important;
+  }
+
+  /* One Stiltz-colored clickable social card per platform—recognizable
+     platform icon, but the overall palette stays unmistakably on-brand. */
+  main section:has(a[href*="instagram.com"]) a[href*="instagram.com"],
+  main section:has(a[href*="instagram.com"]) a[href*="facebook.com"],
+  main section:has(a[href*="instagram.com"]) a[href*="tiktok.com"] {
+    color: #fff !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 16px rgba(38, 47, 45, .12) !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="instagram.com"] {
+    background: #383c3f !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="facebook.com"] {
+    background: #9cb800 !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="tiktok.com"] {
+    background: #ed7a19 !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="instagram.com"] svg,
+  main section:has(a[href*="instagram.com"]) a[href*="facebook.com"] svg,
+  main section:has(a[href*="instagram.com"]) a[href*="tiktok.com"] svg {
+    color: currentColor !important;
+    stroke: currentColor !important;
+    fill: none !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="instagram.com"] :is(h3, p, span),
+  main section:has(a[href*="instagram.com"]) a[href*="facebook.com"] :is(h3, p, span),
+  main section:has(a[href*="instagram.com"]) a[href*="tiktok.com"] :is(h3, p, span) {
+    color: #fff !important;
+  }
+}
