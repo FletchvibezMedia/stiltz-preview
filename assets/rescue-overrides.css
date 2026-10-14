@@ -1065,3 +1065,44 @@ main figure img,
     line-height: 1.24 !important;
   }
 }
+
+
+/* Keep the Duo Alta hero compact without clipping its actual message or call
+   to action. The earlier compressed height was smaller than the new content. */
+@media (min-width: 901px) {
+  .alta-page .alta-hero {
+    height: 430px !important;
+  }
+
+  .alta-page .alta-hero > div {
+    padding: 38px 46px !important;
+  }
+
+  .alta-page .alta-hero h1 {
+    margin: 0 !important;
+    font-size: clamp(50px, 4.3vw, 64px) !important;
+    line-height: .96 !important;
+  }
+
+  .alta-page .duo-alta-hero-heading {
+    margin-top: 14px !important;
+    font-size: clamp(27px, 2.15vw, 34px) !important;
+    line-height: 1.03 !important;
+  }
+
+  .alta-page .duo-alta-hero-copy {
+    max-width: 410px !important;
+    margin: 14px 0 16px !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .alta-page .alta-hero .alta-cta {
+    margin-top: 0 !important;
+  }
+
+  .alta-page .alta-hero > img {
+    height: calc(100% - 32px) !important;
+    margin: 16px 22px 16px 0 !important;
+  }
+}
