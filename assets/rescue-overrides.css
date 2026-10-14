@@ -488,3 +488,111 @@ main figure img,
     margin: 0 !important;
   }
 }
+
+
+/* Desktop proportion pass: the site should feel composed, not like every
+   section was designed in a separate zip code. */
+@media (min-width: 901px) {
+  .site-header {
+    height: 54px !important;
+    min-height: 54px !important;
+    padding-inline: clamp(28px, 4vw, 54px) !important;
+  }
+
+  .site-header .brand-logo {
+    width: auto !important;
+    height: 64px !important;
+    max-height: none !important;
+  }
+
+  .head-act {
+    min-height: 0 !important;
+  }
+
+  .head-act .cta {
+    min-height: 0 !important;
+    height: 38px !important;
+    padding: 10px 15px !important;
+    font-size: 11px !important;
+  }
+
+  /* Bring the home hero down from billboard scale while keeping it deliberate. */
+  .brand-hero {
+    height: clamp(560px, 44vw, 620px) !important;
+    min-height: 0 !important;
+  }
+
+  .brand-hero > figure,
+  .brand-hero > figure img {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .brand-hero > figure {
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .brand-hero > figure img {
+    display: block !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .brand-hero .brand-hero-content {
+    height: auto !important;
+    align-self: center !important;
+    padding: clamp(54px, 5vw, 74px) !important;
+  }
+
+  .brand-hero h1 {
+    font-size: clamp(48px, 3.8vw, 56px) !important;
+    line-height: .98 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .brand-hero .brand-lead {
+    max-width: 470px !important;
+  }
+
+  /* Factory brochures: retain a generous layout without collapsing the copy
+     into a thin center column. */
+  .factory-brochures-hero,
+  .factory-brochures-list,
+  .factory-brochures-disclaimer {
+    box-sizing: border-box !important;
+    width: min(100%, 1280px) !important;
+    margin-inline: auto !important;
+    padding-inline: clamp(36px, 5vw, 68px) !important;
+  }
+
+  .factory-brochures-hero {
+    padding-top: 88px !important;
+    padding-bottom: 58px !important;
+  }
+
+  .factory-brochures-list {
+    grid-template-columns: minmax(0, 1.3fr) minmax(300px, .9fr) !important;
+    gap: 28px !important;
+    align-items: stretch !important;
+  }
+
+  .factory-brochure-card,
+  .factory-brochures-note {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    height: auto !important;
+    text-align: left !important;
+  }
+
+  .factory-brochure-card > div,
+  .factory-brochures-note > * {
+    max-width: 100% !important;
+  }
+
+  .factory-brochures-disclaimer {
+    padding-top: 18px !important;
+    padding-bottom: 60px !important;
+  }
+}
