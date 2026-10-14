@@ -630,3 +630,102 @@ main figure img,
     background: #f3f5f3 !important;
   }
 }
+
+
+/* Refine the homepage into a single composed desktop canvas. */
+@media (min-width: 901px) {
+  .brand-hero {
+    width: min(calc(100% - 48px), 1440px) !important;
+    height: clamp(540px, 42vw, 590px) !important;
+    margin: 24px auto 0 !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    box-shadow: 0 18px 36px rgba(32, 43, 40, .11) !important;
+  }
+
+  .brand-hero .brand-hero-content {
+    height: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 30px 0 0 30px !important;
+  }
+
+  .brand-hero > figure {
+    height: 100% !important;
+    border-radius: 0 30px 30px 0 !important;
+  }
+
+  .brand-hero > figure img {
+    height: 100% !important;
+    border-radius: 0 30px 30px 0 !important;
+  }
+
+  /* The final consultation panel should feel like a closing card, not a
+     second giant hero right before the footer. */
+  main section:has(img[alt*="bright Florida interior"]) {
+    width: min(calc(100% - 48px), 1440px) !important;
+    height: 410px !important;
+    min-height: 0 !important;
+    margin: 58px auto 30px !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    box-shadow: 0 16px 34px rgba(32, 43, 40, .12) !important;
+  }
+
+  main section:has(img[alt*="bright Florida interior"]) > div {
+    box-sizing: border-box !important;
+    padding: clamp(44px, 5vw, 72px) !important;
+  }
+
+  main section:has(img[alt*="bright Florida interior"]) > figure,
+  main section:has(img[alt*="bright Florida interior"]) > figure img {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  main section:has(img[alt*="bright Florida interior"]) > figure {
+    margin: 0 !important;
+    background: #f3f5f3 !important;
+  }
+
+  main section:has(img[alt*="bright Florida interior"]) > figure img {
+    display: block !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #f3f5f3 !important;
+  }
+
+  /* Give the social stop the same finished, colorful character as the
+     gallery and About cards. */
+  main section:has(a[href*="instagram.com"]) {
+    width: min(calc(100% - 96px), 1290px) !important;
+    box-sizing: border-box !important;
+    margin: 58px auto !important;
+    padding: clamp(42px, 5vw, 68px) !important;
+    border: 1px solid #9ab5c6 !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #e7f1f6 0%, #edf4ea 100%) !important;
+    box-shadow: 0 16px 34px rgba(32, 43, 40, .10) !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="instagram.com"],
+  main section:has(a[href*="facebook.com"]),
+  main section:has(a[href*="tiktok.com"]) {
+    border-radius: 16px !important;
+  }
+
+  main section:has(a[href*="instagram.com"]) a[href*="instagram.com"] {
+    background: #f5d6df !important;
+    border-color: #d799aa !important;
+  }
+
+  main section:has(a[href*="facebook.com"]) {
+    background: #dceafb !important;
+    border-color: #8dabd0 !important;
+  }
+
+  main section:has(a[href*="tiktok.com"]) {
+    background: #d9f0ea !important;
+    border-color: #8ebeb1 !important;
+  }
+}
