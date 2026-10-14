@@ -1106,3 +1106,38 @@ main figure img,
     margin: 16px 22px 16px 0 !important;
   }
 }
+
+
+/* The Duo Alta gallery moved to a light card, so its original white copy
+   needs a proper dark ink color to remain readable. */
+.alta-page .alta-gallery > div:first-child :is(h2, p) {
+  color: #383c3f !important;
+}
+
+.alta-page .alta-gallery > div:first-child .eyebrow {
+  color: #789000 !important;
+  font-weight: 800 !important;
+}
+
+.alta-page .alta-gallery > div:first-child h2 {
+  max-width: 420px !important;
+  font-size: clamp(38px, 3.3vw, 54px) !important;
+  line-height: .98 !important;
+}
+
+.alta-page .alta-gallery > div:first-child > p:not(.eyebrow) {
+  max-width: 390px !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.duo-alta-photo-grid figure,
+.duo-alta-photo-grid img {
+  border-radius: 24px !important;
+}
+
+@media (min-width: 901px) {
+  .alta-page .alta-hero > img {
+    border-radius: 24px !important;
+  }
+}
