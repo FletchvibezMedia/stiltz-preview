@@ -1432,3 +1432,37 @@ main figure img,
     stroke: currentColor !important;
   }
 }
+
+
+/* Remove legacy fixed-height media and CTA tracks that were still winning
+   inside the newly compact variant layout. */
+@media (min-width: 901px) {
+  .variant-page .variant-hero figure {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: 100% !important;
+    align-self: stretch !important;
+  }
+
+  .variant-page .variant-hero figure img {
+    min-height: 0 !important;
+    max-height: 100% !important;
+    height: 100% !important;
+  }
+
+  .variant-page .variant-next {
+    grid-auto-rows: min-content !important;
+    align-items: start !important;
+  }
+
+  .variant-page .variant-next > div,
+  .variant-page .variant-next aside {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start !important;
+  }
+
+  .variant-page .variant-next aside {
+    min-height: 210px !important;
+  }
+}
