@@ -1466,3 +1466,12 @@ main figure img,
     min-height: 210px !important;
   }
 }
+
+
+/* The source CTA adds oversized viewport padding to its copy column. The
+   enclosing compact card already provides the intended breathing room. */
+@media (min-width: 901px) {
+  .variant-page .variant-next > div {
+    padding: 0 !important;
+  }
+}
