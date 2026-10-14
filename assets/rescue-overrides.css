@@ -985,3 +985,23 @@ main figure img,
     border: 1px solid #aec7d2 !important;
   }
 }
+
+
+.alta-page .duo-alta-hero-heading {
+  max-width: 420px !important;
+  margin: 14px 0 0 !important;
+  font-size: clamp(28px, 2.25vw, 38px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.035em !important;
+}
+
+@media (min-width: 901px) {
+  .alta-page .alta-hero > div {
+    justify-content: center !important;
+  }
+
+  .alta-page .duo-alta-hero-copy {
+    margin-top: 16px !important;
+    margin-bottom: 22px !important;
+  }
+}
