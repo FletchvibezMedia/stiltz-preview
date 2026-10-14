@@ -180,7 +180,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   // Version the cleaned Trio Alta photo URLs so visitors are not held to an
   // older cached version of the same filenames.
   html = html
-    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=duo-alta-structure-v2')
+    .replaceAll('rescue-overrides.css', 'rescue-overrides.css?v=duo-alta-cta-v1')
     .replaceAll('images/models/duo-alta/professional-02.jpg', 'images/models/duo-alta/professional-02.jpg?v=duo-alta-straight-v1')
     .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
@@ -210,6 +210,10 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
         '$1<h2 class="duo-alta-hero-heading">Thoughtful access,<br>without a conventional elevator footprint.</h2><p class="duo-alta-hero-copy">The Duo Alta is made for a compact, comfortable connection between floors. Its self-supporting guide rails and self-contained electric drive create flexible placement possibilities in an existing home, subject to a complete site assessment.</p>$2',
       )
       .replace(/<section class="alta-intro">[\s\S]*?<\/section>(?=<section class="alta-features">)/, '')
+      .replace(
+        /(<section class="alta-next">[\s\S]*?<aside>)/,
+        '$1<p class="alta-next-callout">Ready to make your home easier? Call Stiltz of Florida today.</p>',
+      )
       .replace(/<div class="model-photo-carousel" aria-label="Duo Alta installation gallery">[\s\S]*?<\/section>/, duoAltaGrid + '</section>');
   }
   if (route === '/custom-colors/') {
