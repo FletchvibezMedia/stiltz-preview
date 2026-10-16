@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v5. Mobile remains unchanged below 901px. */
+/* Stiltz of Florida desktop system v6. Mobile remains unchanged below 901px. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -354,4 +354,35 @@
     grid-template-columns:minmax(240px,.6fr) minmax(0,1.4fr)!important;
   }
   .duo-classic-media>div:last-child,.duo-alta-photo-grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+}
+
+/* Homepage bookends: keep the full photographs visible inside intentional,
+   rounded media frames. This prevents the hero lift and closing room scene
+   from reading as accidentally cropped at wide desktop aspect ratios. */
+@media (min-width:901px) {
+  .brand-home .brand-hero>figure {
+    padding:18px!important; background:var(--ds-blue)!important;
+    border-radius:24px!important;
+  }
+  .brand-home .brand-hero>figure>img {
+    width:auto!important; max-width:100%!important; height:100%!important;
+    max-height:100%!important; object-fit:contain!important; object-position:center!important;
+    clip-path:none!important; border-radius:18px!important;
+  }
+  .brand-home .brand-contact-band {
+    display:grid!important; grid-template-columns:minmax(360px,.9fr) minmax(520px,1.1fr)!important;
+    height:360px!important; min-height:0!important; padding:14px!important;
+    gap:14px!important; align-items:stretch!important; background:var(--ds-ink)!important;
+  }
+  .brand-home .brand-contact-band>div {
+    min-width:0!important; padding:clamp(28px,3vw,48px)!important;
+    border-radius:20px!important;
+  }
+  .brand-home .brand-contact-band>img {
+    align-self:stretch!important; justify-self:stretch!important;
+    width:100%!important; height:100%!important; min-height:0!important;
+    padding:14px!important; box-sizing:border-box!important;
+    object-fit:contain!important; object-position:center!important;
+    clip-path:none!important; border-radius:20px!important; background:var(--ds-blue)!important;
+  }
 }
