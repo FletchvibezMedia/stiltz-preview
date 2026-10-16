@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v8. Shared header/footer refinements. */
+/* Stiltz of Florida desktop system v9. Shared responsive header/footer refinements. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -419,5 +419,57 @@
     padding:14px!important; box-sizing:border-box!important;
     object-fit:contain!important; object-position:center!important;
     clip-path:none!important; border-radius:20px!important; background:var(--ds-blue)!important;
+  }
+}
+
+/* Some mobile browsers can request a desktop-width layout viewport. In that
+   mode max-width breakpoints never run even though the device is a phone.
+   Keep the shared chrome genuinely mobile on touch-first devices too. */
+@media (hover:none) and (pointer:coarse) {
+  header.site-header {
+    position:sticky!important; top:0!important; z-index:100!important;
+    display:flex!important; width:calc(100% - 28px)!important; max-width:none!important;
+    height:74px!important; min-height:74px!important; margin:12px auto 0!important;
+    padding:0 18px!important; box-sizing:border-box!important; overflow:visible!important;
+    border:1px solid rgba(65,89,82,.22)!important; border-radius:22px!important;
+    background:#fbfcf9!important; opacity:1!important; backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important; box-shadow:0 8px 22px rgba(31,47,41,.09)!important;
+  }
+  header.site-header>a { display:flex!important; align-items:center!important; flex:0 0 auto!important; height:100%!important; }
+  header.site-header .brand-logo {
+    display:block!important; width:104px!important; max-width:104px!important;
+    height:65px!important; max-height:65px!important; object-fit:contain!important;
+    object-position:left center!important; border-radius:0!important;
+  }
+  header.site-header .desktop-nav,header.site-header .head-act { display:none!important; }
+  header.site-header .home-menu {
+    display:grid!important; place-items:center!important; flex:0 0 44px!important;
+    width:44px!important; height:44px!important; margin-left:auto!important;
+    padding:0!important; border:1px solid rgba(65,89,82,.35)!important;
+    border-radius:50%!important; background:#fff!important; color:#383d3f!important;
+  }
+  header.site-header+.home-mobile-nav {
+    position:absolute!important; top:86px!important; left:14px!important; right:14px!important;
+    z-index:101!important; max-height:calc(100dvh - 100px)!important;
+    overflow:auto!important; border-radius:0 0 22px 22px!important;
+  }
+
+  /* One closing CTA card: copy and photo share its surface, with no extra
+     blue inset tile around the image. */
+  .brand-home .brand-contact-band {
+    display:grid!important; grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important; height:auto!important; min-height:0!important;
+    gap:0!important; padding:0!important; overflow:hidden!important;
+    border:0!important; border-radius:24px!important; background:#383d3f!important;
+  }
+  .brand-home .brand-contact-band>div {
+    min-width:0!important; padding:30px 26px!important; border-radius:0!important;
+  }
+  .brand-home .brand-contact-band>img {
+    display:block!important; align-self:auto!important; justify-self:stretch!important;
+    width:100%!important; height:auto!important; min-height:0!important; max-height:none!important;
+    margin:0!important; padding:0!important; box-sizing:border-box!important;
+    object-fit:contain!important; object-position:center!important; clip-path:none!important;
+    border-radius:0 0 24px 24px!important; background:transparent!important;
   }
 }
