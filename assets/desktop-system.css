@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v7. Mobile remains unchanged below 901px. */
+/* Stiltz of Florida desktop system v8. Shared header/footer refinements. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -341,6 +341,41 @@
     padding:clamp(38px,3.2vw,58px)!important; border:1px solid var(--ds-line)!important; background:var(--ds-paper)!important;
   }
   .gh-meaning { background:var(--ds-sage)!important; }
+}
+
+/* Mobile header must remain a solid, correctly stacked bar while scrolling.
+   Keep the identity fully visible; don't let page content ghost through it. */
+@media (max-width:900px) {
+  header.site-header {
+    position:sticky!important; top:0!important; z-index:100!important;
+    height:72px!important; min-height:72px!important; box-sizing:border-box!important;
+    overflow:visible!important;
+    opacity:1!important; background:#fff!important; backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important; isolation:isolate!important;
+    border-bottom:1px solid rgba(65,89,82,.24)!important;
+    box-shadow:0 5px 16px rgba(31,47,41,.08)!important;
+  }
+  header.site-header .brand-logo {
+    display:block!important; width:104px!important; max-width:104px!important;
+    height:65px!important; max-height:65px!important; object-fit:contain!important;
+    object-position:left center!important;
+  }
+}
+
+/* Remove the extra color tile behind the closing photo: the CTA remains one
+   dark rounded card and the complete image sits directly in its right column. */
+@media (max-width:900px) {
+  .brand-home .brand-contact-band {
+    overflow:hidden!important; border-radius:24px!important;
+    padding:0!important; gap:0!important;
+  }
+  .brand-home .brand-contact-band>img {
+    display:block!important; width:100%!important; height:auto!important;
+    min-height:0!important; max-height:none!important; padding:0!important;
+    box-sizing:border-box!important; object-fit:contain!important;
+    object-position:center!important; background:transparent!important;
+    border-radius:18px!important;
+  }
 }
 
 @media (min-width:901px) and (max-width:1220px) {
