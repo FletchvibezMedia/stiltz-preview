@@ -165,6 +165,38 @@ document.addEventListener('DOMContentLoaded', () => {
     menus.forEach((other) => { if (other !== menu) other.open = false; });
   }));
 
+  // Keep deferred media light, and make the financing overview play only
+  // while a desktop visitor is actively hovering it.
+  document.querySelectorAll('img[loading="lazy"]').forEach((image) => {
+    image.decoding = 'async';
+    image.fetchPriority = 'low';
+  });
+
+  const financeVideo = document.querySelector('.finance-video video');
+  if (financeVideo && window.matchMedia('(min-width: 901px)').matches) {
+    financeVideo.muted = true;
+    financeVideo.setAttribute('muted', '');
+    financeVideo.setAttribute('playsinline', '');
+    financeVideo.preload = 'auto';
+    const playVideo = () => {
+      const attempt = financeVideo.play();
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
+    };
+    financeVideo.addEventListener('pointerenter', playVideo);
+    financeVideo.closest('figure')?.addEventListener('pointerenter', playVideo);
+    financeVideo.addEventListener('pointerleave', () => financeVideo.pause());
+    financeVideo.closest('figure')?.addEventListener('pointerleave', () => financeVideo.pause());
+  }
+
+  // The compare page reads as one deliberate sequence: two models,
+  // supporting context, two more models, then the final three.
+  if (sitePathname() === '/compare/') {
+    const grid = document.querySelector('.compare-model-grid');
+    const context = document.querySelector('.compare-specification-sheet');
+    const secondCard = grid?.querySelectorAll('.compare-model-card')[1];
+    if (grid && context && secondCard) secondCard.after(context);
+  }
+
 });
 `;
   fs.writeFileSync(navigationFile, navigation);
@@ -186,7 +218,8 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
     .replaceAll('images/models/duo-thru-car/verified-hero.jpg', 'images/models/duo-thru-car/verified-hero.jpg?v=duo-thru-car-straight-v1')
     .replaceAll('images/models/trio-alta/drive-hero-gray.jpg', 'images/models/trio-alta/drive-hero-gray.jpg?v=trio-clean-v3')
     .replaceAll('images/models/trio-alta/professional-white-01.jpg', 'images/models/trio-alta/professional-white-01.jpg?v=trio-clean-v3')
-    .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4');
+    .replaceAll('images/models/duo-classic/drive-hero.jpg', 'images/models/duo-classic/drive-hero.jpg?v=classic-portrait-v4')
+    .replaceAll('images/team/current/bill-bell.jpg', 'images/team/current/bill-bell.jpg?v=bill-bell-v2');
   if (route === '/stiltz-duo-alta-new-model/') {
     const duoAltaGrid = '<div class="duo-alta-photo-grid" aria-label="Duo Alta installation gallery">' +
       [
@@ -216,6 +249,12 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
         '$1<p class="alta-next-callout">Ready to make your home easier? Call Stiltz of Florida today.</p>',
       )
       .replace(/<div class="model-photo-carousel" aria-label="Duo Alta installation gallery">[\s\S]*?<\/section>/, duoAltaGrid + '</section>');
+  }
+  if (route === '/trio-alta-three-story/') {
+    html = html.replace(
+      /<figure>\s*<img src="images\/models\/trio-alta-3-story\/middle-level-enclosure-door\.jpg"[^>]*>\s*<\/figure>/,
+      '',
+    );
   }
   if (route === '/custom-colors/') {
     html = html
@@ -258,7 +297,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (html.includes('<behold-widget')) {
     html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#fff;border:1px solid #ced9d4;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
   }
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v3">\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v4">\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }
