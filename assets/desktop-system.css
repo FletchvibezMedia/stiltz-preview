@@ -880,3 +880,542 @@
     border-radius: 22px !important;
   }
 }
+
+
+/* Desktop system v4: full-site visual QA corrections. */
+@media (min-width: 901px) {
+  /* About: keep Heather's square portrait intentional and round every inner panel. */
+  .about-hero figure,
+  .about-hero figure > img {
+    border-radius: 30px !important;
+  }
+
+  .about-hero figure {
+    padding: 14px !important;
+    box-sizing: border-box !important;
+    background: var(--desktop-mist) !important;
+  }
+
+  .about-hero figure > img {
+    width: min(100%, 430px) !important;
+    height: min(100%, 520px) !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center 18% !important;
+  }
+
+  .about-team-link {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr) !important;
+    gap: 22px !important;
+    background: var(--desktop-sage) !important;
+  }
+
+  .about-team-link > div,
+  .about-team-link > aside {
+    min-height: 0 !important;
+    padding: 32px !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 22px !important;
+    box-sizing: border-box !important;
+  }
+
+  .about-team-link > div {
+    background: #fff !important;
+  }
+
+  .about-team-link > aside {
+    background: var(--desktop-ink) !important;
+    color: #fff !important;
+  }
+
+  .about-team-link > aside :is(p, span, a, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+
+  /* Team portraits already have circles; they do not need cards around the circles. */
+  .team-directory .team-card {
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .team-directory .team-portrait {
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    box-shadow: 0 12px 26px rgba(35, 48, 43, .10) !important;
+  }
+
+  .team-directory .team-portrait img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .team-directory .team-card-caption {
+    padding: 16px 6px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Homes We Serve: compact copy and show the full elevator without clipping it. */
+  .coastal-hero {
+    height: 560px !important;
+    padding: 40px 46px !important;
+    gap: 38px !important;
+    background: var(--desktop-ink) !important;
+  }
+
+  .coastal-hero > div {
+    max-width: 510px !important;
+    align-self: center !important;
+  }
+
+  .coastal-hero h1 {
+    margin: 10px 0 20px !important;
+    font-size: clamp(46px, 4.5vw, 68px) !important;
+    line-height: .96 !important;
+  }
+
+  .coastal-hero > img {
+    width: min(100%, 520px) !important;
+    height: 480px !important;
+    max-height: 480px !important;
+    align-self: center !important;
+    justify-self: center !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 26px !important;
+    background: var(--desktop-mist) !important;
+  }
+
+  /* Every model hero uses the same rounded, contained photo treatment. */
+  .variant-page .variant-hero,
+  .alta-page .alta-hero,
+  .duo-classic-page .duo-classic-hero {
+    background: var(--desktop-sage) !important;
+  }
+
+  .variant-page .variant-hero figure,
+  .duo-classic-page .duo-classic-hero figure {
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 26px !important;
+    background: var(--desktop-mist) !important;
+  }
+
+  .variant-page .variant-hero figure > img,
+  .duo-classic-page .duo-classic-hero figure > img,
+  .alta-page .alta-hero > img {
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .alta-page .alta-hero > img {
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    background: var(--desktop-mist) !important;
+  }
+
+  .variant-page .variant-facts > article:nth-child(3n + 1),
+  .alta-page .alta-features > article:nth-child(3n + 1) {
+    background: var(--desktop-sage) !important;
+  }
+
+  .variant-page .variant-facts > article:nth-child(3n + 2),
+  .alta-page .alta-features > article:nth-child(3n + 2) {
+    background: var(--desktop-ink) !important;
+    color: #fff !important;
+  }
+
+  .variant-page .variant-facts > article:nth-child(3n + 3),
+  .alta-page .alta-features > article:nth-child(3n + 3) {
+    background: var(--desktop-warm) !important;
+  }
+
+  /* Configuration galleries: one box, one height, no source photo gets sacrificed. */
+  .variant-page .variant-media,
+  .duo-classic-page .duo-classic-media,
+  .three-story-detail-gallery,
+  .three-story-brochure,
+  .three-story-enclosure {
+    overflow: hidden !important;
+    border: 1px solid rgba(111, 143, 156, .35) !important;
+    border-radius: 28px !important;
+    background: var(--desktop-mist) !important;
+    box-shadow: var(--desktop-shadow) !important;
+  }
+
+  .variant-page .variant-media > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+
+  .variant-page .variant-media > div:last-child > figure {
+    display: flex !important;
+    width: 100% !important;
+    height: 360px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 22px !important;
+    box-sizing: border-box !important;
+    background: #dce9f0 !important;
+  }
+
+  .variant-page .variant-media > div:last-child > figure:nth-child(2) {
+    background: #edf3e7 !important;
+  }
+
+  .variant-page .variant-media > div:last-child > figure:nth-child(3) {
+    background: #f8e4cf !important;
+  }
+
+  .variant-page .variant-media > div:last-child > figure > img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  .duo-classic-page .duo-classic-media > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+  }
+
+  .duo-classic-page .duo-classic-media > div:last-child > figure {
+    display: flex !important;
+    width: 100% !important;
+    height: 330px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 22px !important;
+    box-sizing: border-box !important;
+    background: var(--desktop-mist) !important;
+  }
+
+  .duo-classic-page .duo-classic-media > div:last-child > figure:nth-child(even) {
+    background: var(--desktop-sage) !important;
+  }
+
+  .duo-classic-page .duo-classic-media > div:last-child > figure > img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  .duo-alta-photo-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .duo-alta-photo-grid figure {
+    display: flex !important;
+    height: 320px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 22px !important;
+    background: #dce9f0 !important;
+  }
+
+  .duo-alta-photo-grid figure:nth-child(3n + 2) {
+    background: var(--desktop-sage) !important;
+  }
+
+  .duo-alta-photo-grid figure:nth-child(3n + 3) {
+    background: var(--desktop-warm) !important;
+  }
+
+  .duo-alta-photo-grid img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  /* Florida installs landing page: full photos in matching frames. */
+  .curated-model-images {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .curated-model-images figure {
+    display: flex !important;
+    width: 100% !important;
+    height: 390px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 22px !important;
+    box-sizing: border-box !important;
+    background: rgba(255, 255, 255, .48) !important;
+  }
+
+  .curated-model-images img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  /* Landing, build-down and finish carousels. */
+  .installation-page__gallery .installation-carousel figure {
+    display: flex !important;
+    width: 100% !important;
+    height: 660px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 26px !important;
+    box-sizing: border-box !important;
+    background: #f7faf9 !important;
+  }
+
+  .installation-page__gallery .installation-carousel figure > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 22px !important;
+  }
+
+  .alta-page .alta-gallery .model-photo-carousel figure,
+  .trio-full-door-option .model-photo-carousel figure {
+    padding: 10px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 24px !important;
+    box-sizing: border-box !important;
+    background: #f7faf9 !important;
+  }
+
+  .alta-page .alta-gallery .model-photo-carousel img,
+  .trio-full-door-option .model-photo-carousel img {
+    border-radius: 20px !important;
+  }
+
+  /* Three-story supplemental media uses matched boxes; screenshot panel is removed in the build. */
+  .three-story-detail-gallery > div:last-child,
+  .three-story-brochure-gallery,
+  .three-story-enclosure-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+
+  .three-story-brochure-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .three-story-detail-gallery figure,
+  .three-story-brochure-gallery figure,
+  .three-story-enclosure-gallery figure {
+    display: flex !important;
+    width: 100% !important;
+    height: 380px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 22px !important;
+    box-sizing: border-box !important;
+    background: #f7faf9 !important;
+  }
+
+  .three-story-detail-gallery img,
+  .three-story-brochure-gallery img,
+  .three-story-enclosure-gallery img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  .three-story-enclosure-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Lift finishes: readable hierarchy instead of billboard typography. */
+  .installation-page--finishes .installation-page__intro {
+    padding: 44px 52px !important;
+    background: var(--desktop-sage) !important;
+  }
+
+  .installation-page--finishes .installation-page__intro > div {
+    max-width: 760px !important;
+  }
+
+  .installation-page--finishes .installation-page__intro h1 {
+    margin: 10px 0 20px !important;
+    font-size: clamp(44px, 4.6vw, 68px) !important;
+    line-height: .98 !important;
+    color: var(--desktop-ink) !important;
+  }
+
+  .installation-page--finishes .installation-page__gallery > div:first-child {
+    max-width: 520px !important;
+  }
+
+  .installation-page--finishes .installation-page__gallery h2 {
+    font-size: clamp(34px, 3.2vw, 48px) !important;
+    line-height: 1.02 !important;
+    color: var(--desktop-ink) !important;
+  }
+
+  /* Testimonials: keep the opening message, lose the theatrical acreage. */
+  .testimonials-hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr) !important;
+    gap: 38px !important;
+    align-items: end !important;
+    padding: 42px 50px !important;
+  }
+
+  .testimonials-hero h1 {
+    margin: 8px 0 0 !important;
+    font-size: clamp(48px, 5vw, 72px) !important;
+    line-height: .96 !important;
+  }
+
+  .testimonials-hero > p {
+    max-width: 480px !important;
+    margin: 0 !important;
+    align-self: end !important;
+  }
+
+  .testimonials-intro {
+    display: grid !important;
+    grid-template-columns: .7fr 1.3fr !important;
+    gap: 34px !important;
+    min-height: 0 !important;
+    margin: 0 auto 28px !important;
+    padding: 34px 48px !important;
+    border: 1px solid var(--desktop-line) !important;
+    border-radius: 28px !important;
+    background: var(--desktop-mist) !important;
+  }
+
+  .testimonials-intro h2 {
+    margin: 0 !important;
+    font-size: clamp(36px, 3.5vw, 52px) !important;
+    line-height: 1 !important;
+  }
+
+  /* Compare: two, explanation, two, then three—in one connected block. */
+  .compare-page-intro {
+    margin-bottom: 0 !important;
+    border-radius: 28px 28px 0 0 !important;
+  }
+
+  .compare-model-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    margin-top: 0 !important;
+    border-top: 0 !important;
+    border-radius: 0 0 28px 28px !important;
+  }
+
+  .compare-model-grid > .compare-model-card {
+    grid-column: span 3 !important;
+    min-width: 0 !important;
+  }
+
+  .compare-model-grid > .compare-model-card:nth-of-type(n + 5) {
+    grid-column: span 2 !important;
+  }
+
+  .compare-model-grid > .compare-specification-sheet {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 34px 40px !important;
+    border-radius: 22px !important;
+    background: var(--desktop-sage) !important;
+  }
+
+  /* Compact the global footer so it ends the page instead of becoming another page. */
+  .site-footer {
+    width: min(calc(100% - 32px), 1320px) !important;
+    min-height: 0 !important;
+    margin: 24px auto 18px !important;
+    padding: 34px 42px 24px !important;
+    gap: 24px 38px !important;
+    box-sizing: border-box !important;
+    border-radius: 28px !important;
+  }
+
+  .site-footer > div,
+  .site-footer > nav {
+    min-height: 0 !important;
+    margin: 0 !important;
+  }
+
+  .site-footer .brand-logo {
+    max-width: 132px !important;
+    height: auto !important;
+  }
+
+  .site-footer small {
+    margin-top: 0 !important;
+  }
+}
