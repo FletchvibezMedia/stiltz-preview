@@ -19,7 +19,8 @@ main figure img,
   aspect-ratio: auto !important;
   height: auto !important;
   background: transparent !important;
-  overflow: visible !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
 }
 
 .variant-page .variant-media img,
@@ -156,7 +157,7 @@ main figure img,
   width: 100% !important;
   margin: 0 !important;
   clip-path: none !important;
-  border-radius: 0 !important;
+  border-radius: 18px !important;
   object-fit: cover !important;
   background: transparent !important;
 }
@@ -813,7 +814,7 @@ main figure img,
     object-fit: contain !important;
     object-position: center !important;
     background: #f2f5f1 !important;
-    border-radius: 0 !important;
+    border-radius: 18px !important;
   }
 
   .alta-page .alta-intro {

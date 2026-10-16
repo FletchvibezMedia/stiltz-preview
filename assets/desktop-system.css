@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v10. Shared responsive header/footer refinements. */
+/* Stiltz of Florida desktop system v11. Shared responsive header/footer refinements. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -15,7 +15,7 @@
     max-width:2100px!important; box-sizing:border-box!important;
   }
   .site-header {
-    min-height:82px!important; margin:16px auto 0!important; padding:14px 28px!important;
+    min-height:82px!important; margin:0 auto!important; padding:14px 28px!important;
     border:1px solid var(--ds-line)!important; border-radius:24px!important;
     background:rgba(251,252,249,.97)!important; box-shadow:0 10px 26px rgba(31,47,41,.08)!important;
   }
@@ -498,5 +498,145 @@
     margin:0!important; padding:0!important; box-sizing:border-box!important;
     object-fit:contain!important; object-position:center!important; clip-path:none!important;
     border-radius:0 0 24px 24px!important; background:transparent!important;
+  }
+}
+
+/* Canonical sitewide image rule. Keep both the photo and its frame rounded;
+   constrain photographs to their frame while preserving natural proportions. */
+main figure,
+main picture,
+main .model-photo-carousel figure,
+main .installation-carousel figure,
+main .curated-gallery figure,
+main .real-homes-gallery figure,
+main .duo-alta-photo-grid figure,
+main .three-story-enclosure-gallery figure,
+main .duo-classic-media figure,
+main .variant-media figure {
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  clip-path: inset(0 round 24px) !important;
+}
+
+main img,
+main picture img,
+main figure img,
+main .gallery img,
+main [class*="gallery"] img,
+main [class*="carousel"] img {
+  border-radius: 18px !important;
+}
+
+main figure img,
+main .brand-model > img,
+main .alta-hero > img,
+main .variant-hero figure img,
+main .variant-media figure img,
+main .duo-classic-media figure img,
+main .three-story-enclosure-gallery figure img,
+main .installation-carousel figure img {
+  display: block !important;
+  max-width: 100% !important;
+  border-radius: 18px !important;
+}
+
+/* Portraits keep their intended circular crop. */
+main .team-portrait img,
+main .about-hero img {
+  border-radius: 50% !important;
+}
+main .team-portrait {
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  clip-path: circle(50% at 50% 50%) !important;
+}
+
+/* Desktop mode on touch devices must not leave a strip of canvas above the
+   header or squeeze the header contents outside their own background. */
+@media (hover:none) and (pointer:coarse) {
+  html, body { scroll-padding-top: 80px !important; }
+  header.site-header {
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    margin: 0 !important;
+    padding: 0 22px !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgba(65,89,82,.24) !important;
+    border-radius: 22px !important;
+    background: #fbfcf9 !important;
+    box-shadow: 0 8px 22px rgba(31,47,41,.10) !important;
+  }
+  header.site-header > a {
+    height: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+  header.site-header .brand-logo {
+    width: 112px !important;
+    max-width: 112px !important;
+    height: 68px !important;
+    max-height: 68px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+  }
+}
+
+/* Duo Vista and the other standard variant pages had a later legacy rule
+   limiting the hero to 420px. Give the lift a real hero-sized frame. */
+@media (min-width: 901px) {
+  main.variant-page .variant-hero {
+    display: grid !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: clamp(590px, 48vw, 760px) !important;
+    min-height: 590px !important;
+    margin: 0 !important;
+    grid-template-columns: minmax(360px, .82fr) minmax(0, 1.18fr) !important;
+    gap: 22px !important;
+    padding: 22px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 30px !important;
+  }
+  main.variant-page .variant-hero > figure {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    background: var(--ds-blue, #dcebf0) !important;
+  }
+  main.variant-page .variant-hero > figure > img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  main.variant-page .variant-hero > figure {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+  }
+  main.variant-page .variant-hero > figure > img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 18px !important;
   }
 }
