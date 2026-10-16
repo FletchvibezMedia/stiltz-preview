@@ -742,3 +742,99 @@
     border-color: transparent !important;
   }
 }
+
+
+/* Desktop system v2: final media bounds and holdout cleanup. */
+@media (min-width: 901px) {
+  .brand-home .brand-hero figure,
+  .brand-home .brand-hero img {
+    overflow: hidden !important;
+    border-radius: 24px !important;
+  }
+
+  .brand-home .brand-model img {
+    border-radius: 20px !important;
+  }
+
+  .alta-page .alta-gallery .model-photo-carousel figure {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 620px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    background: #f9fbfb !important;
+  }
+
+  .alta-page .alta-gallery .model-photo-carousel img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 20px !important;
+  }
+
+  .duo-classic-page .duo-classic-hero figure {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .duo-classic-page .duo-classic-hero figure > img {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .coastal-hero {
+    display: grid !important;
+    height: 560px !important;
+    min-height: 0 !important;
+    grid-template-columns: minmax(360px, .86fr) minmax(420px, 1.14fr) !important;
+    gap: 34px !important;
+    align-items: stretch !important;
+    padding: 46px 50px !important;
+  }
+
+  .coastal-hero > :first-child {
+    align-self: center !important;
+  }
+
+  .coastal-hero figure {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    background: #dce9f0 !important;
+  }
+
+  .coastal-hero figure > img,
+  .coastal-hero > img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 22px !important;
+  }
+
+  .brand-home .instagram-feed {
+    max-height: 980px !important;
+    overflow: hidden !important;
+  }
+}
