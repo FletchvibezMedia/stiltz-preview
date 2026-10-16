@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v6. Mobile remains unchanged below 901px. */
+/* Stiltz of Florida desktop system v7. Mobile remains unchanged below 901px. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -371,7 +371,7 @@
   }
   .brand-home .brand-contact-band {
     display:grid!important; grid-template-columns:minmax(360px,.9fr) minmax(520px,1.1fr)!important;
-    height:360px!important; min-height:0!important; padding:14px!important;
+    height:auto!important; min-height:360px!important; padding:14px!important;
     gap:14px!important; align-items:stretch!important; background:var(--ds-ink)!important;
   }
   .brand-home .brand-contact-band>div {
