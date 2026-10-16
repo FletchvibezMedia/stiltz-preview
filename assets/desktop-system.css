@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v9. Shared responsive header/footer refinements. */
+/* Stiltz of Florida desktop system v10. Shared responsive header/footer refinements. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -449,9 +449,36 @@
     border-radius:50%!important; background:#fff!important; color:#383d3f!important;
   }
   header.site-header+.home-mobile-nav {
-    position:absolute!important; top:86px!important; left:14px!important; right:14px!important;
+    position:fixed!important; top:86px!important; left:14px!important; right:14px!important;
     z-index:101!important; max-height:calc(100dvh - 100px)!important;
     overflow:auto!important; border-radius:0 0 22px 22px!important;
+    background:#fff!important; padding:12px 22px 24px!important;
+    box-shadow:0 16px 35px rgba(28,37,25,.12)!important;
+  }
+  header.site-header+.home-mobile-nav:not([hidden]) { display:grid!important; }
+  .home-mobile-nav details {
+    display:block!important; border-bottom:1px solid rgba(65,89,82,.18)!important;
+    border-radius:14px!important; padding:2px 10px!important;
+  }
+  .home-mobile-nav summary {
+    display:flex!important; align-items:center!important; justify-content:space-between!important;
+    min-height:48px!important; padding:12px 4px!important; color:#383d3f!important;
+    cursor:pointer!important; font-size:16px!important; font-weight:700!important;
+    list-style:none!important;
+  }
+  .home-mobile-nav summary::-webkit-details-marker { display:none!important; }
+  .home-mobile-nav details>div {
+    display:grid!important; gap:2px!important; padding:0 0 12px!important;
+  }
+  .home-mobile-nav details>div a {
+    display:block!important; min-height:44px!important; padding:12px 8px!important;
+    border-radius:10px!important; color:#383d3f!important; font-size:15px!important;
+    font-weight:500!important; text-decoration:none!important;
+  }
+  .home-mobile-nav .mobile-nav-cta {
+    display:block!important; margin-top:14px!important; padding:15px 18px!important;
+    border-radius:16px!important; background:#383d3f!important; color:#fff!important;
+    text-align:center!important; font-size:15px!important; font-weight:700!important;
   }
 
   /* One closing CTA card: copy and photo share its surface, with no extra
