@@ -838,3 +838,45 @@
     overflow: hidden !important;
   }
 }
+
+
+/* Desktop system v3: lock legacy image grids to their visible hero bounds. */
+@media (min-width: 901px) {
+  .about-hero {
+    display: grid !important;
+    height: 600px !important;
+    min-height: 0 !important;
+    grid-template-columns: minmax(360px, .86fr) minmax(420px, 1.14fr) !important;
+    align-items: stretch !important;
+  }
+
+  .about-hero > div {
+    min-height: 0 !important;
+    padding: 46px 50px !important;
+    box-sizing: border-box !important;
+    align-self: center !important;
+  }
+
+  .about-hero figure {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    background: #eef3ef !important;
+  }
+
+  .about-hero figure > img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    border-radius: 22px !important;
+  }
+}
