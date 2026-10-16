@@ -258,7 +258,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (html.includes('<behold-widget')) {
     html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#fff;border:1px solid #ced9d4;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
   }
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v2">\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v3">\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }
