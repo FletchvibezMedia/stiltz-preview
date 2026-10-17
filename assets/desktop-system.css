@@ -955,8 +955,8 @@ header.site-header .brand-logo {
   clip-path:none !important;
 }
 main img:not(.brand-logo) {
-  border-radius:22px !important;
-  clip-path:inset(0 round 22px) !important;
+  border-radius:28px !important;
+  clip-path:inset(0 round 28px) !important;
 }
 
 /* Undeclared section surfaces use the site beige; existing green, blue,
@@ -1209,3 +1209,34 @@ main.factory-brochures-page :is(.factory-brochures-disclaimer,.factory-brochures
 @media (max-width:560px) {
   main.compare-page > .compare-model-grid { grid-template-columns:minmax(0,1fr) !important; }
 }
+
+/* Final visual polish: model hero content sits directly on the single page
+   shell; the copy and photo remain the two intentional colored surfaces. */
+@media (min-width:901px) {
+  main.variant-page > .variant-hero,
+  main.duo-classic-page > .duo-classic-hero,
+  main.alta-page > .alta-hero {
+    padding:0 !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    background:transparent !important;
+  }
+}
+html body main.variant-page .variant-hero figure img,
+html body main.duo-classic-page .duo-classic-hero figure img,
+html body main.alta-page .alta-hero > img,
+html body main.variant-page .variant-media figure img,
+html body main.duo-classic-page .duo-classic-media figure img,
+html body main.variant-page .three-story-detail-gallery figure img,
+html body main.variant-page .three-story-brochure-gallery figure img,
+html body main.variant-page .three-story-enclosure-gallery figure img,
+html body main.alta-page .alta-gallery .model-photo-carousel img,
+html body main.alta-page .trio-full-door-option .model-photo-carousel img,
+html body main.installation-page .installation-carousel figure img,
+html body main.compare-page .compare-model-card figure img {
+  border-radius:28px !important;
+  clip-path:inset(0 round 28px) !important;
+}
+main .team-portrait img { border-radius:50% !important; clip-path:circle(50% at 50% 50%) !important; }
+main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 round 24px) !important; }
