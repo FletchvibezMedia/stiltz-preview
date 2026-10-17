@@ -1729,3 +1729,13 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
     color: #fff !important;
   }
 }
+
+/* Mobile legibility: the warm beige sections on these editorial pages were
+   inheriting white copy from dark-panel treatments, leaving text unreadable. */
+@media (max-width: 900px) {
+  html body main.installation-page :is(.installation-hero, .installation-roadmap) :is(h1, h2, h3, p, li, .eyebrow),
+  html body main.costs-page .costs-close :is(h1, h2, h3, p, li, .eyebrow),
+  html body main.testimonials-page .testimonials-cta :is(h1, h2, h3, p, .eyebrow) {
+    color: var(--ds-ink, #383d3f) !important;
+  }
+}

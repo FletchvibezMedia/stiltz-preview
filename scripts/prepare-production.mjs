@@ -134,9 +134,9 @@ if (fs.existsSync(navigationFile)) {
 const navigationGroups = [`);
   navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
   navigation = navigation.replace(/const landingImages = \[[\s\S]*?\n\]\.map\(\(file\) => `\/images\/installations\/landing\/\$\{file\}`\);/, `const landingImages = [
-  '5131.jpg', '5132.jpg', '5133.jpg', '5134.jpg', '5135.jpg', '5136.png', '5137.jpg', '5138.jpg', '5139.jpg', '5140.jpg',
-  '5141.jpg', '5142.jpg', '5143.jpg', '5144.jpg', '5145.jpg', '5146.jpg', '5147.jpg', '5148.jpg', '5149.jpg', '5150.jpg',
-  '5151.jpg', '5152.jpg', '5153.jpg', '5154.jpg', '5155.jpg', '5156.jpg', '5157.jpg', '5158.jpg', '5159.jpg',
+  '5131.jpg', '5134.jpg', '5135.jpg', '5136.png', '5137.jpg', '5138.jpg', '5139.jpg', '5140.jpg', '5141.jpg', '5142.jpg',
+  '5143.jpg', '5144.jpg', '5145.jpg', '5146.jpg', '5147.jpg', '5148.jpg', '5149.jpg', '5150.jpg', '5151.jpg', '5152.jpg',
+  '5157.jpg', '5158.jpg', '5159.jpg',
 ].map((file) => \`/images/installations/landing/\${file}\`);`);
   navigation = navigation.replace(/const buildDownImages = \[[\s\S]*?\n\];/, `const buildDownImages = [
   '/images/installations/build-down/5123.png', '/images/installations/build-down/5124.png',
@@ -298,7 +298,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (html.includes('<behold-widget')) {
     html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#e7efec;border:1px solid #aebfba;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
   }
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v24">\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v25">\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }
