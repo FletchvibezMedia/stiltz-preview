@@ -2053,26 +2053,23 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
 
   /* Alta photo carousels (including the 11-photo Trio gallery) need one
      full-width slide and a natural height on phones, never a clipped panel. */
-  html body main.alta-page .alta-gallery .model-photo-carousel,
-  html body main.alta-page .trio-full-door-option .model-photo-carousel {
-    display: flex !important;
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"]) .model-photo-carousel {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     width: 100% !important;
     min-width: 0 !important;
     gap: 14px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory !important;
-    overscroll-behavior-inline: contain !important;
-    -webkit-overflow-scrolling: touch !important;
+    overflow: visible !important;
   }
 
-  html body main.alta-page .model-photo-carousel > figure {
-    flex: 0 0 100% !important;
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"]) .model-photo-carousel figure {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
     width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
-    aspect-ratio: 4 / 3 !important;
+    aspect-ratio: auto !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
@@ -2082,16 +2079,70 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
     background: transparent !important;
   }
 
-  html body main.alta-page .model-photo-carousel > figure > img {
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"]) .model-photo-carousel figure img {
     display: block !important;
     width: 100% !important;
-    height: 100% !important;
-    max-height: none !important;
+    height: auto !important;
+    max-height: min(68vh, 680px) !important;
     border-radius: 22px !important;
     clip-path: inset(0 round 22px) !important;
     object-fit: contain !important;
     object-position: center !important;
     background: transparent !important;
+  }
+
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"]) .model-photo-carousel-controls {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    inset: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin: 14px 0 0 !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    color: var(--ds-ink, #383d3f) !important;
+  }
+
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"]) .model-photo-carousel-controls button {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 46px !important;
+    height: 46px !important;
+    flex: 0 0 46px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 1px solid var(--ds-ink, #383d3f) !important;
+    border-radius: 50% !important;
+    background: var(--ds-paper, #f7f5ef) !important;
+    color: var(--ds-ink, #383d3f) !important;
+  }
+
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"]) .model-photo-carousel-controls :is(span, p) {
+    color: var(--ds-ink, #383d3f) !important;
+  }
+
+  /* Keep portrait product photography at its natural aspect ratio. A fixed
+     hero frame was cropping the Vista lift on narrow screens. */
+  html body main:is(.variant-page, .trio-page, .duo-classic-page) > :is(.variant-hero, .duo-classic-hero) figure,
+  html body main.alta-page > .alta-hero figure {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+  html body main:is(.variant-page, .trio-page, .duo-classic-page) > :is(.variant-hero, .duo-classic-hero) figure img,
+  html body main.alta-page > .alta-hero figure img,
+  html body main.alta-page > .alta-hero > img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   /* Light beige, sage, and pale blue model panels use charcoal copy. Keep
@@ -2114,7 +2165,7 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
    white only for copy sitting on intentionally dark or saturated surfaces. */
 html body main :is(
   h1, h2, h3, h4, p, li, blockquote, .eyebrow,
-  a:not(.button):not(.btn):not([class*="button"]):not([class*="btn"]):not([role="button"])
+  a:not(.button):not(.btn):not([class*="button"]):not([class*="btn"]):not([class*="cta"]):not([role="button"])
 ) {
   color: var(--ds-ink, #383d3f) !important;
 }
@@ -2134,6 +2185,20 @@ html body main .duo-classic-next aside :is(p, a, svg),
 html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]),
 html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]) :is(h3, p, span) {
   color: #fff !important;
+}
+
+/* Dark buttons and intentionally dark cards retain bright, readable copy.
+   This rule follows the sitewide charcoal default so the text stays visible. */
+html body main a:is(.cta, [class*="-cta"], [class*="cta-button"]),
+html body main a:is(.cta, [class*="-cta"], [class*="cta-button"]) *,
+html body main .brand-contact-band *,
+html body main :is(.team-contact-band, .contact-band, .phone-card, .contact-card, .contact-panel) *,
+html body main :is(.variant-facts, .alta-features, .duo-classic-feature-grid) > :nth-child(3n + 2) *,
+html body main :is(.variant-next aside, .alta-next > :last-child, .duo-classic-next aside) *,
+html body main :is(.about-team-link > aside, .testimonial-story.ink) *,
+html body main.installation-page--builddown > .installation-page__intro * {
+  color: #fff !important;
+  opacity: 1 !important;
 }
 
 html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]) svg {
