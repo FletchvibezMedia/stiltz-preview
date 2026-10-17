@@ -1,4 +1,4 @@
-/* Stiltz of Florida desktop system v11. Shared responsive header/footer refinements. */
+/* Stiltz of Florida desktop system v12. Shared responsive header/footer refinements. */
 @media (min-width: 901px) {
   :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
@@ -1240,3 +1240,295 @@ html body main.compare-page .compare-model-card figure img {
 }
 main .team-portrait img { border-radius:50% !important; clip-path:circle(50% at 50% 50%) !important; }
 main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 round 24px) !important; }
+
+/* Model pages: one continuous warm shell, shared section alignment and
+   photo geometry. Color stays on the intentional feature cards and CTAs;
+   the page no longer breaks into unrelated white/blue tiles. */
+@media (min-width: 901px) {
+  :root { --ds-shell: #f1e9dc; }
+
+  main.variant-page,
+  main.alta-page,
+  main.duo-classic-page,
+  main.trio-page,
+  main[class*="three-story"] {
+    gap: 0 !important;
+    padding: clamp(18px, 2vw, 30px) !important;
+    background: var(--ds-shell) !important;
+  }
+
+  main.variant-page > section,
+  main.alta-page > section,
+  main.duo-classic-page > section,
+  main.trio-page > section,
+  main[class*="three-story"] > section {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 26px !important;
+    box-shadow: none !important;
+  }
+
+  /* The hero and gallery sit directly on the shared beige page surface. */
+  main.variant-page .variant-hero,
+  main.alta-page .alta-hero,
+  main.duo-classic-page .duo-classic-hero,
+  main.trio-page .variant-hero,
+  main.variant-page .variant-intro,
+  main.variant-page .variant-media,
+  main.alta-page .alta-intro,
+  main.alta-page .alta-gallery,
+  main.duo-classic-page .duo-classic-intro,
+  main.duo-classic-page .duo-classic-media,
+  main.trio-page .variant-intro,
+  main.trio-page .variant-media,
+  main[class*="three-story"] .three-story-detail-gallery,
+  main[class*="three-story"] .three-story-enclosure,
+  main[class*="three-story"] .three-story-brochure {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  main.variant-page .variant-hero,
+  main.alta-page .alta-hero,
+  main.duo-classic-page .duo-classic-hero,
+  main.trio-page .variant-hero {
+    height: clamp(500px, 39vw, 630px) !important;
+    min-height: 500px !important;
+    grid-template-columns: minmax(360px, .78fr) minmax(0, 1.22fr) !important;
+    gap: clamp(18px, 2vw, 30px) !important;
+    padding: 0 0 28px !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+  }
+
+  main.variant-page .variant-hero > div,
+  main.alta-page .alta-hero > div,
+  main.duo-classic-page .duo-classic-hero > div,
+  main.trio-page .variant-hero > div {
+    padding: clamp(30px, 3.4vw, 58px) !important;
+    border-radius: 26px !important;
+    background: #e5eddf !important;
+  }
+
+  main.variant-page .variant-hero > figure,
+  main.alta-page .alta-hero > figure,
+  main.duo-classic-page .duo-classic-hero > figure,
+  main.trio-page .variant-hero > figure,
+  main.variant-page .variant-hero > img,
+  main.alta-page .alta-hero > img,
+  main.duo-classic-page .duo-classic-hero > img,
+  main.trio-page .variant-hero > img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 26px !important;
+    background: transparent !important;
+    clip-path: inset(0 round 26px) !important;
+  }
+
+  main.variant-page .variant-hero figure img,
+  main.alta-page .alta-hero figure img,
+  main.duo-classic-page .duo-classic-hero figure img,
+  main.trio-page .variant-hero figure img,
+  main.variant-page .variant-hero > img,
+  main.alta-page .alta-hero > img,
+  main.duo-classic-page .duo-classic-hero > img,
+  main.trio-page .variant-hero > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 26px !important;
+    background: transparent !important;
+  }
+
+  /* Four planning points line up evenly instead of leaving a lone card below. */
+  main.variant-page .variant-facts,
+  main.alta-page .alta-features,
+  main.duo-classic-page .duo-classic-feature-grid,
+  main.trio-page .variant-facts {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0 28px !important;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+  }
+
+  main.variant-page .variant-facts > *,
+  main.alta-page .alta-features > *,
+  main.duo-classic-page .duo-classic-feature-grid > *,
+  main.trio-page .variant-facts > * {
+    min-width: 0 !important;
+    min-height: 170px !important;
+    padding: clamp(22px, 2vw, 32px) !important;
+    border-radius: 22px !important;
+  }
+
+  /* Consistent gallery grid: same aligned frames, no pale inset tile, rounded
+     images, and the complete source photograph preserved without cropping. */
+  main.variant-page .variant-media,
+  main.alta-page .alta-gallery,
+  main.duo-classic-page .duo-classic-media,
+  main.trio-page .variant-media,
+  main[class*="three-story"] .three-story-detail-gallery {
+    grid-template-columns: minmax(260px, .42fr) minmax(0, 1.58fr) !important;
+    gap: clamp(20px, 2vw, 32px) !important;
+    padding: 28px 0 !important;
+  }
+
+  main.variant-page .variant-media > div:last-child,
+  main.alta-page .duo-alta-photo-grid,
+  main.duo-classic-page .duo-classic-media > div:last-child,
+  main.trio-page .variant-media > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+  }
+
+  main.variant-page .variant-media figure,
+  main.alta-page .duo-alta-photo-grid figure,
+  main.alta-page .model-photo-carousel figure,
+  main.duo-classic-page .duo-classic-media figure,
+  main.trio-page .variant-media figure,
+  main[class*="three-story"] .three-story-detail-gallery figure,
+  main[class*="three-story"] .three-story-enclosure-gallery figure {
+    display: flex !important;
+    width: 100% !important;
+    height: clamp(235px, 20vw, 330px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 22px !important;
+    background: transparent !important;
+    clip-path: inset(0 round 22px) !important;
+    box-shadow: none !important;
+  }
+
+  main.variant-page .variant-media figure img,
+  main.alta-page .duo-alta-photo-grid figure img,
+  main.alta-page .model-photo-carousel figure img,
+  main.duo-classic-page .duo-classic-media figure img,
+  main.trio-page .variant-media figure img,
+  main[class*="three-story"] .three-story-detail-gallery figure img,
+  main[class*="three-story"] .three-story-enclosure-gallery figure img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 22px !important;
+    background: transparent !important;
+  }
+
+  /* Keep color in deliberate highlights; story and gallery now share the
+     same page surface and section rhythm. */
+  main.variant-page .variant-callout,
+  main.alta-page .alta-story,
+  main.duo-classic-page .duo-classic-story,
+  main.trio-page .variant-callout {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: clamp(30px, 3vw, 48px) !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    background: transparent !important;
+  }
+
+  main.variant-page .variant-next,
+  main.alta-page .alta-next,
+  main.duo-classic-page .duo-classic-next,
+  main.trio-page .variant-next {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: clamp(28px, 2.6vw, 42px) !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    background: transparent !important;
+  }
+
+  main.variant-page .variant-next aside,
+  main.alta-page .alta-next aside,
+  main.duo-classic-page .duo-classic-next aside,
+  main.trio-page .variant-next aside {
+    border-radius: 22px !important;
+    background: var(--ds-green) !important;
+    color: #fff !important;
+  }
+
+  main.variant-page .variant-next aside :is(p, a, svg),
+  main.alta-page .alta-next aside :is(p, a, svg),
+  main.duo-classic-page .duo-classic-next aside :is(p, a, svg),
+  main.trio-page .variant-next aside :is(p, a, svg) {
+    color: #fff !important;
+    stroke: currentColor !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1240px) {
+  main.variant-page .variant-facts,
+  main.alta-page .alta-features,
+  main.duo-classic-page .duo-classic-feature-grid,
+  main.trio-page .variant-facts { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  main.variant-page .variant-media > div:last-child,
+  main.alta-page .duo-alta-photo-grid,
+  main.duo-classic-page .duo-classic-media > div:last-child,
+  main.trio-page .variant-media > div:last-child { grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)) !important; }
+}
+
+@media (max-width: 900px) {
+  main.variant-page,
+  main.alta-page,
+  main.duo-classic-page,
+  main.trio-page,
+  main[class*="three-story"] { background: #f1e9dc !important; }
+
+  main.variant-page .variant-hero figure,
+  main.alta-page .alta-hero figure,
+  main.duo-classic-page .duo-classic-hero figure,
+  main.trio-page .variant-hero figure,
+  main.variant-page .variant-media figure,
+  main.alta-page .duo-alta-photo-grid figure,
+  main.duo-classic-page .duo-classic-media figure,
+  main.trio-page .variant-media figure {
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    border-radius: 20px !important;
+    clip-path: inset(0 round 20px) !important;
+  }
+
+  main.variant-page .variant-hero img,
+  main.alta-page .alta-hero img,
+  main.duo-classic-page .duo-classic-hero img,
+  main.trio-page .variant-hero img,
+  main.variant-page .variant-media figure img,
+  main.alta-page .duo-alta-photo-grid figure img,
+  main.duo-classic-page .duo-classic-media figure img,
+  main.trio-page .variant-media figure img {
+    border-radius: 20px !important;
+  }
+}
