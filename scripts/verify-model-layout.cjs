@@ -32,8 +32,8 @@ const failures=[];
       const decoded=new Map();
       await Promise.all(images.map(i=>{i.loading='eager';return i.decode().then(()=>decoded.set(i,true),()=>decoded.set(i,false));}));
       const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0 && decoded.get(i),width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,frameHeight:f?.getBoundingClientRect().height,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
-      const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside, .testimonial-story, .news-card, .installation-page--custom-colors > .installation-page__intro')];
-      const colors=cards.flatMap(e=>[...e.querySelectorAll('h1,h2,h3,p,a,blockquote,footer b,footer span,.news-card-action,.news-card > div > span')].filter(n=>n.textContent.trim() && !n.matches('a[class*=cta]')).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
+      const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside, .testimonial-story, .news-card, .compare-model-content > a, .installation-page--custom-colors > .installation-page__intro')];
+      const colors=cards.flatMap(e=>[...(e.matches('a')?[e]:[]),...e.querySelectorAll('h1,h2,h3,p,a,blockquote,footer b,footer span,.news-card-action,.news-card > div > span')].filter(n=>n.textContent.trim() && !n.matches('a[class*=cta]')).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
       return {images:metrics,colors,overflow:document.documentElement.scrollWidth>innerWidth+1};
      });
      assert(!stats.overflow,'horizontal page overflow');
@@ -102,7 +102,7 @@ const failures=[];
       await page.goBack({waitUntil:'load'});
       assert(await page.evaluate(()=>![...document.querySelectorAll('.desktop-nav details')].some(e=>e.open) && document.getElementById('mobile-site-navigation').hidden),'navigation reopened after Back');
      }
-     await page.evaluate(()=>window.scrollTo(0,0));
+     await page.evaluate(async()=>{window.scrollTo(0,0);await Promise.all([...document.querySelectorAll('main img')].map(i=>{i.loading='eager';return i.decode().catch(()=>{});}));});
      await page.screenshot({path:`layout-checks/${route}-${width}.png`,fullPage:true});
      console.log('PASS',route,width);
     }catch(e){failures.push(`${route} at ${width}: ${e.message}`);console.error('FAIL',failures.at(-1));await page.screenshot({path:`layout-checks/FAIL-${route}-${width}.png`,fullPage:true});}

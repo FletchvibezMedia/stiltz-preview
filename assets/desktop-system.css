@@ -2415,3 +2415,10 @@ html body main.compare-page .compare-model-card > figure > img {
     max-height: none !important;
   }
 }
+html body main.compare-page .compare-model-content > a,
+html body main.compare-page .compare-model-content > a * {
+  color: #fff !important;
+}
+html body main.compare-page .compare-model-content > a {
+  background: #383d3f !important;
+}
