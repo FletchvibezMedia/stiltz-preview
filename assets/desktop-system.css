@@ -362,6 +362,61 @@
   }
 }
 
+/* Duo Vista media: keep rounded edges and equal image windows at phone and
+   tablet widths too. Contain preserves the complete installation photos. */
+@media (max-width: 900px) {
+  html body main.variant-page > .variant-hero > figure,
+  html body main.variant-page > .variant-hero > figure > picture,
+  html body main.variant-page > .variant-hero > figure > img {
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+  }
+
+  html body main.variant-page > .variant-hero > figure > img,
+  html body main.variant-page > .variant-hero > figure > picture > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  html body main.variant-page > .variant-media {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+  }
+
+  html body main.variant-page > .variant-media > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(8px, 2vw, 14px) !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  html body main.variant-page .variant-media figure {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4 !important;
+    overflow: hidden !important;
+    padding: 5px !important;
+    border-radius: 20px !important;
+    clip-path: inset(0 round 20px) !important;
+  }
+
+  html body main.variant-page .variant-media figure img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 15px !important;
+    clip-path: inset(0 round 15px) !important;
+  }
+}
+
 /* Remove the extra color tile behind the closing photo: the CTA remains one
    dark rounded card and the complete image sits directly in its right column. */
 @media (max-width:900px) {
