@@ -1,11 +1,11 @@
 /* Stiltz of Florida desktop system v12. Shared responsive header/footer refinements. */
-@media (min-width: 901px) {
-  :root {
+:root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
     --ds-sage:#dfeadb; --ds-blue:#dcebf0; --ds-warm:#f3ddc5;
     --ds-ink:#383d3f; --ds-green:#9ab600; --ds-line:rgba(65,89,82,.22);
     --ds-shadow:0 18px 46px rgba(31,47,41,.10);
-  }
+}
+@media (min-width: 901px) {
   html,body { background:var(--ds-canvas)!important; }
   body { margin:0!important; color:var(--ds-ink)!important; }
 
@@ -2204,4 +2204,62 @@ html body main.installation-page--builddown > .installation-page__intro * {
 html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]) svg {
   color: #fff !important;
   stroke: currentColor !important;
+}
+
+/* A dark-text exception is only valid together with its dark surface.
+   These surfaces previously existed only inside the desktop breakpoint. */
+html body main :is(.variant-facts, .alta-features, .duo-classic-feature-grid) > :nth-child(3n + 2),
+html body main .variant-next aside,
+html body main .alta-next > :last-child,
+html body main .duo-classic-next aside,
+html body main.about-team-link > aside {
+  background: #383d3f !important;
+  color: #fff !important;
+}
+
+@media (min-width: 901px) {
+  .duo-alta-mobile-carousel { display: none !important; }
+}
+
+@media (max-width: 900px) {
+  html body main.alta-page .duo-alta-photo-grid { display: none !important; }
+
+  /* Let the image define its own rounded box. A landscape frame with contain
+     makes a portrait look like a tiny square-cornered thumbnail inside it. */
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"])
+    :is(.variant-media, .duo-classic-media) > div:last-child {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"])
+    :is(.variant-media, .duo-classic-media, .model-photo-carousel, .three-story-detail-gallery, .three-story-enclosure-gallery, .three-story-brochure-gallery) figure {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 22px !important;
+    clip-path: none !important;
+    overflow: hidden !important;
+    background: transparent !important;
+  }
+
+  html body main:is(.variant-page, .trio-page, .alta-page, .duo-classic-page, [class*="three-story"])
+    :is(.variant-media, .duo-classic-media, .model-photo-carousel, .three-story-detail-gallery, .three-story-enclosure-gallery, .three-story-brochure-gallery) figure img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    margin: 0 !important;
+    border-radius: 22px !important;
+    clip-path: none !important;
+    object-fit: contain !important;
+  }
 }

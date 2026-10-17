@@ -45,6 +45,20 @@ jobs:
           test -f _site/robots.txt
           test -f _site/sitemap.xml
           test ! -n "$(grep -Ril 'noindex, nofollow' _site --include='*.html' || true)"
+      - name: Install layout check browser
+        run: |
+          npm install --no-save --prefix /tmp/stiltz-layout playwright@1.58.2
+          /tmp/stiltz-layout/node_modules/.bin/playwright install --with-deps chromium
+      - name: Check model layouts before publishing
+        env:
+          NODE_PATH: /tmp/stiltz-layout/node_modules
+        run: node scripts/verify-model-layout.cjs _site
+      - name: Save model screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-layout-checks
+          path: layout-checks/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
