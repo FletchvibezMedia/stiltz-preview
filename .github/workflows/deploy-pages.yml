@@ -52,7 +52,9 @@ jobs:
       - name: Check model layouts before publishing
         env:
           NODE_PATH: /tmp/stiltz-layout/node_modules
-        run: node scripts/verify-model-layout.cjs _site
+        run: |
+          node scripts/verify-model-layout.cjs _site
+          node scripts/verify-site-layout.cjs _site
       - name: Save model screenshots
         if: always()
         uses: actions/upload-artifact@v4

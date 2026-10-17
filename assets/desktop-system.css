@@ -2431,3 +2431,16 @@ html body main.testimonials-page .testimonials-cta > a.cta {
 html body main.testimonials-page .testimonials-cta > a.cta * {
   color: #383d3f !important;
 }
+
+/* The social hub contains white link rows, so its labels and icons are dark. */
+html body main .social-hub .social-hub-links > a.social-hub-link,
+html body main .social-hub .social-hub-links > a.social-hub-link * {
+  color: #383d3f !important;
+  opacity: 1 !important;
+}
+html body main .social-hub .social-hub-links > a.social-hub-link svg {
+  stroke: currentColor !important;
+}
+html body main .social-hub .social-hub-links > a.social-hub-link small {
+  color: #59656a !important;
+}
