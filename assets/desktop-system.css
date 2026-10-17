@@ -641,7 +641,7 @@ main .team-portrait {
   }
 }
 
-/* Sitewide finish pass v12. These rules are intentionally outside the
+/* Sitewide finish pass v13. These rules are intentionally outside the
    desktop media query above: mobile and desktop now share the same palette,
    rounded media frames, and predictable content width. */
 :root {
@@ -720,6 +720,13 @@ html body main > section :is(article,[class*="-card"],[class*="-tile"]):not(.tea
   border-color:var(--ds-line) !important;
   background-color:var(--ds-paper) !important;
 }
+html body main .brand-model {
+  border:1px solid var(--ds-line) !important;
+  border-radius:26px !important;
+  background:var(--ds-blue) !important;
+}
+html body main .brand-model:nth-child(even) { background:var(--ds-warm) !important; }
+html body main .brand-model > img { border-radius:18px 18px 14px 14px !important; }
 
 /* Catch image edges even when legacy page selectors set square corners. */
 html body main figure,
