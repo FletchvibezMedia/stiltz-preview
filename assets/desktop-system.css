@@ -2422,3 +2422,12 @@ html body main.compare-page .compare-model-content > a * {
 html body main.compare-page .compare-model-content > a {
   background: #383d3f !important;
 }
+
+/* The Testimonials closing button has a white surface. */
+html body main.testimonials-page .testimonials-cta > a.cta {
+  background: #fff !important;
+  color: #383d3f !important;
+}
+html body main.testimonials-page .testimonials-cta > a.cta * {
+  color: #383d3f !important;
+}

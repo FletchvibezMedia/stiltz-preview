@@ -4,7 +4,7 @@ const path = require('node:path');
 const http = require('node:http');
 const assert = require('node:assert/strict');
 const root = path.resolve(process.argv[2] || '_site');
-const routes = ['stiltz-duo-alta-new-model','stiltz-trio-alta-new-model','stiltz-duo-classic','stiltz-duo-vista','stiltz-duo-thru-car','stiltz-trio-alta-thru-car','trio-alta-three-story','testimonials','stiltz-news','gallery-of-installs-florida','build-down-installations','landing-installations','custom-colors','compare'];
+const routes = ['stiltz-duo-alta-new-model','stiltz-trio-alta-new-model','stiltz-duo-classic','stiltz-duo-vista','stiltz-duo-thru-car','stiltz-trio-alta-thru-car','trio-alta-three-story','testimonials','stiltz-news','gallery-of-installs-florida','build-down-installations','landing-installations','custom-colors','compare','meet-the-team'];
 const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'};
 const server = http.createServer((req,res) => {
   let name = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -32,8 +32,8 @@ const failures=[];
       const decoded=new Map();
       await Promise.all(images.map(i=>{i.loading='eager';return i.decode().then(()=>decoded.set(i,true),()=>decoded.set(i,false));}));
       const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0 && decoded.get(i),width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,frameHeight:f?.getBoundingClientRect().height,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
-      const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside, .testimonial-story, .news-card, .compare-model-content > a, .installation-page--custom-colors > .installation-page__intro')];
-      const colors=cards.flatMap(e=>[...(e.matches('a')?[e]:[]),...e.querySelectorAll('h1,h2,h3,p,a,blockquote,footer b,footer span,.news-card-action,.news-card > div > span')].filter(n=>n.textContent.trim() && !n.matches('a[class*=cta]')).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
+      const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside, .testimonial-story, .news-card, .compare-model-content > a, .testimonials-cta > a.cta, .installation-page--custom-colors > .installation-page__intro')];
+      const colors=cards.flatMap(e=>[...(e.matches('a')?[e]:[]),...e.querySelectorAll('h1,h2,h3,p,a,blockquote,footer b,footer span,.news-card-action,.news-card > div > span')].filter(n=>n.textContent.trim() && (!n.matches('a[class*=cta]') || n===e)).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
       return {images:metrics,colors,overflow:document.documentElement.scrollWidth>innerWidth+1};
      });
      assert(!stats.overflow,'horizontal page overflow');
@@ -76,6 +76,14 @@ const failures=[];
        if(route==='landing-installations')assert.equal(total,22,'corrupt landing photo still included');
 
       }
+     }
+     if(route==='meet-the-team') {
+      const bill=page.locator('.team-card').filter({has:page.getByRole('heading',{name:'Bill Bell',exact:true})});
+      assert.equal(await bill.count(),1,'Bill card missing or duplicated');
+      const photo=bill.locator('img');
+      assert.equal(await photo.count(),1,'Bill photo missing');
+      assert(await photo.evaluate(async i=>{i.loading='eager';try{await i.decode();return i.naturalWidth===1152 && i.naturalHeight===1536;}catch{return false;}}),'Bill uploaded photo failed to load');
+      await bill.screenshot({path:`layout-checks/bill-${width}.png`});
      }
      if(route==='compare') {
       assert(await page.evaluate(()=>{
