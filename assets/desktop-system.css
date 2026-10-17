@@ -641,13 +641,13 @@ main .team-portrait {
   }
 }
 
-/* Sitewide finish pass v14. These rules are intentionally outside the
-   desktop media query above: mobile and desktop now share the same palette,
-   rounded media frames, and predictable content width. */
+/* Production correction: preserve the approved page-specific palette and use
+   one warm outer canvas. Earlier broad rules overwrote section colors and
+   forced dark text onto dark cards. */
 :root {
-  --ds-canvas:#e8eee9;
-  --ds-shell:#f4f3ec;
-  --ds-paper:#eeefe8;
+  --ds-canvas:#ffffff;
+  --ds-shell:#f1eadf;
+  --ds-paper:#eee6d8;
   --ds-sage:#dfeadb;
   --ds-blue:#dcebf0;
   --ds-warm:#f3ddc5;
@@ -655,409 +655,264 @@ main .team-portrait {
   --ds-green:#9ab600;
   --ds-line:rgba(65,89,82,.24);
 }
-
-html, body { background:var(--ds-canvas) !important; }
-body { color:var(--ds-ink) !important; }
-
-header.site-header {
-  position:relative !important;
-  z-index:50 !important;
-  min-width:0 !important;
-  box-sizing:border-box !important;
-  border:1px solid var(--ds-line) !important;
-  border-radius:22px !important;
-  background:var(--ds-shell) !important;
-  overflow:visible !important;
-}
-header.site-header > a {
-  display:flex !important;
-  flex:0 0 auto !important;
-  align-items:center !important;
-  min-width:0 !important;
-  height:auto !important;
-  overflow:visible !important;
-}
-html body header.site-header img.brand-logo {
-  display:block !important;
-  flex:0 0 auto !important;
-  width:118px !important;
-  max-width:118px !important;
-  height:auto !important;
-  max-height:54px !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  overflow:visible !important;
-}
-header.site-header .brand-logo,
-footer.site-footer .brand-logo { border-radius:0 !important; }
-
+html,body { background:#fff !important; color:var(--ds-ink) !important; }
+header.site-header { box-sizing:border-box !important; border-radius:22px !important; }
 main {
   box-sizing:border-box !important;
-  width:min(calc(100% - 36px), 1760px) !important;
-  max-width:1760px !important;
-  margin:18px auto 24px !important;
-  padding:clamp(14px, 2vw, 28px) !important;
-  display:flex !important;
-  flex-direction:column !important;
-  gap:clamp(14px, 1.5vw, 22px) !important;
+  width:min(calc(100% - 40px),2100px) !important;
+  max-width:2100px !important;
+  margin:18px auto 26px !important;
+  padding:clamp(12px,1.5vw,22px) !important;
   border:1px solid var(--ds-line) !important;
-  border-radius:32px !important;
+  border-radius:34px !important;
   background:var(--ds-shell) !important;
 }
-
 main > section {
   box-sizing:border-box !important;
-  width:100% !important;
-  max-width:none !important;
-  margin-inline:0 !important;
-  border-radius:26px !important;
-  background-color:var(--ds-sage) !important;
+  border-radius:28px !important;
 }
-
-/* Keep legacy white cards from reading as unrelated nested boxes. */
-html body main > section :is(article,[class*="-card"],[class*="-tile"]):not(.team-card):not(.team-portrait) {
+main :is(article,[class*="-card"],[class*="-tile"],[class*="-gallery"],[class*="-media"],figure,picture) {
   border-radius:22px !important;
-  border-color:var(--ds-line) !important;
-  background-color:var(--ds-paper) !important;
 }
-html body main .brand-model {
-  border:1px solid var(--ds-line) !important;
-  border-radius:26px !important;
-  background:var(--ds-blue) !important;
-}
-html body main .brand-model:nth-child(even) { background:var(--ds-warm) !important; }
-html body main .brand-model > img { border-radius:18px 18px 14px 14px !important; }
-
-/* Catch image edges even when legacy page selectors set square corners. */
-html body main figure,
-html body main picture,
-html body main .model-photo-carousel figure,
-html body main .installation-carousel figure,
-html body main .curated-model-images figure,
-html body main .compare-model-card figure,
-html body main .brand-model figure,
-html body main [class*="gallery"] figure {
+main figure,
+main picture,
+main .model-photo-carousel figure,
+main .installation-carousel figure,
+main .duo-alta-photo-grid figure,
+main .variant-media figure,
+main .duo-classic-media figure,
+main .three-story-detail-gallery figure,
+main .three-story-brochure-gallery figure,
+main .three-story-enclosure-gallery figure,
+main .curated-model-images figure,
+main .team-portrait {
   box-sizing:border-box !important;
+  overflow:hidden !important;
+  border-radius:22px !important;
+  clip-path:inset(0 round 22px) !important;
+}
+main img:not(.brand-logo),
+main picture img:not(.brand-logo),
+main figure img:not(.brand-logo),
+main [class*="gallery"] img:not(.brand-logo),
+main [class*="carousel"] img:not(.brand-logo) {
+  border-radius:18px !important;
+}
+main .team-portrait { border-radius:50% !important; clip-path:circle(50% at 50% 50%) !important; }
+main .team-portrait img { border-radius:50% !important; object-position:center 16% !important; }
+main .team-portrait-fallback {
+  position:absolute !important;
+  inset:0 !important;
+  display:grid !important;
+  width:100% !important;
+  height:100% !important;
+  place-items:center !important;
+  border-radius:50% !important;
+  background:var(--ds-green) !important;
+  color:#26302c !important;
+  font-size:clamp(34px,5vw,64px) !important;
+  font-weight:700 !important;
+  letter-spacing:.04em !important;
+}
+html body main.variant-page .variant-media figure,
+html body main.duo-classic-page .duo-classic-media figure,
+html body main.variant-page .three-story-detail-gallery figure,
+html body main.variant-page .three-story-brochure-gallery figure,
+html body main.variant-page .three-story-enclosure-gallery figure {
   overflow:hidden !important;
   border-radius:24px !important;
   clip-path:inset(0 round 24px) !important;
-  background-color:var(--ds-sage) !important;
 }
-
-html body main img:not(.brand-logo),
-html body main figure img:not(.brand-logo),
-html body main picture img:not(.brand-logo),
-html body main [class*="gallery"] img:not(.brand-logo),
-html body main [class*="carousel"] img:not(.brand-logo) {
+html body main.variant-page .variant-media figure img,
+html body main.duo-classic-page .duo-classic-media figure img,
+html body main.variant-page .three-story-detail-gallery figure img,
+html body main.variant-page .three-story-brochure-gallery figure img,
+html body main.variant-page .three-story-enclosure-gallery figure img,
+html body main.alta-page .alta-gallery .model-photo-carousel img,
+html body main.alta-page .trio-full-door-option .model-photo-carousel img,
+html body main.installation-page .installation-carousel figure img {
   border-radius:18px !important;
-}
-
-/* Use actual aspect ratios in installation galleries, while keeping a
-   compact, consistent stage so one portrait cannot stretch an entire page. */
-html body main .installation-page__gallery {
-  display:grid !important;
-  grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr) !important;
-  align-items:center !important;
-  gap:clamp(18px,2.6vw,38px) !important;
-  padding:clamp(24px,3vw,46px) !important;
-  border:1px solid var(--ds-line) !important;
-  background:var(--ds-blue) !important;
-}
-html body main .installation-page__gallery > div:first-child {
-  min-width:0 !important;
-  padding:clamp(12px,1.5vw,22px) !important;
-  color:var(--ds-ink) !important;
-}
-html body main .installation-page__gallery > div:first-child :is(h2,p,.eyebrow) {
-  color:var(--ds-ink) !important;
-}
-html body main .installation-carousel { min-width:0 !important; }
-html body main .installation-carousel figure {
-  display:flex !important;
-  width:100% !important;
-  height:clamp(330px,42vw,590px) !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:12px !important;
-  align-items:center !important;
-  justify-content:center !important;
-  border:1px solid var(--ds-line) !important;
-  background:var(--ds-sage) !important;
-}
-html body main .installation-carousel figure img {
-  width:100% !important;
-  height:100% !important;
-  min-height:0 !important;
-  max-height:100% !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  background:transparent !important;
-}
-html body main .installation-carousel__controls {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:16px !important;
-  margin-top:14px !important;
-}
-html body main .installation-carousel__controls button {
-  display:grid !important;
-  place-items:center !important;
-  width:44px !important;
-  height:44px !important;
-  border:1px solid var(--ds-line) !important;
-  border-radius:50% !important;
-  background:var(--ds-shell) !important;
-  color:var(--ds-ink) !important;
-  cursor:pointer !important;
-}
-
-/* Variant and finish pages share one warm, rounded, high contrast system.
-   Photo tiles inherit color from their page instead of becoming white cards. */
-html body main.variant-page > section,
-html body main.alta-page > section,
-html body main.duo-classic-page > section {
-  border:1px solid var(--ds-line) !important;
-}
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-hero,.alta-hero,.duo-classic-hero) {
-  border-radius:30px !important;
-  background:var(--ds-sage) !important;
-}
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-hero,.alta-hero,.duo-classic-hero) figure,
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-hero,.alta-hero,.duo-classic-hero) > img {
-  overflow:hidden !important;
-  border-radius:24px !important;
-  background:var(--ds-blue) !important;
-}
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-media,.alta-gallery,.duo-classic-media,.three-story-detail-gallery,.three-story-brochure,.three-story-enclosure) {
-  border:1px solid var(--ds-line) !important;
-  border-radius:28px !important;
-  background:var(--ds-blue) !important;
-}
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-media,.alta-gallery,.duo-classic-media,.three-story-detail-gallery,.three-story-brochure,.three-story-enclosure) figure {
-  padding:8px !important;
-  border:0 !important;
-  border-radius:22px !important;
-  background:var(--ds-sage) !important;
-}
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-intro,.alta-intro,.duo-classic-intro,.variant-callout,.alta-story,.duo-classic-specs) {
-  border:1px solid var(--ds-line) !important;
-  border-radius:24px !important;
-  background:var(--ds-sage) !important;
-}
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-hero,.alta-hero,.duo-classic-hero) :is(h1,h2,h3,p,.eyebrow),
-html body main:is(.variant-page,.alta-page,.duo-classic-page) :is(.variant-media,.alta-gallery,.duo-classic-media,.three-story-detail-gallery,.three-story-brochure,.three-story-enclosure) :is(h2,h3,p,.eyebrow) {
-  color:var(--ds-ink) !important;
-}
-
-/* Flatten the Florida gallery to one composed card per model. */
-html body main.curated-gallery > .curated-models {
-  padding:0 !important;
-  border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-}
-html body main.curated-gallery .curated-model-card {
-  grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr) !important;
-  border-radius:26px !important;
-}
-html body main.curated-gallery .curated-model-images figure {
-  padding:0 !important;
-  border:0 !important;
-  border-radius:20px !important;
-  background:transparent !important;
-}
-html body main.curated-gallery .curated-model-images figure img {
-  border-radius:18px !important;
-}
-
-html body main.installation-page > .installation-page__intro,
-html body main.installation-page > .installation-hero {
-  min-height:0 !important;
-  padding:clamp(28px,4vw,58px) !important;
-  border:1px solid var(--ds-line) !important;
-  background:var(--ds-sage) !important;
-  color:var(--ds-ink) !important;
-}
-html body main.installation-page > .installation-page__intro :is(h1,p,.eyebrow),
-html body main.installation-page > .installation-hero :is(h1,p,.brand-kicker) {
-  color:var(--ds-ink) !important;
-}
-
-/* Florida installs: balanced copy and same-size image windows, without a
-   giant, undifferentiated strip of photos. */
-html body main.curated-gallery > .curated-gallery-intro {
-  min-height:0 !important;
-  padding:clamp(28px,4vw,56px) !important;
-  border:1px solid var(--ds-line) !important;
-  background:var(--ds-sage) !important;
-}
-html body main.curated-gallery > .curated-models {
-  display:flex !important;
-  flex-direction:column !important;
-  gap:16px !important;
-  padding:clamp(16px,2vw,28px) !important;
-  border:1px solid var(--ds-line) !important;
-  background:var(--ds-blue) !important;
-}
-html body main.curated-gallery .curated-model-card {
-  display:grid !important;
-  grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr) !important;
-  align-items:center !important;
-  gap:clamp(16px,2vw,28px) !important;
-  padding:clamp(16px,2vw,28px) !important;
-  border:1px solid var(--ds-line) !important;
-  border-radius:24px !important;
-  background:var(--ds-sage) !important;
-}
-html body main.curated-gallery .curated-model-card:nth-child(even) { background:var(--ds-warm) !important; }
-html body main.curated-gallery .curated-model-copy,
-html body main.curated-gallery .curated-model-copy :is(h2,p,.eyebrow,a) {
-  color:var(--ds-ink) !important;
-}
-html body main.curated-gallery .curated-model-images {
-  display:grid !important;
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  gap:12px !important;
-}
-html body main.curated-gallery .curated-model-images figure {
-  display:flex !important;
-  height:clamp(220px,24vw,340px) !important;
-  min-height:0 !important;
-  margin:0 !important;
-  padding:10px !important;
-  align-items:center !important;
-  justify-content:center !important;
-  background:var(--ds-paper) !important;
-}
-html body main.curated-gallery .curated-model-images figure img {
-  width:100% !important;
-  height:100% !important;
-  object-fit:contain !important;
-}
-
-/* Muted, colored surfaces for the remaining editorial and trust pages. */
-html body main.gh-page > :is(.gh-hero,.gh-meaning,.gh-quote) {
-  padding:clamp(26px,3vw,48px) !important;
-  border:1px solid var(--ds-line) !important;
-  border-radius:26px !important;
-  background:var(--ds-sage) !important;
-  color:var(--ds-ink) !important;
-}
-html body main.gh-page > .gh-quote {
-  background:var(--ds-ink) !important;
-  color:#fff !important;
-}
-html body main.gh-page > .gh-quote :is(blockquote,p,a) { color:#fff !important; }
-html body main.gh-page > .gh-hero {
-  display:grid !important;
-  grid-template-columns:minmax(0,1fr) minmax(300px,.8fr) !important;
-  align-items:center !important;
-  justify-items:stretch !important;
-  text-align:left !important;
-}
-html body main.gh-page > .gh-hero > img {
-  display:block !important;
-  width:min(100%,540px) !important;
-  height:auto !important;
-  max-height:560px !important;
-  margin-inline:auto !important;
   object-fit:contain !important;
   object-position:center !important;
 }
-html body main.gh-page .gh-meaning article,
-html body main.gh-page .gh-meaning > div > article {
-  background:var(--ds-paper) !important;
-  border-color:var(--ds-line) !important;
-  border-radius:20px !important;
-  color:var(--ds-ink) !important;
-}
-html body main.testimonials-page > section,
-html body main.video-library-page > section,
-html body main.news-page > section {
-  border:1px solid var(--ds-line) !important;
-  color:var(--ds-ink) !important;
-}
-html body main.testimonials-page > :is(.testimonials-hero,.testimonials-intro,.testimonial-stories,.testimonials-cta),
-html body main.video-library-page > :is(.video-library-lead,.video-library-grid-section,.video-library-note),
-html body main.news-page > :is(.news-hero,.news-list) {
-  padding:clamp(24px,3vw,46px) !important;
-  border-radius:26px !important;
-  background:var(--ds-sage) !important;
-}
-html body main.testimonials-page :is(.testimonial-card,.testimonial-story),
-html body main.video-library-page :is(.video-card,.video-library-card),
-html body main.news-page .news-card {
-  border:1px solid var(--ds-line) !important;
-  border-radius:22px !important;
-  background:var(--ds-blue) !important;
-  color:var(--ds-ink) !important;
-}
-html body main.testimonials-page .testimonial-story:nth-child(3n+1) { background:var(--ds-sage) !important; }
-html body main.testimonials-page .testimonial-story:nth-child(3n+2) { background:var(--ds-blue) !important; }
-html body main.testimonials-page .testimonial-story:nth-child(3n) { background:var(--ds-warm) !important; }
-html body main.testimonials-page .testimonial-detail { background:transparent !important; color:var(--ds-ink) !important; }
-html body main.video-library-page .video-preview {
-  overflow:hidden !important;
-  border-radius:20px !important;
-  background:var(--ds-blue) !important;
-}
-html body main.video-library-page .video-library-card-copy { background:var(--ds-sage) !important; }
-html body main.video-library-page .video-library-card-copy :is(h2,h3,p,a) { color:var(--ds-ink) !important; }
-html body main.news-page .news-list-intro { background:transparent !important; }
-html body main.testimonials-page :is(.testimonial-card,.testimonial-story) :is(h2,h3,p,blockquote),
-html body main.video-library-page :is(.video-card,.video-library-card) :is(h2,h3,p),
-html body main.news-page .news-card :is(h2,h3,p,span) { color:var(--ds-ink) !important; }
-html body main.testimonials-page .testimonials-cta,
-html body main.video-library-page .video-library-note {
-  background:var(--ds-ink) !important;
-  color:#fff !important;
-}
-html body main.testimonials-page .testimonials-cta :is(.eyebrow,h2,p),
-html body main.video-library-page .video-library-note :is(.eyebrow,h2,p) { color:#fff !important; }
-html body main.news-page .news-list { background:var(--ds-warm) !important; }
 
-html body footer.site-footer {
-  box-sizing:border-box !important;
-  width:min(calc(100% - 36px),1760px) !important;
-  max-width:1760px !important;
-  margin:0 auto 18px !important;
-  border-radius:26px !important;
-}
-
+/* Keep the photo galleries uniform and show each whole installation. */
 @media (min-width:901px) {
-  header.site-header {
-    display:flex !important;
-    width:min(calc(100% - 72px),1760px) !important;
-    min-height:76px !important;
-    height:auto !important;
-    margin:14px auto 0 !important;
-    padding:10px 24px !important;
-    align-items:center !important;
+  html body main.variant-page .variant-hero,
+  html body main.duo-classic-page .duo-classic-hero,
+  html body main.alta-page .alta-hero {
+    border-radius:30px !important;
   }
-  header.site-header .brand-logo { width:124px !important; max-width:124px !important; max-height:58px !important; object-fit:contain !important; }
+  html body main.variant-page .variant-hero figure,
+  html body main.duo-classic-page .duo-classic-hero figure {
+    border-radius:24px !important;
+    clip-path:inset(0 round 24px) !important;
+    background:var(--ds-blue) !important;
+  }
+  html body main.variant-page .variant-hero figure img,
+  html body main.duo-classic-page .duo-classic-hero figure img {
+    width:100% !important;
+    height:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+    border-radius:18px !important;
+  }
+  html body main.alta-page .alta-hero > img {
+    border-radius:24px !important;
+    object-fit:contain !important;
+  }
+  main .variant-media figure,
+  main .duo-classic-media figure,
+  main .three-story-detail-gallery figure,
+  main .three-story-brochure-gallery figure,
+  main .three-story-enclosure-gallery figure {
+    height:clamp(300px,25vw,390px) !important;
+    min-height:0 !important;
+    padding:10px !important;
+    background:var(--ds-paper) !important;
+  }
+  main .variant-media figure img,
+  main .duo-classic-media figure img,
+  main .three-story-detail-gallery figure img,
+  main .three-story-brochure-gallery figure img,
+  main .three-story-enclosure-gallery figure img {
+    width:100% !important;
+    height:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+  html body main.variant-page .variant-media figure,
+  html body main.duo-classic-page .duo-classic-media figure,
+  html body main.variant-page .three-story-detail-gallery figure,
+  html body main.variant-page .three-story-brochure-gallery figure,
+  html body main.variant-page .three-story-enclosure-gallery figure {
+    border-radius:24px !important;
+    clip-path:inset(0 round 24px) !important;
+  }
+  html body main.variant-page .variant-media figure img,
+  html body main.duo-classic-page .duo-classic-media figure img,
+  html body main.variant-page .three-story-detail-gallery figure img,
+  html body main.variant-page .three-story-brochure-gallery figure img,
+  html body main.variant-page .three-story-enclosure-gallery figure img {
+    border-radius:18px !important;
+    object-fit:contain !important;
+  }
+  main .alta-gallery .model-photo-carousel figure,
+  main .trio-full-door-option .model-photo-carousel figure {
+    height:clamp(340px,31vw,480px) !important;
+    min-height:0 !important;
+    padding:10px !important;
+    background:var(--ds-paper) !important;
+  }
+  main .alta-gallery .model-photo-carousel img,
+  main .trio-full-door-option .model-photo-carousel img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+  main .duo-alta-photo-grid {
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+  main .duo-alta-photo-grid figure {
+    height:clamp(230px,21vw,310px) !important;
+    min-height:0 !important;
+    padding:8px !important;
+    background:var(--ds-paper) !important;
+  }
+  main .duo-alta-photo-grid img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+  main .installation-carousel figure {
+    height:clamp(400px,44vw,620px) !important;
+    min-height:0 !important;
+    padding:10px !important;
+  }
+  main .installation-carousel figure img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+  }
+  html body main.installation-page .installation-carousel figure img {
+    object-fit:contain !important;
+    border-radius:18px !important;
+  }
+  html body main.alta-page .alta-gallery .model-photo-carousel figure,
+  html body main.alta-page .trio-full-door-option .model-photo-carousel figure {
+    border-radius:24px !important;
+    clip-path:inset(0 round 24px) !important;
+  }
+  html body main.alta-page .alta-gallery .model-photo-carousel img,
+  html body main.alta-page .trio-full-door-option .model-photo-carousel img {
+    object-fit:contain !important;
+    border-radius:18px !important;
+  }
+}
+
+/* Recover readable contrast without flattening intentional charcoal or color
+   panels elsewhere in the site. */
+main:is(.variant-page,.alta-page,.duo-classic-page) :is(
+  .variant-intro,.variant-callout,.alta-intro,.alta-story,.duo-classic-intro,
+  .duo-classic-specs,.three-story-detail-gallery,.three-story-brochure,.three-story-enclosure
+) :is(h1,h2,h3,p,li,a,.eyebrow) { color:var(--ds-ink) !important; }
+main .factory-brochures-disclaimer,
+main .factory-brochures-disclaimer :is(h2,h3,p,a,.eyebrow),
+main .factory-brochure-card :is(h2,h3,p,a,.eyebrow) { color:var(--ds-ink) !important; }
+main .factory-brochures-disclaimer { background:var(--ds-blue) !important; }
+main .compare-page-intro h1,
+main .factory-brochures-hero h1 { font-size:clamp(34px,3.2vw,52px) !important; line-height:1.04 !important; }
+main .compare-specification-sheet {
+  display:grid !important;
+  grid-template-columns:minmax(0,.9fr) minmax(280px,1.1fr) !important;
+  align-items:center !important;
+  gap:clamp(20px,3vw,44px) !important;
+  width:100% !important;
+  min-height:0 !important;
+  padding:clamp(24px,3vw,48px) !important;
+  background:var(--ds-warm) !important;
+  color:var(--ds-ink) !important;
+}
+main .compare-specification-sheet :is(h2,h3,p,a,.eyebrow) { color:var(--ds-ink) !important; }
+main .compare-specification-sheet img { width:100% !important; height:auto !important; object-fit:contain !important; }
+main .video-library-grid-section,
+main .team-directory,
+main .factory-brochures-list,
+main .compare-model-grid { background:var(--ds-paper) !important; }
+main.installation-page--builddown > .installation-page__intro {
+  background:#383d3f !important;
+  color:#fff !important;
+}
+main.installation-page--builddown > .installation-page__intro :is(h1,h2,p,.eyebrow) {
+  color:#fff !important;
+}
+main.alta-page > .alta-intro {
+  width:min(100%,1500px) !important;
+  margin-inline:auto !important;
+  text-align:center !important;
+}
+main.alta-page > .alta-gallery {
+  grid-template-columns:minmax(220px,.34fr) minmax(0,1.66fr) !important;
+  gap:clamp(16px,2vw,28px) !important;
+  padding:clamp(22px,2.2vw,38px) !important;
 }
 
 @media (max-width:900px) {
   main { width:calc(100% - 20px) !important; margin:10px auto 16px !important; padding:10px !important; border-radius:24px !important; }
   main > section { border-radius:20px !important; }
-  html body main .installation-page__gallery { grid-template-columns:minmax(0,1fr) !important; gap:12px !important; padding:18px !important; }
-  html body main .installation-carousel figure { height:clamp(300px,64vw,500px) !important; }
-  html body main.variant-page > .variant-hero,
-  html body main.alta-page > .alta-hero,
-  html body main.duo-classic-page > .duo-classic-hero { min-height:0 !important; }
-  html body main.gh-page > .gh-hero { grid-template-columns:minmax(0,1fr) !important; }
-  html body main.curated-gallery .curated-model-card { grid-template-columns:minmax(0,1fr) !important; }
-  html body main.curated-gallery .curated-model-images figure { height:clamp(190px,52vw,310px) !important; }
-  html body main.testimonials-page > :is(.testimonials-hero,.testimonials-intro,.testimonial-stories,.testimonials-cta),
-  html body main.video-library-page > :is(.video-library-lead,.video-library-grid-section,.video-library-note),
-  html body main.news-page > :is(.news-hero,.news-list),
-  html body main.gh-page > :is(.gh-hero,.gh-meaning,.gh-quote) { padding:22px !important; }
-  footer.site-footer { width:calc(100% - 20px) !important; margin-bottom:12px !important; }
+  main .duo-alta-photo-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:12px !important; }
+  main .duo-alta-photo-grid figure { height:clamp(210px,44vw,300px) !important; }
+  main .duo-alta-photo-grid figure img { object-fit:contain !important; }
+  main .compare-specification-sheet { grid-template-columns:minmax(0,1fr) !important; }
+  main .installation-page__gallery { grid-template-columns:minmax(0,1fr) !important; gap:14px !important; }
+  main .installation-carousel figure { height:clamp(340px,68vw,520px) !important; min-height:0 !important; }
 }
-
 @media (max-width:560px) {
-  html body main.curated-gallery .curated-model-images { grid-template-columns:minmax(0,1fr) !important; }
-  html body main.curated-gallery .curated-model-images figure { height:auto !important; min-height:0 !important; }
-  html body main.curated-gallery .curated-model-images figure img { height:auto !important; max-height:440px !important; }
+  main .duo-alta-photo-grid figure { height:auto !important; aspect-ratio:4 / 5 !important; }
+  main .duo-alta-photo-grid figure img { height:100% !important; }
 }
