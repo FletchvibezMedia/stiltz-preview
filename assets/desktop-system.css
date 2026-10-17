@@ -1739,3 +1739,225 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
     color: var(--ds-ink, #383d3f) !important;
   }
 }
+
+/* Mobile model-page corrections: keep the hero and every gallery image fully
+   visible, rounded, and sized to the available column. Long galleries become
+   swipeable image tracks instead of tiny side-by-side thumbnails. */
+@media (max-width: 900px) {
+  html body main.variant-page > .variant-hero,
+  html body main.trio-page > .variant-hero,
+  html body main.alta-page > .alta-hero,
+  html body main.duo-classic-page > .duo-classic-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 20px !important;
+  }
+
+  html body main.variant-page > .variant-hero > figure,
+  html body main.trio-page > .variant-hero > figure,
+  html body main.duo-classic-page > .duo-classic-hero > figure {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    clip-path: inset(0 round 24px) !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page > .variant-hero > figure > img,
+  html body main.variant-page > .variant-hero > figure > picture,
+  html body main.trio-page > .variant-hero > figure > img,
+  html body main.duo-classic-page > .duo-classic-hero > figure > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 24px !important;
+    clip-path: inset(0 round 24px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
+  html body main.alta-page > .alta-hero > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 24px !important;
+    clip-path: inset(0 round 24px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page > .variant-media,
+  html body main.trio-page > .variant-media,
+  html body main.duo-classic-page > .duo-classic-media,
+  html body main.alta-page > .alta-gallery,
+  html body main.alta-page > .trio-full-door-option,
+  html body main[class*="three-story"] .three-story-detail-gallery,
+  html body main[class*="three-story"] .three-story-enclosure,
+  html body main[class*="three-story"] .three-story-brochure {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 22px !important;
+  }
+
+  html body main.variant-page > .variant-media > div:last-child,
+  html body main.trio-page > .variant-media > div:last-child,
+  html body main.duo-classic-page > .duo-classic-media > div:last-child,
+  html body main[class*="three-story"] .three-story-detail-gallery > div:last-child,
+  html body main[class*="three-story"] .three-story-enclosure-gallery,
+  html body main[class*="three-story"] .three-story-brochure-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  html body main.variant-page > .variant-media > div:last-child > figure,
+  html body main.trio-page > .variant-media > div:last-child > figure,
+  html body main.duo-classic-page > .duo-classic-media > div:last-child > figure,
+  html body main[class*="three-story"] .three-story-detail-gallery figure,
+  html body main[class*="three-story"] .three-story-enclosure-gallery figure,
+  html body main[class*="three-story"] .three-story-brochure-gallery figure {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 20px !important;
+    clip-path: inset(0 round 20px) !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page .variant-media figure img,
+  html body main.trio-page .variant-media figure img,
+  html body main.duo-classic-page .duo-classic-media figure img,
+  html body main[class*="three-story"] .three-story-detail-gallery figure img,
+  html body main[class*="three-story"] .three-story-enclosure-gallery figure img,
+  html body main[class*="three-story"] .three-story-brochure-gallery figure img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    border-radius: 20px !important;
+    clip-path: inset(0 round 20px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
+  /* Duo Alta has eight photos; let each photo occupy the full swipe card. */
+  html body main.alta-page > .alta-gallery > .duo-alta-photo-grid {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 0 0 8px !important;
+    scroll-snap-type: x mandatory !important;
+    overscroll-behavior-inline: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  html body main.alta-page .duo-alta-photo-grid > figure {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+    scroll-snap-align: start !important;
+    background: transparent !important;
+  }
+
+  html body main.alta-page .duo-alta-photo-grid > figure > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
+  /* Alta photo carousels (including the 11-photo Trio gallery) need one
+     full-width slide and a natural height on phones, never a clipped panel. */
+  html body main.alta-page .alta-gallery .model-photo-carousel,
+  html body main.alta-page .trio-full-door-option .model-photo-carousel {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    overscroll-behavior-inline: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  html body main.alta-page .model-photo-carousel > figure {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+    scroll-snap-align: start !important;
+    background: transparent !important;
+  }
+
+  html body main.alta-page .model-photo-carousel > figure > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
+  /* Light beige, sage, and pale blue model panels use charcoal copy. Keep
+     their colored/dark feature cards and CTA buttons' intentional white text. */
+  html body main:is(.variant-page, .alta-page, .duo-classic-page, .trio-page, [class*="three-story"])
+    :is(.variant-hero > div, .variant-intro, .variant-callout, .variant-media > div:first-child,
+      .variant-next > div:first-child, .alta-hero > div, .alta-intro, .alta-gallery > div:first-child,
+      .alta-story, .trio-full-door-option > div:first-child, .alta-next > div:first-child,
+      .duo-classic-hero > div, .duo-classic-intro, .duo-classic-media > div:first-child,
+      .duo-classic-story, .duo-classic-specs, .duo-classic-next > div:first-child,
+      .three-story-detail-gallery > div:first-child, .three-story-enclosure > div:first-child,
+      .three-story-brochure > div:first-child)
+    :is(h1, h2, h3, h4, p, li, blockquote, .eyebrow) {
+    color: var(--ds-ink, #383d3f) !important;
+  }
+}
