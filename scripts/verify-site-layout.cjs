@@ -8,7 +8,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
  await new Promise(r=>server.listen(0,'127.0.0.1',r));
  const browser=await chromium.launch({headless:true});const reports=[];fs.mkdirSync('layout-checks/site',{recursive:true});
  try{
-  for(const viewport of [{width:1920,height:1080},{width:2560,height:1440},{width:390,height:844},{width:430,height:932}]){
+  for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:2560,height:1440},{width:390,height:844},{width:430,height:932}]){
    const page=await browser.newPage({viewport});
    for(const route of (viewport.width<901?['']:routes)){
     await page.goto(`http://127.0.0.1:${server.address().port}/${route?route+'/':''}`,{waitUntil:'load'});

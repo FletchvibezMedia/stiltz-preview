@@ -2448,17 +2448,22 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
 /* Keep these final surface/foreground pairs together. Important declarations
    in this layer outrank the older unlayered rescue overrides. */
 @layer verified-surfaces {
+  main a.cta, main a.finance-cta { background: #383d3f !important; }
+  main a.cta, main a.cta *, main a.finance-cta, main a.finance-cta * { color: #fff !important; }
+  main.testimonials-page .testimonials-cta > a.cta { background: #fff !important; color: #383d3f !important; }
+  main.testimonials-page .testimonials-cta > a.cta * { color: #383d3f !important; }
+
   main .social-hub-link { background: #fff !important; color: #383d3f !important; }
   main .social-hub-link * { color: #383d3f !important; }
   main .social-hub-link small { color: #59656a !important; }
   main .social-hub-link svg { stroke: currentColor !important; }
+  main .instagram-follow-link { background: #fff !important; }
   main .instagram-follow-link, main .instagram-follow-link * { color: #383d3f !important; }
   main .brand-hero-content small { color: #59656a !important; }
   main .brand-contact-band { background: #383d3f !important; }
   main .brand-contact-band * { color: #fff !important; }
   main .brand-button.green, main .brand-button.green *,
-  main a.cta, main a.cta *, main a.finance-cta, main a.finance-cta *,
-  main .contact-page-form button, main .contact-form button,
+    main .contact-page-form button, main .contact-form button,
   main .gh-quote a, main .gh-quote a * { color: #202628 !important; }
   main .contact-page-request button { color: #202628 !important; }
   main .team-contact-band { background: #f3ddc5 !important; }
@@ -2469,8 +2474,8 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
   main .about-principles > article:nth-child(2) *,
   main .coastal-reasons > article:last-child *,
   main .contact-page-location * { color: #fff !important; }
-  main .coastal-reasons > article:nth-child(2) { background: #f3ddc5 !important; }
-  main .coastal-reasons > article:nth-child(2) * { color: #383d3f !important; }
+  main .coastal-reasons > article:nth-child(3) { background: #f3ddc5 !important; }
+  main .coastal-reasons > article:nth-child(3) * { color: #383d3f !important; }
   main .alta-gallery .eyebrow { color: #383d3f !important; }
   main .video-preview { background: #383d3f !important; color: #fff !important; }
   main .video-preview-copy, main .video-preview-copy * { color: #fff !important; }
@@ -2479,6 +2484,22 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
 }
 
 @layer verified-photographs {
+  @media (min-width: 901px) {
+    main.compare-page > .compare-model-grid { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+    main.compare-page .compare-model-card { grid-column: span 3 !important; }
+    main.compare-page .compare-model-card:nth-of-type(n+5) { grid-column: span 2 !important; }
+    main.compare-page .compare-model-card > figure { height: clamp(400px, 30vw, 520px) !important; }
+    main.compare-page .compare-model-card > figure > img { height: 100% !important; width: auto !important; }
+    main .installation-carousel > figure {
+      height: clamp(420px, 38vw, 680px) !important; min-height: 0 !important; max-height: 680px !important;
+      display: flex !important; justify-content: center !important; align-items: center !important;
+      background: transparent !important; box-shadow: none !important;
+    }
+    main .installation-carousel > figure > img { height: 100% !important; width: auto !important; }
+    main .model-photo-carousel > figure { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+    main .model-photo-carousel__controls { justify-content: center !important; }
+  }
+
   @media (min-width: 901px) {
     main img:is([src*="/models/"], [src*="/installations/"], [src*="images/alta/"]) {
       display: block !important;
@@ -2539,6 +2560,7 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
   @media (max-width: 900px) {
     main.brand-home .brand-model > img,
     main.brand-home .real-homes-gallery > figure > img {
+      min-height: 0 !important;
       width: 100% !important;
       height: auto !important;
       max-height: none !important;
