@@ -2444,3 +2444,111 @@ html body main .social-hub .social-hub-links > a.social-hub-link svg {
 html body main .social-hub .social-hub-links > a.social-hub-link small {
   color: #59656a !important;
 }
+
+/* Keep these final surface/foreground pairs together. Important declarations
+   in this layer outrank the older unlayered rescue overrides. */
+@layer verified-surfaces {
+  main .social-hub-link { background: #fff !important; color: #383d3f !important; }
+  main .social-hub-link * { color: #383d3f !important; }
+  main .social-hub-link small { color: #59656a !important; }
+  main .social-hub-link svg { stroke: currentColor !important; }
+  main .instagram-follow-link, main .instagram-follow-link * { color: #383d3f !important; }
+  main .brand-hero-content small { color: #59656a !important; }
+  main .brand-contact-band { background: #383d3f !important; }
+  main .brand-contact-band * { color: #fff !important; }
+  main .brand-button.green, main .brand-button.green *,
+  main a.cta, main a.cta *, main a.finance-cta, main a.finance-cta *,
+  main .contact-page-form button, main .contact-form button,
+  main .gh-quote a, main .gh-quote a * { color: #202628 !important; }
+  main .contact-page-request button { color: #202628 !important; }
+  main .team-contact-band { background: #f3ddc5 !important; }
+  main .team-contact-band, main .team-contact-band * { color: #383d3f !important; }
+  main .about-principles > article:nth-child(2),
+  main .coastal-reasons > article:last-child,
+  main .contact-page-location { background: #383d3f !important; color: #fff !important; }
+  main .about-principles > article:nth-child(2) *,
+  main .coastal-reasons > article:last-child *,
+  main .contact-page-location * { color: #fff !important; }
+  main .coastal-reasons > article:nth-child(2) { background: #f3ddc5 !important; }
+  main .coastal-reasons > article:nth-child(2) * { color: #383d3f !important; }
+  main .alta-gallery .eyebrow { color: #383d3f !important; }
+  main .video-preview { background: #383d3f !important; color: #fff !important; }
+  main .video-preview-copy, main .video-preview-copy * { color: #fff !important; }
+  main .video-fallback { background: #dfeadb !important; }
+  main .video-fallback, main .video-fallback * { color: #383d3f !important; }
+}
+
+@layer verified-photographs {
+  @media (min-width: 901px) {
+    main img:is([src*="/models/"], [src*="/installations/"], [src*="images/alta/"]) {
+      display: block !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      min-height: 0 !important;
+      min-width: 0 !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+      border-radius: 22px !important;
+      clip-path: none !important;
+      justify-self: center !important;
+      align-self: center !important;
+      margin-inline: auto !important;
+      padding: 0 !important;
+    }
+    main .model-photo-carousel > figure {
+      height: clamp(420px, 30vw, 600px) !important;
+      min-height: 0 !important;
+      aspect-ratio: auto !important;
+    }
+    main .duo-alta-photo-grid > figure {
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+    }
+    main .duo-alta-photo-grid > figure > img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+    }
+    main .real-homes-gallery > figure, main .curated-model-images > figure {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: clamp(380px, 30vw, 520px) !important;
+      min-height: 0 !important;
+      aspect-ratio: auto !important;
+      gap: 8px !important;
+      padding: 0 !important;
+    }
+    main .real-homes-gallery > figure > img, main .curated-model-images > figure > img {
+      max-height: calc(100% - 46px) !important;
+      flex: 0 1 auto !important;
+    }
+    main .real-homes-gallery figcaption, main .curated-model-images figcaption {
+      position: static !important;
+      flex: 0 0 auto !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+    }
+  }
+  @media (max-width: 900px) {
+    main.brand-home .brand-model > img,
+    main.brand-home .real-homes-gallery > figure > img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+    }
+    main.brand-home .real-homes-gallery > figure {
+      height: auto !important;
+      min-height: 0 !important;
+      aspect-ratio: auto !important;
+    }
+  }
+}
