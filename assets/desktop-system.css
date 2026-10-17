@@ -2448,6 +2448,9 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
 /* Keep these final surface/foreground pairs together. Important declarations
    in this layer outrank the older unlayered rescue overrides. */
 @layer verified-surfaces {
+  main.installation-page .installation-page__intro a.cta { background: #9ab600 !important; }
+  main.installation-page .installation-page__intro a.cta, main.installation-page .installation-page__intro a.cta * { color: #202628 !important; }
+
   main.curated-gallery .curated-gallery-cta h2 em { color: #383d3f !important; }
 
   main a.cta, main a.finance-cta { background: #383d3f !important; }
@@ -2486,6 +2489,15 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
 }
 
 @layer verified-photographs {
+  @media (min-width: 901px) {
+    main .variant-media figure, main .duo-classic-media figure {
+      height: clamp(320px, 25vw, 480px) !important; min-height: 0 !important; aspect-ratio: auto !important;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      background: transparent !important; padding: 0 !important; border: 0 !important; clip-path: none !important;
+    }
+    main .variant-media figure img, main .duo-classic-media figure img { height: 100% !important; width: auto !important; }
+  }
+
   @media (min-width: 901px) {
     main.compare-page > .compare-model-grid { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
     main.compare-page .compare-model-card { grid-column: span 3 !important; }
