@@ -4,7 +4,7 @@ const path = require('node:path');
 const http = require('node:http');
 const assert = require('node:assert/strict');
 const root = path.resolve(process.argv[2] || '_site');
-const routes = ['stiltz-duo-alta-new-model','stiltz-trio-alta-new-model','stiltz-duo-classic','stiltz-duo-vista','stiltz-duo-thru-car','stiltz-trio-alta-thru-car','trio-alta-three-story','testimonials','stiltz-news','gallery-of-installs-florida','build-down-installations','landing-installations','custom-colors'];
+const routes = ['stiltz-duo-alta-new-model','stiltz-trio-alta-new-model','stiltz-duo-classic','stiltz-duo-vista','stiltz-duo-thru-car','stiltz-trio-alta-thru-car','trio-alta-three-story','testimonials','stiltz-news','gallery-of-installs-florida','build-down-installations','landing-installations','custom-colors','compare'];
 const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'};
 const server = http.createServer((req,res) => {
   let name = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -28,7 +28,7 @@ const failures=[];
      await page.locator('main').waitFor();
      const stats=await page.evaluate(async()=>{
       const main=document.querySelector('main');
-      const images=[...main.querySelectorAll(':is(.variant-hero,.alta-hero,.duo-classic-hero,.variant-media,.duo-classic-media,.model-photo-carousel,.curated-model-images,.installation-carousel) img')].filter(e=>e.getBoundingClientRect().width>0);
+      const images=[...main.querySelectorAll(':is(.variant-hero,.alta-hero,.duo-classic-hero,.variant-media,.duo-classic-media,.model-photo-carousel,.curated-model-images,.installation-carousel,.compare-model-card) img')].filter(e=>e.getBoundingClientRect().width>0);
       const decoded=new Map();
       await Promise.all(images.map(i=>{i.loading='eager';return i.decode().then(()=>decoded.set(i,true),()=>decoded.set(i,false));}));
       const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0 && decoded.get(i),width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,frameHeight:f?.getBoundingClientRect().height,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
@@ -77,6 +77,32 @@ const failures=[];
 
       }
      }
+     if(route==='compare') {
+      assert(await page.evaluate(()=>{
+       const brochure=document.querySelector('.compare-specification-sheet');
+       return [...document.querySelectorAll('.compare-model-card')].every(card=>!!(card.compareDocumentPosition(brochure)&Node.DOCUMENT_POSITION_FOLLOWING));
+      }),'brochure appears before the last model');
+      if(width>900) {
+       const menu=page.locator('.desktop-nav details').first();
+       await menu.locator('summary').click();
+       assert(await menu.evaluate(e=>e.open),'desktop menu did not open');
+       await page.evaluate(()=>window.scrollBy(0,300));
+       await page.waitForFunction(()=>!document.querySelector('.desktop-nav details').open);
+       await page.evaluate(()=>window.scrollTo(0,0));
+       await menu.locator('summary').click();
+      } else {
+       await page.locator('.home-menu').click();
+       assert(await page.locator('#mobile-site-navigation').isVisible(),'mobile menu did not open');
+       await page.evaluate(()=>window.scrollBy(0,300));
+       await page.waitForFunction(()=>document.getElementById('mobile-site-navigation').hidden);
+       await page.evaluate(()=>window.scrollTo(0,0));
+       await page.locator('.home-menu').click();
+      }
+      await page.goto(`http://127.0.0.1:${server.address().port}/stiltz-duo-vista/`,{waitUntil:'load'});
+      await page.goBack({waitUntil:'load'});
+      assert(await page.evaluate(()=>![...document.querySelectorAll('.desktop-nav details')].some(e=>e.open) && document.getElementById('mobile-site-navigation').hidden),'navigation reopened after Back');
+     }
+     await page.evaluate(()=>window.scrollTo(0,0));
      await page.screenshot({path:`layout-checks/${route}-${width}.png`,fullPage:true});
      console.log('PASS',route,width);
     }catch(e){failures.push(`${route} at ${width}: ${e.message}`);console.error('FAIL',failures.at(-1));await page.screenshot({path:`layout-checks/FAIL-${route}-${width}.png`,fullPage:true});}

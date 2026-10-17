@@ -151,12 +151,26 @@ const navigationGroups = [`);
     .replace("'/custom-colors/': [customColorImages],", "'/custom-colors/': [customPaintImages],");
   navigation += `
 
-// A normal static-page navigation should never leave a desktop <details>
-// menu visually open while the browser moves to its next document.
+// Reset both navigation surfaces on scrolling and history restoration.
+function closeNavigationMenus() {
+  document.querySelectorAll('.desktop-nav details[open], #mobile-site-navigation details[open]')
+    .forEach((menu) => { menu.open = false; });
+  const mobile = document.getElementById('mobile-site-navigation');
+  const toggle = document.querySelector('.home-menu');
+  if (mobile) mobile.hidden = true;
+  if (toggle) {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation');
+  }
+}
+window.addEventListener('scroll', closeNavigationMenus, { passive: true });
+['pagehide', 'pageshow', 'popstate'].forEach((name) => window.addEventListener(name, closeNavigationMenus));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeNavigationMenus();
+});
 document.addEventListener('click', (event) => {
-  const link = event.target.closest('.desktop-nav details a[href]');
-  if (!link) return;
-  document.querySelectorAll('.desktop-nav details[open]').forEach((menu) => { menu.open = false; });
+  const link = event.target.closest('.desktop-nav a[href], #mobile-site-navigation a[href]');
+  if (link) closeNavigationMenus();
 }, true);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -189,13 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
     financeVideo.closest('figure')?.addEventListener('pointerleave', () => financeVideo.pause());
   }
 
-  // The compare page reads as one deliberate sequence: two models,
-  // supporting context, two more models, then the final three.
+  // Keep the brochure reference below the complete model comparison.
   if (sitePathname() === '/compare/') {
     const grid = document.querySelector('.compare-model-grid');
-    const context = document.querySelector('.compare-specification-sheet');
-    const secondCard = grid?.querySelectorAll('.compare-model-card')[1];
-    if (grid && context && secondCard) secondCard.after(context);
+    const brochure = document.querySelector('.compare-specification-sheet');
+    if (grid && brochure) grid.after(brochure);
   }
 
 });
@@ -307,7 +319,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (html.includes('<behold-widget')) {
     html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#e7efec;border:1px solid #aebfba;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
   }
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v32">\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v33">\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }

@@ -2380,3 +2380,38 @@ html body main.news-page .news-card:not(:nth-child(4n + 3)),
 html body main.news-page .news-card:not(:nth-child(4n + 3)) * {
   color: #202628 !important;
 }
+
+/* Round the photograph's own edges, including portrait images in comparison. */
+html body main.compare-page .compare-model-card > figure {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+html body main.compare-page .compare-model-card > figure > img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  aspect-ratio: auto !important;
+  border-radius: 22px !important;
+  clip-path: none !important;
+  object-fit: contain !important;
+}
+@media (max-width: 900px) {
+  html body main.compare-page .compare-model-card > figure {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+  html body main.compare-page .compare-model-card > figure > img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+}
