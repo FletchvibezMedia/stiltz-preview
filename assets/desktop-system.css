@@ -2448,6 +2448,7 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
 /* Keep these final surface/foreground pairs together. Important declarations
    in this layer outrank the older unlayered rescue overrides. */
 @layer verified-surfaces {
+  main.about-page { background: #f1e9dc !important; }
   main :is(h1,h2,h3) em { color: inherit !important; }
   main .installation-assurance span { color: #383d3f !important; }
   main .installation-carousel__controls span { color: #383d3f !important; }
