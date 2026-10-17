@@ -641,7 +641,7 @@ main .team-portrait {
   }
 }
 
-/* Sitewide finish pass v13. These rules are intentionally outside the
+/* Sitewide finish pass v14. These rules are intentionally outside the
    desktop media query above: mobile and desktop now share the same palette,
    rounded media frames, and predictable content width. */
 :root {
@@ -944,6 +944,11 @@ html body main.gh-page > :is(.gh-hero,.gh-meaning,.gh-quote) {
   background:var(--ds-sage) !important;
   color:var(--ds-ink) !important;
 }
+html body main.gh-page > .gh-quote {
+  background:var(--ds-ink) !important;
+  color:#fff !important;
+}
+html body main.gh-page > .gh-quote :is(blockquote,p,a) { color:#fff !important; }
 html body main.gh-page > .gh-hero {
   display:grid !important;
   grid-template-columns:minmax(0,1fr) minmax(300px,.8fr) !important;
@@ -1004,7 +1009,12 @@ html body main.testimonials-page :is(.testimonial-card,.testimonial-story) :is(h
 html body main.video-library-page :is(.video-card,.video-library-card) :is(h2,h3,p),
 html body main.news-page .news-card :is(h2,h3,p,span) { color:var(--ds-ink) !important; }
 html body main.testimonials-page .testimonials-cta,
-html body main.video-library-page .video-library-note,
+html body main.video-library-page .video-library-note {
+  background:var(--ds-ink) !important;
+  color:#fff !important;
+}
+html body main.testimonials-page .testimonials-cta :is(.eyebrow,h2,p),
+html body main.video-library-page .video-library-note :is(.eyebrow,h2,p) { color:#fff !important; }
 html body main.news-page .news-list { background:var(--ds-warm) !important; }
 
 html body footer.site-footer {
