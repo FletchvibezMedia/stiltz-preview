@@ -40,7 +40,7 @@ const failures=[];
       assert(i.loaded,`image failed: ${i.src}`);
       if(width<901){
        assert(i.radius>=16,`square image: ${i.src}`);
-       if(i.frameWidth)assert(i.width>=i.frameWidth*.95,`thumbnail inside frame: ${i.src}`);
+       if(i.frameWidth)assert(i.width>=i.frameWidth*.95,`thumbnail inside frame: ${i.src} (image ${i.width}, frame ${i.frameWidth})`);
        assert(Math.abs(i.width/i.height-i.naturalRatio)<.03,`cropped/distorted image: ${i.src}`);
       }
      }

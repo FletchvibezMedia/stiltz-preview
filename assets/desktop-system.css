@@ -2263,3 +2263,36 @@ html body main.about-team-link > aside {
     object-fit: contain !important;
   }
 }
+
+/* Match the original page selectors so their padding and green backgrounds
+   cannot outrank the paired surface and natural-photo rules. */
+html body main.variant-page > .variant-next aside,
+html body main.duo-classic-page > .duo-classic-next aside,
+html body main.alta-page > .alta-next > :last-child {
+  background: #383d3f !important;
+}
+@media (max-width: 900px) {
+  html body main.alta-page > .alta-gallery > .duo-alta-photo-grid {
+    display: none !important;
+  }
+  html body main.alta-page > :is(.alta-gallery, .trio-full-door-option) > .model-photo-carousel > figure {
+    display: block !important;
+    padding: 0 !important;
+    border: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    border-radius: 22px !important;
+    clip-path: none !important;
+    background: transparent !important;
+  }
+  html body main.alta-page > :is(.alta-gallery, .trio-full-door-option) > .model-photo-carousel > figure > img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    border-radius: 22px !important;
+    clip-path: none !important;
+  }
+}
