@@ -4,7 +4,7 @@ const path = require('node:path');
 const http = require('node:http');
 const assert = require('node:assert/strict');
 const root = path.resolve(process.argv[2] || '_site');
-const routes = ['stiltz-duo-alta-new-model','stiltz-trio-alta-new-model','stiltz-duo-classic','stiltz-duo-vista','stiltz-duo-thru-car','stiltz-trio-alta-thru-car','trio-alta-three-story'];
+const routes = ['stiltz-duo-alta-new-model','stiltz-trio-alta-new-model','stiltz-duo-classic','stiltz-duo-vista','stiltz-duo-thru-car','stiltz-trio-alta-thru-car','trio-alta-three-story','testimonials','stiltz-news','gallery-of-installs-florida','build-down-installations','landing-installations','custom-colors'];
 const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'};
 const server = http.createServer((req,res) => {
   let name = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -28,11 +28,12 @@ const failures=[];
      await page.locator('main').waitFor();
      const stats=await page.evaluate(async()=>{
       const main=document.querySelector('main');
-      const images=[...main.querySelectorAll(':is(.variant-hero,.alta-hero,.duo-classic-hero,.variant-media,.duo-classic-media,.model-photo-carousel) img')].filter(e=>e.getBoundingClientRect().width>0);
-      await Promise.all(images.map(i=>{i.loading='eager';return i.decode().catch(()=>{});}));
-      const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0,width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,frameHeight:f?.getBoundingClientRect().height,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
-      const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside')];
-      const colors=cards.flatMap(e=>[...e.querySelectorAll('h3,p,a')].filter(n=>n.textContent.trim()).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
+      const images=[...main.querySelectorAll(':is(.variant-hero,.alta-hero,.duo-classic-hero,.variant-media,.duo-classic-media,.model-photo-carousel,.curated-model-images,.installation-carousel) img')].filter(e=>e.getBoundingClientRect().width>0);
+      const decoded=new Map();
+      await Promise.all(images.map(i=>{i.loading='eager';return i.decode().then(()=>decoded.set(i,true),()=>decoded.set(i,false));}));
+      const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0 && decoded.get(i),width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,frameHeight:f?.getBoundingClientRect().height,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
+      const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside, .testimonial-story, .news-card, .installation-page--custom-colors > .installation-page__intro')];
+      const colors=cards.flatMap(e=>[...e.querySelectorAll('h1,h2,h3,p,a,blockquote,footer b,footer span,.news-card-action,.news-card > div > span')].filter(n=>n.textContent.trim() && !n.matches('a[class*=cta]')).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
       return {images:metrics,colors,overflow:document.documentElement.scrollWidth>innerWidth+1};
      });
      assert(!stats.overflow,'horizontal page overflow');
@@ -53,7 +54,7 @@ const failures=[];
       assert((Math.max(a,b)+.05)/(Math.min(a,b)+.05)>=4.5,`unreadable card: ${c.text} (${c.color} on ${c.bg})`);
      }
      if(width<901){
-      const carousels=page.locator('.model-photo-carousel');
+      const carousels=page.locator('.model-photo-carousel, .installation-carousel');
       for(const carousel of await carousels.all()){
        if(!await carousel.isVisible())continue;
        const next=carousel.getByRole('button',{name:'Next photo',exact:true});
@@ -62,6 +63,17 @@ const failures=[];
        const before=await carousel.locator('img').getAttribute('src');
        await next.click();
        assert.notEqual(await carousel.locator('img').getAttribute('src'),before,'gallery next button does not change photo');
+       const countText=await carousel.locator('p').innerText();
+       const total=Number(countText.split('/').at(-1).trim());
+       assert(total>1 && total<100,'invalid gallery count');
+       for(let index=1; index<total; index++) {
+        const photo=carousel.locator('img');
+        const state=await photo.evaluate(async i=>{try{await i.decode();return {ok:true,src:i.getAttribute('src')};}catch{return {ok:false,src:i.getAttribute('src')};}});
+        assert(state.ok,`gallery photo cannot decode: ${state.src}`);
+        if(index<total-1)await next.click();
+       }
+       if(route==='build-down-installations')assert.equal(total,7,'corrupt build-down photo still included');
+
       }
      }
      await page.screenshot({path:`layout-checks/${route}-${width}.png`,fullPage:true});

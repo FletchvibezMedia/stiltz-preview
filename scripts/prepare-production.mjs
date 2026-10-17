@@ -139,7 +139,7 @@ const navigationGroups = [`);
   '5157.jpg', '5158.jpg', '5159.jpg',
 ].map((file) => \`/images/installations/landing/\${file}\`);`);
   navigation = navigation.replace(/const buildDownImages = \[[\s\S]*?\n\];/, `const buildDownImages = [
-  '/images/installations/build-down/5123.png', '/images/installations/build-down/5124.png',
+  '/images/installations/build-down/5123.png',
   '/images/installations/build-down/5125.jpg', '/images/installations/build-down/5126.jpg',
   '/images/installations/build-down/5127.jpg', '/images/installations/build-down/5128.jpg',
   '/images/installations/build-down/5129.jpg', '/images/installations/build-down/5130.jpg',
@@ -255,6 +255,11 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
       )
       .replace(/<div class="model-photo-carousel" aria-label="Duo Alta installation gallery">[\s\S]*?<\/section>/, duoAltaGrid + duoAltaCarousel + '</section>');
   }
+  if (route === '/build-down-installations/') {
+    // 5124.png contains a broken PNG chunk and decodes only its top rows.
+    // Remove it from the seven-photo collection rather than showing a partial lift.
+    html = html.replace(/(<b>01<\/b>\s*\/\s*(?:<!--.*?-->\s*)?)08/g, (_, prefix) => prefix + '07');
+  }
   if (route === '/trio-alta-three-story/') {
     html = html.replace(
       /<figure>\s*<img src="\/?images\/models\/trio-alta-3-story\/middle-level-enclosure-door\.jpg"[^>]*>\s*<\/figure>/,
@@ -302,7 +307,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (html.includes('<behold-widget')) {
     html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#e7efec;border:1px solid #aebfba;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
   }
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v31">\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v32">\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }

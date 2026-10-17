@@ -2313,3 +2313,65 @@ html body main.alta-page > .alta-next > :last-child {
     aspect-ratio: auto !important;
   }
 }
+
+/* Editorial dark cards keep both their surface and readable foreground. */
+html body main.news-page .news-card:nth-child(4n + 3),
+html body main.testimonials-page .testimonial-story.ink {
+  background: #383d3f !important;
+  color: #fff !important;
+}
+html body main.news-page .news-card:nth-child(4n + 3) *,
+html body main.testimonials-page .testimonial-story.ink * {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* Custom Paint uses the same light surface at mobile and desktop widths. */
+html body main.installation-page--custom-colors > .installation-page__intro {
+  background: var(--ds-sage) !important;
+  background-image: none !important;
+  color: var(--ds-ink) !important;
+}
+html body main.installation-page--custom-colors > .installation-page__intro :is(h1, p) {
+  color: var(--ds-ink) !important;
+}
+
+/* Installation photos must define the frame height, including captions. */
+html body main.curated-gallery .curated-model-card .curated-model-images > figure,
+html body main.installation-page .installation-carousel > figure {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  clip-path: none !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+html body main.curated-gallery .curated-model-card .curated-model-images > figure > img,
+html body main.installation-page .installation-carousel > figure > img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  border-radius: 22px !important;
+  clip-path: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+html body main.curated-gallery .curated-model-card .curated-model-images > figure > figcaption {
+  position: static !important;
+  display: block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 8px 0 0 !important;
+  background: #383d3f !important;
+  color: #fff !important;
+}
