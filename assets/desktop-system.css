@@ -417,6 +417,153 @@
   }
 }
 
+/* Keep mobile model galleries easy to understand: no hidden sideways track,
+   and carousel arrows stay directly below the active photo. */
+@media (max-width: 900px) {
+  html body main.alta-page > .alta-gallery > .duo-alta-photo-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    gap: 18px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    scroll-snap-type: none !important;
+  }
+
+  html body main.alta-page .duo-alta-photo-grid > figure {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 22px !important;
+    clip-path: none !important;
+    background: transparent !important;
+  }
+
+  html body main.alta-page .duo-alta-photo-grid > figure > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: min(62vh, 600px) !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  html body main.alta-page .model-photo-carousel {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    gap: 12px !important;
+  }
+
+  html body main.alta-page .model-photo-carousel > figure {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 22px !important;
+    clip-path: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  html body main.alta-page .model-photo-carousel > figure > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: min(62vh, 600px) !important;
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
+  html body main.alta-page .model-photo-carousel-controls {
+    display: flex !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  html body main.alta-page .model-photo-carousel-controls button {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    height: 46px !important;
+    padding: 0 !important;
+    border: 1px solid var(--ds-ink, #383d3f) !important;
+    border-radius: 50% !important;
+    background: var(--ds-sage, #e5eee8) !important;
+    color: var(--ds-ink, #383d3f) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+  }
+
+  html body main.alta-page .model-photo-carousel-controls button svg {
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    color: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  html body main.alta-page .model-photo-carousel-controls :is(span, p) {
+    color: var(--ds-ink, #383d3f) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: .08em !important;
+  }
+
+  /* The narrow two-column facts made every card unnecessarily tall. */
+  html body main.variant-page .variant-facts,
+  html body main.trio-page .variant-facts,
+  html body main.alta-page .alta-features,
+  html body main.duo-classic-page .duo-classic-feature-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  html body main.variant-page .variant-facts > *,
+  html body main.trio-page .variant-facts > *,
+  html body main.alta-page .alta-features > *,
+  html body main.duo-classic-page .duo-classic-feature-grid > * {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 20px 22px !important;
+    border-radius: 22px !important;
+  }
+}
+
 /* Remove the extra color tile behind the closing photo: the CTA remains one
    dark rounded card and the complete image sits directly in its right column. */
 @media (max-width:900px) {
@@ -1960,4 +2107,36 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
     :is(h1, h2, h3, h4, p, li, blockquote, .eyebrow) {
     color: var(--ds-ink, #383d3f) !important;
   }
+}
+
+/* Sitewide contrast rule: default all editorial copy inside page content to
+   charcoal. Light panels inherit this; the explicit exceptions below restore
+   white only for copy sitting on intentionally dark or saturated surfaces. */
+html body main :is(
+  h1, h2, h3, h4, p, li, blockquote, .eyebrow,
+  a:not(.button):not(.btn):not([class*="button"]):not([class*="btn"]):not([role="button"])
+) {
+  color: var(--ds-ink, #383d3f) !important;
+}
+
+/* Preserve white copy only where the surface itself is intentionally dark
+   or saturated. The surrounding light panels remain charcoal. */
+html body main :is(.ink, .dark-panel, .is-dark, [data-theme="dark"]) :is(h1, h2, h3, h4, p, li, blockquote, .eyebrow, a),
+html body main.about-team-link > aside :is(h2, h3, p, span, a),
+html body main.installation-page--builddown > .installation-page__intro :is(h1, h2, h3, p, li, .eyebrow),
+html body main .testimonial-story.ink :is(h2, h3, p, a, blockquote),
+html body main .variant-facts > :nth-child(3n + 2) :is(h3, p, svg),
+html body main .alta-features > :nth-child(3n + 2) :is(h3, p, svg),
+html body main .duo-classic-feature-grid > :nth-child(3n + 2) :is(h3, p, svg),
+html body main .variant-next aside :is(p, a, svg),
+html body main .alta-next > :last-child :is(p, a, svg),
+html body main .duo-classic-next aside :is(p, a, svg),
+html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]),
+html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]) :is(h3, p, span) {
+  color: #fff !important;
+}
+
+html body main section:has(a[href*="instagram.com"]) a:is([href*="instagram.com"], [href*="facebook.com"], [href*="tiktok.com"]) svg {
+  color: #fff !important;
+  stroke: currentColor !important;
 }
