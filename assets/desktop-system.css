@@ -2448,6 +2448,8 @@ html body main .social-hub .social-hub-links > a.social-hub-link small {
 /* Keep these final surface/foreground pairs together. Important declarations
    in this layer outrank the older unlayered rescue overrides. */
 @layer verified-surfaces {
+  main.curated-gallery .curated-gallery-cta h2 em { color: #383d3f !important; }
+
   main a.cta, main a.finance-cta { background: #383d3f !important; }
   main a.cta, main a.cta *, main a.finance-cta, main a.finance-cta * { color: #fff !important; }
   main.testimonials-page .testimonials-cta > a.cta { background: #fff !important; color: #383d3f !important; }

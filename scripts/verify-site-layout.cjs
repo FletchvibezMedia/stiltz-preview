@@ -14,7 +14,8 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
     await page.goto(`http://127.0.0.1:${server.address().port}/${route?route+'/':''}`,{waitUntil:'load'});
     const report=await page.evaluate(async()=>{
      const main=document.querySelector('main');if(!main)return {issues:[{kind:'missing-main'}]};
-     const imgs=[...main.querySelectorAll('img')].filter(i=>i.getBoundingClientRect().width>0);
+     const allImgs=[...main.querySelectorAll('img')];
+     const imgs=allImgs;
      const decode=new Map();await Promise.all(imgs.map(i=>{i.loading='eager';return i.decode().then(()=>decode.set(i,true),()=>decode.set(i,false));}));
      const issues=[];
      const label=e=>[e.tagName.toLowerCase(),e.className?.baseVal??e.className].filter(Boolean).join('.');
@@ -23,7 +24,8 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
      const lum=a=>a.map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
      const contrast=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
      if(document.documentElement.scrollWidth>innerWidth+2)issues.push({kind:'overflow',width:document.documentElement.scrollWidth,viewport:innerWidth});
-     for(const e of main.querySelectorAll('h1,h2,h3,h4,p,a,blockquote,li,dt,dd,figcaption,label,button,small,strong')){
+     for(const e of main.querySelectorAll('h1,h2,h3,h4,p,a,blockquote,li,dt,dd,figcaption,label,button,small,strong,em,span,b')){
+      if(['SPAN','EM','B'].includes(e.tagName)&&![...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()))continue;
       const r=e.getBoundingClientRect(),s=getComputedStyle(e);if(r.width<2||r.height<2||s.visibility==='hidden'||s.display==='none'||!e.textContent.trim())continue;
       if(e.closest('[hidden]')||s.clipPath==='inset(50%)')continue;
       const back=bg(e),fg=rgba(s.color).slice(0,3),ratio=contrast(fg,back.rgb),size=parseFloat(s.fontSize),large=size>=24||(size>=18.66&&Number(s.fontWeight)>=700);
@@ -32,6 +34,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
      for(const i of imgs){
       const r=i.getBoundingClientRect(),s=getComputedStyle(i),src=i.getAttribute('src'),f=i.closest('figure'),fr=f?.getBoundingClientRect();
       if(!decode.get(i))issues.push({kind:'broken-image',src});
+      if(r.width<2||r.height<2){if(!i.closest('[hidden]')&&s.display!=='none')issues.push({kind:'invisible-image',src});continue;}
       if(!/(models|installations|\/alta\/)/.test(src)||/brochure|footprint|diagram|dimension|reference|plan/i.test(src))continue;
       if(parseFloat(s.borderTopLeftRadius)<12)issues.push({kind:'square-photo',src,node:label(i)});
       const ratio=r.width/r.height,natural=i.naturalWidth/i.naturalHeight;
