@@ -916,3 +916,292 @@ main.alta-page > .alta-gallery {
   main .duo-alta-photo-grid figure { height:auto !important; aspect-ratio:4 / 5 !important; }
   main .duo-alta-photo-grid figure img { height:100% !important; }
 }
+
+/* v16: final production repair. Keep the shared beige shell, restore color
+   panels, and make the media and header geometry survive the legacy rules. */
+:root {
+  --ds-canvas:#ffffff;
+  --ds-shell:#f1eadf;
+  --ds-paper:#eee6d8;
+  --ds-sage:#dfeadb;
+  --ds-blue:#dcebf0;
+  --ds-warm:#f3ddc5;
+  --ds-ink:#383d3f;
+  --ds-green:#9ab600;
+  --ds-line:rgba(65,89,82,.24);
+}
+html,body { background:#fff !important; color:var(--ds-ink) !important; }
+.staging-bar { display:none !important; height:0 !important; }
+header.site-header {
+  display:flex !important;
+  align-items:center !important;
+  box-sizing:border-box !important;
+  height:82px !important;
+  min-height:82px !important;
+  padding:10px 28px !important;
+  overflow:visible !important;
+  border-radius:22px !important;
+  background:#fbfcf9 !important;
+}
+header.site-header .brand-logo {
+  display:block !important;
+  width:auto !important;
+  height:50px !important;
+  max-width:138px !important;
+  max-height:50px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  border-radius:0 !important;
+  clip-path:none !important;
+}
+
+/* Undeclared section surfaces use the site beige; existing green, blue,
+   orange, and charcoal class panels retain their explicit colors. */
+main {
+  background:var(--ds-shell) !important;
+  border-radius:34px !important;
+}
+main > section {
+  background-color:var(--ds-paper) !important;
+  border-radius:28px !important;
+}
+main :is(.video-library-grid-section,.team-directory,.factory-brochures-list,
+  .compare-model-grid,.news-list,.curated-models,.testimonial-stories) {
+  background:var(--ds-sage) !important;
+}
+main .video-library-card,
+main .compare-model-card,
+main .curated-model-card,
+main .factory-brochure-card,
+main .factory-brochures-note {
+  box-sizing:border-box !important;
+  border:1px solid var(--ds-line) !important;
+  border-radius:24px !important;
+  background:var(--ds-paper) !important;
+  color:var(--ds-ink) !important;
+  overflow:hidden !important;
+}
+main .video-library-card :is(h2,h3,p,a),
+main .compare-model-card :is(h2,h3,p,dt,dd,a),
+main .curated-model-card :is(h2,h3,p,a),
+main .factory-brochure-card :is(h2,h3,p,a),
+main .factory-brochures-note :is(h2,h3,p,a) { color:var(--ds-ink) !important; }
+main .testimonial-story.moss { background:var(--ds-sage) !important; color:var(--ds-ink) !important; }
+main .testimonial-story.sand { background:var(--ds-warm) !important; color:var(--ds-ink) !important; }
+main .testimonial-story.line,
+main .testimonial-story.blue { background:var(--ds-blue) !important; color:var(--ds-ink) !important; }
+main .testimonial-story.olive { background:#e7edcf !important; color:var(--ds-ink) !important; }
+main .testimonial-story.paper { background:var(--ds-paper) !important; color:var(--ds-ink) !important; }
+main .testimonial-story.ink { background:#383d3f !important; color:#fff !important; }
+main .testimonial-story.ink :is(h2,h3,p,a,blockquote) { color:#fff !important; }
+
+/* Give every photograph and its frame the same rounded treatment. Clip the
+   image itself so object-fit and legacy gallery rules cannot expose corners. */
+main figure,
+main picture,
+main .model-photo-carousel figure,
+main .installation-carousel figure,
+main [class*="gallery"] figure {
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  border-radius:24px !important;
+  clip-path:inset(0 round 24px) !important;
+  background-color:var(--ds-paper) !important;
+}
+main figure img:not(.brand-logo),
+main picture img:not(.brand-logo),
+main [class*="gallery"] img:not(.brand-logo),
+main [class*="carousel"] img:not(.brand-logo) {
+  border-radius:18px !important;
+  clip-path:inset(0 round 18px) !important;
+  object-position:center !important;
+}
+main .team-portrait { border-radius:50% !important; clip-path:circle(50% at 50% 50%) !important; }
+main .team-portrait img { border-radius:50% !important; clip-path:circle(50% at 50% 50%) !important; object-position:center 12% !important; }
+main .about-hero figure,
+main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 round 24px) !important; }
+main .about-hero figure img { object-fit:cover !important; object-position:center 16% !important; }
+main .team-feature-image .team-portrait { width:min(100%,440px) !important; margin-inline:auto !important; }
+
+/* Align model copy with the media instead of leaving a narrow text island. */
+main.variant-page > .variant-intro,
+main.duo-classic-page > .duo-classic-intro,
+main.alta-page > .alta-intro {
+  display:grid !important;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) !important;
+  align-items:center !important;
+  gap:clamp(22px,3vw,48px) !important;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:clamp(28px,3vw,48px) !important;
+  text-align:left !important;
+  background:var(--ds-sage) !important;
+  color:var(--ds-ink) !important;
+}
+main.variant-page > .variant-intro :is(h2,p,.eyebrow),
+main.duo-classic-page > .duo-classic-intro :is(h2,p,.eyebrow),
+main.alta-page > .alta-intro :is(h2,p,.eyebrow) { color:var(--ds-ink) !important; }
+main.variant-page > .variant-callout,
+main.duo-classic-page > .duo-classic-specs,
+main.alta-page > .alta-story {
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:clamp(28px,3vw,48px) !important;
+  border-radius:28px !important;
+  background:var(--ds-warm) !important;
+  color:var(--ds-ink) !important;
+}
+main.variant-page > .variant-callout :is(h2,h3,p,blockquote),
+main.duo-classic-page > .duo-classic-specs :is(h2,h3,p,li),
+main.alta-page > .alta-story :is(h2,h3,p,li) { color:var(--ds-ink) !important; }
+main.variant-page > .variant-next,
+main.duo-classic-page > .duo-classic-next,
+main.alta-page > .alta-next {
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  border-radius:28px !important;
+  background:var(--ds-blue) !important;
+}
+
+/* Portrait lift photography gets a portrait-shaped stage instead of being
+   shrunk into a wide landscape panel. The whole photo remains visible. */
+@media (min-width:901px) {
+  main.variant-page > .variant-hero,
+  main.duo-classic-page > .duo-classic-hero {
+    grid-template-columns:minmax(360px,1fr) minmax(0,.76fr) !important;
+    height:clamp(640px,52vw,780px) !important;
+    min-height:640px !important;
+    align-items:stretch !important;
+  }
+  main.variant-page > .variant-hero > figure,
+  main.duo-classic-page > .duo-classic-hero > figure {
+    width:min(100%,500px) !important;
+    max-width:500px !important;
+    height:100% !important;
+    justify-self:center !important;
+    border-radius:24px !important;
+    clip-path:inset(0 round 24px) !important;
+    background:var(--ds-blue) !important;
+  }
+  main.variant-page > .variant-hero > figure > img,
+  main.duo-classic-page > .duo-classic-hero > figure > img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    border-radius:18px !important;
+    clip-path:inset(0 round 18px) !important;
+  }
+  main.alta-page > .alta-hero {
+    height:clamp(620px,48vw,740px) !important;
+    min-height:620px !important;
+    grid-template-columns:minmax(0,1fr) minmax(400px,.9fr) !important;
+  }
+  main.alta-page > .alta-hero > img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    border-radius:24px !important;
+    clip-path:inset(0 round 24px) !important;
+    background:var(--ds-blue) !important;
+  }
+  main.variant-page .variant-media,
+  main.duo-classic-page .duo-classic-media,
+  main.variant-page .three-story-detail-gallery,
+  main.variant-page .three-story-brochure,
+  main.variant-page .three-story-enclosure {
+    width:100% !important;
+    grid-template-columns:minmax(250px,.42fr) minmax(0,1.58fr) !important;
+    align-items:center !important;
+  }
+  main.variant-page .variant-media figure,
+  main.duo-classic-page .duo-classic-media figure,
+  main.variant-page .three-story-detail-gallery figure,
+  main.variant-page .three-story-brochure-gallery figure,
+  main.variant-page .three-story-enclosure-gallery figure {
+    height:clamp(280px,24vw,370px) !important;
+    min-height:0 !important;
+    padding:10px !important;
+    background:var(--ds-paper) !important;
+  }
+  main.duo-classic-page .duo-classic-media > div:last-child { grid-template-columns:repeat(4,minmax(0,1fr)) !important; }
+  main.alta-page > .alta-gallery,
+  main.alta-page > .trio-full-door-option {
+    width:100% !important;
+    grid-template-columns:minmax(240px,.42fr) minmax(0,1.58fr) !important;
+  }
+  main.alta-page .alta-gallery .model-photo-carousel figure,
+  main.alta-page .trio-full-door-option .model-photo-carousel figure {
+    height:clamp(320px,27vw,420px) !important;
+    min-height:0 !important;
+    padding:10px !important;
+  }
+  main.alta-page .alta-gallery .model-photo-carousel img,
+  main.alta-page .trio-full-door-option .model-photo-carousel img {
+    width:100% !important; height:100% !important; object-fit:contain !important;
+  }
+  main.installation-page > .installation-page__intro,
+  main.installation-page > .installation-page__gallery {
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    border-radius:28px !important;
+  }
+  main.installation-page > .installation-page__gallery {
+    grid-template-columns:minmax(280px,.55fr) minmax(0,1.45fr) !important;
+    align-items:center !important;
+    padding:clamp(28px,3vw,48px) !important;
+    background:var(--ds-blue) !important;
+  }
+  main.installation-page .installation-carousel figure {
+    height:clamp(360px,40vw,560px) !important;
+    min-height:0 !important;
+    padding:12px !important;
+  }
+  main.installation-page .installation-carousel figure img {
+    width:100% !important; height:100% !important; object-fit:contain !important;
+  }
+}
+
+main.gh-page > .gh-meaning {
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  border-radius:28px !important;
+  background:var(--ds-sage) !important;
+}
+main.gh-page .gh-meaning > div > article:nth-child(3n+1) { background:var(--ds-paper) !important; }
+main.gh-page .gh-meaning > div > article:nth-child(3n+2) { background:var(--ds-blue) !important; }
+main.gh-page .gh-meaning > div > article:nth-child(3n) { background:var(--ds-warm) !important; }
+main.gh-page .gh-meaning > div > article :is(h2,h3,p) { color:var(--ds-ink) !important; }
+main.compare-page > .compare-model-grid { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+main.compare-page .compare-model-card figure { height:clamp(250px,23vw,360px) !important; padding:10px !important; background:var(--ds-blue) !important; }
+main.compare-page .compare-model-card figure img { width:100% !important; height:100% !important; object-fit:contain !important; }
+main.factory-brochures-page :is(.factory-brochures-disclaimer,.factory-brochures-note) {
+  width:100% !important;
+  border-radius:26px !important;
+  background:var(--ds-blue) !important;
+  color:var(--ds-ink) !important;
+}
+main.factory-brochures-page :is(.factory-brochures-disclaimer,.factory-brochures-note) :is(h2,h3,p,a,.eyebrow) { color:var(--ds-ink) !important; }
+
+@media (max-width:900px) {
+  header.site-header {
+    width:100% !important;
+    height:72px !important;
+    min-height:72px !important;
+    padding:8px 18px !important;
+    border-radius:18px !important;
+  }
+  header.site-header .brand-logo { height:48px !important; max-height:48px !important; }
+  main > section { background-color:var(--ds-paper) !important; }
+  main.variant-page > .variant-intro,
+  main.duo-classic-page > .duo-classic-intro,
+  main.alta-page > .alta-intro { grid-template-columns:minmax(0,1fr) !important; }
+  main.compare-page > .compare-model-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+}
+@media (max-width:560px) {
+  main.compare-page > .compare-model-grid { grid-template-columns:minmax(0,1fr) !important; }
+}
