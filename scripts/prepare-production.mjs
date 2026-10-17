@@ -134,7 +134,7 @@ if (fs.existsSync(navigationFile)) {
 const navigationGroups = [`);
   navigation = navigation.replaceAll("const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;", 'const path = sitePathname();');
   navigation = navigation.replace(/const landingImages = \[[\s\S]*?\n\]\.map\(\(file\) => `\/images\/installations\/landing\/\$\{file\}`\);/, `const landingImages = [
-  '5131.jpg', '5134.jpg', '5135.jpg', '5136.png', '5137.jpg', '5138.jpg', '5139.jpg', '5140.jpg', '5141.jpg', '5142.jpg',
+  '5131.jpg', '5134.jpg', '5135.jpg', '5137.jpg', '5138.jpg', '5139.jpg', '5140.jpg', '5141.jpg', '5142.jpg',
   '5143.jpg', '5144.jpg', '5145.jpg', '5146.jpg', '5147.jpg', '5148.jpg', '5149.jpg', '5150.jpg', '5151.jpg', '5152.jpg',
   '5157.jpg', '5158.jpg', '5159.jpg',
 ].map((file) => \`/images/installations/landing/\${file}\`);`);

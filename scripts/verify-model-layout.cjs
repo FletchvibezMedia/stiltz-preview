@@ -73,6 +73,7 @@ const failures=[];
         if(index<total-1)await next.click();
        }
        if(route==='build-down-installations')assert.equal(total,7,'corrupt build-down photo still included');
+       if(route==='landing-installations')assert.equal(total,22,'corrupt landing photo still included');
 
       }
      }
