@@ -1532,3 +1532,89 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
     border-radius: 20px !important;
   }
 }
+
+/* Win over the old rescue selectors that were more specific than the shared
+   model rules above. The photo itself remains clipped to the same rounded
+   frame, while its whole composition stays visible in the hero. */
+@media (min-width: 901px) {
+  html body main.variant-page > .variant-hero > figure,
+  html body main.duo-classic-page > .duo-classic-hero > figure,
+  html body main.alta-page > .alta-hero > figure {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 26px !important;
+    clip-path: inset(0 round 26px) !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page > .variant-hero > figure > img,
+  html body main.duo-classic-page > .duo-classic-hero > figure > img,
+  html body main.alta-page > .alta-hero > figure > img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    border-radius: 26px !important;
+    clip-path: inset(0 round 26px) !important;
+    object-fit: contain !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page > .variant-media,
+  html body main.duo-classic-page > .duo-classic-media,
+  html body main.alta-page > .alta-gallery,
+  html body main.alta-page > .trio-full-door-option {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html body main.variant-page .variant-media figure,
+  html body main.duo-classic-page .duo-classic-media figure,
+  html body main.alta-page .model-photo-carousel figure,
+  html body main.duo-classic-page .duo-classic-media figure img,
+  html body main.variant-page .variant-media figure img,
+  html body main.alta-page .model-photo-carousel figure img {
+    border-radius: 22px !important;
+    clip-path: inset(0 round 22px) !important;
+  }
+
+  html body main.variant-page .variant-media figure,
+  html body main.duo-classic-page .duo-classic-media figure,
+  html body main.alta-page .model-photo-carousel figure {
+    height: clamp(235px, 20vw, 330px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page .variant-media figure img,
+  html body main.duo-classic-page .duo-classic-media figure img,
+  html body main.alta-page .model-photo-carousel figure img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    background: transparent !important;
+  }
+
+  html body main.variant-page > .variant-intro,
+  html body main.variant-page > .variant-callout,
+  html body main.variant-page > .variant-next,
+  html body main.duo-classic-page > .duo-classic-intro,
+  html body main.duo-classic-page > .duo-classic-next,
+  html body main.alta-page > .alta-intro,
+  html body main.alta-page > .alta-story,
+  html body main.alta-page > .alta-next {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html body main.variant-page > .variant-next aside,
+  html body main.duo-classic-page > .duo-classic-next aside,
+  html body main.alta-page > .alta-next > div:last-child {
+    border-radius: 22px !important;
+    background: var(--ds-green) !important;
+    color: #fff !important;
+  }
+}
