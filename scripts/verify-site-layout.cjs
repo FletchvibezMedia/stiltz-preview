@@ -34,6 +34,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
      for(const i of imgs){
       const r=i.getBoundingClientRect(),s=getComputedStyle(i),src=i.getAttribute('src'),f=i.closest('figure'),fr=f?.getBoundingClientRect();
       if(!decode.get(i))issues.push({kind:'broken-image',src});
+      if([...function*(n){while(n){yield n;n=n.parentElement}}(i)].some(n=>getComputedStyle(n).display==='none'||n.hidden))continue;
       if(r.width<2||r.height<2){if(!i.closest('[hidden]')&&s.display!=='none')issues.push({kind:'invisible-image',src});continue;}
       if(!/(models|installations|\/alta\/)/.test(src)||/brochure|footprint|diagram|dimension|reference|plan/i.test(src))continue;
       if(parseFloat(s.borderTopLeftRadius)<12)issues.push({kind:'square-photo',src,node:label(i)});
