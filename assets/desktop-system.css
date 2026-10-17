@@ -962,7 +962,7 @@ main {
   border-radius:34px !important;
 }
 main > section {
-  background-color:var(--ds-paper) !important;
+  background-color:transparent !important;
   border-radius:28px !important;
 }
 main :is(.video-library-grid-section,.team-directory,.factory-brochures-list,
@@ -1196,7 +1196,7 @@ main.factory-brochures-page :is(.factory-brochures-disclaimer,.factory-brochures
     border-radius:18px !important;
   }
   header.site-header .brand-logo { height:48px !important; max-height:48px !important; }
-  main > section { background-color:var(--ds-paper) !important; }
+  main > section { background-color:transparent !important; }
   main.variant-page > .variant-intro,
   main.duo-classic-page > .duo-classic-intro,
   main.alta-page > .alta-intro { grid-template-columns:minmax(0,1fr) !important; }
