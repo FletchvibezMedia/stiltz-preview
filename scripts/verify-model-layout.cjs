@@ -30,7 +30,7 @@ const failures=[];
       const main=document.querySelector('main');
       const images=[...main.querySelectorAll(':is(.variant-hero,.alta-hero,.duo-classic-hero,.variant-media,.duo-classic-media,.model-photo-carousel) img')].filter(e=>e.getBoundingClientRect().width>0);
       await Promise.all(images.map(i=>{i.loading='eager';return i.decode().catch(()=>{});}));
-      const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0,width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
+      const metrics=images.map(i=>{const s=getComputedStyle(i),r=i.getBoundingClientRect(),f=i.closest('figure');return {src:i.getAttribute('src'),loaded:i.naturalWidth>0,width:r.width,height:r.height,naturalRatio:i.naturalWidth/i.naturalHeight,frameWidth:f?.getBoundingClientRect().width,frameHeight:f?.getBoundingClientRect().height,radius:parseFloat(s.borderTopLeftRadius),fit:s.objectFit};});
       const cards=[...main.querySelectorAll('.alta-features > *, .variant-facts > *, .duo-classic-feature-grid > *, .alta-next aside, .variant-next aside, .duo-classic-next aside')];
       const colors=cards.flatMap(e=>[...e.querySelectorAll('h3,p,a')].filter(n=>n.textContent.trim()).map(n=>({text:n.textContent.trim().slice(0,40),color:getComputedStyle(n).color,bg:getComputedStyle(e).backgroundColor})));
       return {images:metrics,colors,overflow:document.documentElement.scrollWidth>innerWidth+1};
@@ -40,6 +40,7 @@ const failures=[];
       assert(i.loaded,`image failed: ${i.src}`);
       if(width<901){
        assert(i.radius>=16,`square image: ${i.src}`);
+       if(i.frameHeight)assert(i.frameHeight>=i.height-1,`image clipped by frame: ${i.src} (image ${i.height}, frame ${i.frameHeight})`);
        if(i.frameWidth)assert(i.width>=i.frameWidth*.95,`thumbnail inside frame: ${i.src} (image ${i.width}, frame ${i.frameWidth})`);
        assert(Math.abs(i.width/i.height-i.naturalRatio)<.03,`cropped/distorted image: ${i.src}`);
       }

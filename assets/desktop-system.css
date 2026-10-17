@@ -2296,3 +2296,20 @@ html body main.alta-page > .alta-next > :last-child {
     clip-path: none !important;
   }
 }
+@media (max-width: 900px) {
+  html body main:is(.variant-page, .trio-page, .duo-classic-page) > :is(.variant-media, .duo-classic-media) > div:last-child > figure {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+  html body main:is(.variant-page, .trio-page, .duo-classic-page) > :is(.variant-media, .duo-classic-media) > div:last-child > figure > img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+}
