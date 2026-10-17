@@ -2165,7 +2165,7 @@ main .about-hero figure img { border-radius:24px !important; clip-path:inset(0 r
    white only for copy sitting on intentionally dark or saturated surfaces. */
 html body main :is(
   h1, h2, h3, h4, p, li, blockquote, .eyebrow,
-  a:not(.button):not(.btn):not([class*="button"]):not([class*="btn"]):not([class*="cta"]):not([role="button"])
+  a:not(:where(.button, .btn, [class*="button"], [class*="btn"], [class*="cta"], [role="button"]))
 ) {
   color: var(--ds-ink, #383d3f) !important;
 }
