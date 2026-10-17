@@ -2375,3 +2375,8 @@ html body main.curated-gallery .curated-model-card .curated-model-images > figur
   background: #383d3f !important;
   color: #fff !important;
 }
+/* Deeper charcoal keeps small type readable on the green/orange news cards. */
+html body main.news-page .news-card:not(:nth-child(4n + 3)),
+html body main.news-page .news-card:not(:nth-child(4n + 3)) * {
+  color: #202628 !important;
+}
