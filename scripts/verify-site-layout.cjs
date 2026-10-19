@@ -2,6 +2,7 @@ const { chromium } = require('playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const root=path.resolve(process.argv[2]||'_site');
 const routes=fs.readdirSync(root,{withFileTypes:true}).filter(e=>e.isDirectory()&&fs.existsSync(path.join(root,e.name,'index.html'))).map(e=>e.name).concat('');
+const surfaceReference=JSON.parse(fs.readFileSync('layout-checks/mobile-panel-reference.json','utf8'));
 const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2'};
 const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(name.endsWith('/'))name+='index.html';let file=path.join(root,name);if(!file.startsWith(root+'/')||!fs.existsSync(file)){res.writeHead(404);res.end();return;}res.setHeader('content-type',types[path.extname(file)]||'application/octet-stream');fs.createReadStream(file).pipe(res);});
 (async()=>{
@@ -47,8 +48,16 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
       const icon=a.querySelector('svg,.social-hub-icon');if(!icon||icon.getBoundingClientRect().width<12)issues.push({kind:'social-icon-missing',text:a.textContent.trim()});
       else if(contrast(rgba(getComputedStyle(icon).color).slice(0,3),bg(a).rgb)<4.5)issues.push({kind:'social-icon-contrast',text:a.textContent.trim()});
      }
-     return {issues,mainBackground:getComputedStyle(main).backgroundColor,images:imgs.length};
+     return {issues,mainBackground:getComputedStyle(main).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
     });
+    if(viewport.width>900){
+     const reference=surfaceReference.find(r=>r.route===(route||'home'));
+     for(const panel of reference.panels){
+      if(panel.background!=='rgba(0, 0, 0, 0)'&&report.panels[panel.index-1]!==panel.background)report.issues.push({kind:'desktop-panel-color',panel:panel.class,expected:panel.background,actual:report.panels[panel.index-1]});
+     }
+     if(report.mainBackground!=='rgb(241, 233, 220)')report.issues.push({kind:'missing-beige-shell',actual:report.mainBackground});
+     if(report.mainWidth<viewport.width-60)report.issues.push({kind:'narrow-beige-shell',width:report.mainWidth,viewport:viewport.width});
+    }
     // Exercise desktop gallery navigation rather than only checking initial images.
     for(const carousel of await page.locator('.model-photo-carousel,.installation-carousel').all()){
      if(!await carousel.isVisible())continue;

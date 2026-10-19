@@ -53,6 +53,7 @@ jobs:
         env:
           NODE_PATH: /tmp/stiltz-layout/node_modules
         run: |
+          node scripts/build-desktop-panels.cjs _site
           node scripts/verify-model-layout.cjs _site
           node scripts/verify-site-layout.cjs _site
       - name: Save model screenshots
