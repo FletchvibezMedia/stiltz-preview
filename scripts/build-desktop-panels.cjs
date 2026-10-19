@@ -20,7 +20,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
  const rules=baseline.flatMap(({route,panels})=>panels.filter(p=>p.background!=='rgba(0, 0, 0, 0)').map(p=>`main[data-design-page="${route}"] > section:nth-of-type(${p.index}) { background-color: ${p.background} !important; background-image: none !important; }`));
  const cssFile=path.join(root,'desktop-panels.css');
  const base=fs.readFileSync(cssFile,'utf8').replace(/\/\* MOBILE_PANEL_COLORS_START \*\/[\s\S]*?\/\* MOBILE_PANEL_COLORS_END \*\//g,'');
- fs.writeFileSync(cssFile,base+`\n/* MOBILE_PANEL_COLORS_START */\n@layer desktop-panels { @media (min-width:901px) {\n${rules.join('\n')}\n} }\n/* MOBILE_PANEL_COLORS_END */\n`);
+ fs.writeFileSync(cssFile,base+`\n/* MOBILE_PANEL_COLORS_START */\n@layer desktop-restoration { @media (min-width:901px) {\n${rules.join('\n')}\n} }\n/* MOBILE_PANEL_COLORS_END */\n`);
  fs.mkdirSync('layout-checks',{recursive:true});
  fs.writeFileSync('layout-checks/mobile-panel-reference.json',JSON.stringify(baseline,null,2));
  console.log('Matched desktop surfaces to mobile:',baseline.length,'pages,',rules.length,'colored panels');

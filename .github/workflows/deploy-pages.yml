@@ -2,7 +2,7 @@ name: Deploy Stiltz of Florida
 
 on:
   push:
-    branches: [main]
+    branches: [main, fix/restore-desktop-style]
   schedule:
     - cron: '23 09 * * *'
   workflow_dispatch:
@@ -67,6 +67,7 @@ jobs:
           path: _site
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

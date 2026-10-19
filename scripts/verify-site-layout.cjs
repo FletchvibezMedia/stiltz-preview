@@ -48,15 +48,33 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
       const icon=a.querySelector('svg,.social-hub-icon');if(!icon||icon.getBoundingClientRect().width<12)issues.push({kind:'social-icon-missing',text:a.textContent.trim()});
       else if(contrast(rgba(getComputedStyle(icon).color).slice(0,3),bg(a).rgb)<4.5)issues.push({kind:'social-icon-contrast',text:a.textContent.trim()});
      }
-     return {issues,mainBackground:getComputedStyle(main).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
+     let home=null;
+     if(main.matches('.brand-home')){
+      const hero=main.querySelector('.brand-hero'),image=hero.querySelector('figure img'),closing=main.querySelector('.brand-contact-band'),closingPhoto=closing.querySelector(':scope>img');
+      home={heroBottom:hero.getBoundingClientRect().bottom,imageBottom:image.getBoundingClientRect().bottom,heroImageRadius:getComputedStyle(image).borderBottomLeftRadius,
+       closingHeight:closing.getBoundingClientRect().height,closingPhotoHeight:closingPhoto.getBoundingClientRect().height,
+       h1Size:parseFloat(getComputedStyle(main.querySelector('h1')).fontSize),installationsBackground:getComputedStyle(main.querySelector('.brand-real-homes')).backgroundColor,
+       stepColors:[...main.querySelectorAll('.brand-process li')].map(e=>getComputedStyle(e).backgroundColor)};
+     }
+     return {issues,home,mainBackground:getComputedStyle(main).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
     });
     if(viewport.width>900){
      const reference=surfaceReference.find(r=>r.route===(route||'home'));
      for(const panel of reference.panels){
       if(panel.background!=='rgba(0, 0, 0, 0)'&&report.panels[panel.index-1]!==panel.background)report.issues.push({kind:'desktop-panel-color',panel:panel.class,expected:panel.background,actual:report.panels[panel.index-1]});
      }
+     if(report.home){
+      const h=report.home;
+      if(h.imageBottom>h.heroBottom+1)report.issues.push({kind:'homepage-hero-clipped',imageBottom:h.imageBottom,heroBottom:h.heroBottom});
+      if(parseFloat(h.heroImageRadius)<20)report.issues.push({kind:'homepage-hero-not-rounded'});
+      if(h.closingHeight>400||h.closingPhotoHeight>350)report.issues.push({kind:'homepage-closing-too-tall',...h});
+      if(h.installationsBackground!=='rgb(223, 234, 219)')report.issues.push({kind:'homepage-installations-panel-missing'});
+      if(h.stepColors.length!==4||new Set(h.stepColors).size!==4||h.stepColors.includes('rgba(0, 0, 0, 0)'))report.issues.push({kind:'homepage-journey-cards-missing'});
+      const expected=Math.min(76,Math.max(48,viewport.width*.043));
+      if(Math.abs(h.h1Size-expected)>.2)report.issues.push({kind:'homepage-type-changed',expected,actual:h.h1Size});
+     }
      if(report.mainBackground!=='rgb(241, 233, 220)')report.issues.push({kind:'missing-beige-shell',actual:report.mainBackground});
-     if(report.mainWidth<viewport.width-60)report.issues.push({kind:'narrow-beige-shell',width:report.mainWidth,viewport:viewport.width});
+     if(report.mainWidth<Math.min(viewport.width-72,2100)-2)report.issues.push({kind:'narrow-beige-shell',width:report.mainWidth,viewport:viewport.width});
     }
     // Exercise desktop gallery navigation rather than only checking initial images.
     for(const carousel of await page.locator('.model-photo-carousel,.installation-carousel').all()){

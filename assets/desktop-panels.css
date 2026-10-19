@@ -1,95 +1,89 @@
-/* Desktop uses the approved mobile surfaces, inside one continuous beige shell.
-   All declarations stay above the mobile breakpoint. */
-@layer desktop-panels {
+/* Background restoration only. Existing desktop typography, content widths,
+   section layouts and approved mobile rules remain in desktop-system.css. */
+@layer desktop-restoration {
   @media (min-width: 901px) {
-    main {
-      width: calc(100% - 48px) !important;
-      max-width: none !important;
-      margin: 24px auto 28px !important;
-      padding: clamp(20px, 2vw, 36px) !important;
-      gap: 24px !important;
-      background: #f1e9dc !important;
-      border: 1px solid rgba(65,89,82,.24) !important;
-      border-radius: 36px !important;
-      box-sizing: border-box !important;
-    }
-    .site-header, .site-footer {
-      width: calc(100% - 48px) !important;
-      max-width: none !important;
-      margin-inline: auto !important;
-      box-sizing: border-box !important;
-    }
-    main > section {
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 !important;
-      border-radius: 28px !important;
-      box-sizing: border-box !important;
-    }
-    main > section:not(:is(.variant-facts,.alta-features,.duo-classic-feature-grid)) {
-      padding: clamp(28px, 2.6vw, 44px) !important;
-      border: 1px solid rgba(65,89,82,.18) !important;
-    }
-    main :is(.variant-facts,.alta-features,.duo-classic-feature-grid) {
-      padding: 0 !important;
-      gap: 20px !important;
-      align-items: stretch !important;
-    }
-    main :is(.variant-facts,.alta-features,.duo-classic-feature-grid) > * {
-      padding: 28px !important;
-      min-height: 0 !important;
-      border-radius: 24px !important;
-    }
-    main :is(.variant-hero,.alta-hero,.duo-classic-hero) {
-      height: clamp(560px, 44vw, 700px) !important;
-      min-height: 560px !important;
-      align-items: center !important;
-      gap: 32px !important;
-    }
-    main :is(.variant-hero,.duo-classic-hero) > figure {
-      height: 100% !important;
-      min-height: 0 !important;
-    }
-    main.alta-page .alta-hero > img {
-      max-height: 620px !important;
-      justify-self: center !important;
-    }
-    main :is(.variant-hero,.alta-hero,.duo-classic-hero) > div {
-      padding: 28px !important;
-      min-width: 0 !important;
-    }
-    main :is(.variant-intro,.alta-intro,.duo-classic-intro) { text-align: left !important; }
-    main :is(.variant-intro,.alta-intro,.duo-classic-intro) > * { text-align: left !important; }
-    main h1 { font-size: clamp(44px, 4vw, 64px) !important; line-height: 1.04 !important; }
-    main h2 { font-size: clamp(30px, 2.6vw, 44px) !important; line-height: 1.12 !important; }
-    main h3 { font-size: clamp(22px, 1.8vw, 28px) !important; line-height: 1.18 !important; }
-    main :is(p,li,dt,dd) { font-size: 18px !important; line-height: 1.6 !important; }
-    main :is(.eyebrow,[class$="-eyebrow"]) { font-size: 12px !important; line-height: 1.5 !important; }
-    main :is(figcaption,small) { font-size: 14px !important; line-height: 1.45 !important; }
-    main :is(.variant-callout,.alta-story) blockquote {
-      font-size: clamp(30px, 2.8vw, 46px) !important;
-      line-height: 1.15 !important;
-      max-width: 32ch !important;
-      margin-inline: auto !important;
-    }
+    main { background: #f1e9dc !important; }
+    main:is(.variant-page,.alta-page,.duo-classic-page) { gap: 18px !important; }
+
+    /* Keep the already approved color panels without flattening their surface. */
     main :is(.variant-hero,.alta-hero,.duo-classic-hero) { background-color: #f2f5f1 !important; }
     main :is(.variant-media,.alta-gallery,.duo-classic-media,.trio-full-door-option,
       .duo-white-finish-option,.three-story-detail-gallery,.three-story-enclosure) {
       background-color: #e7f0f4 !important;
     }
-    main :is(.variant-media,.alta-gallery,.duo-classic-media,.trio-full-door-option) {
-      gap: 28px !important;
+
+    /* The homepage keeps its original type and composition. The photo must
+       fit the hero row rather than forcing that row beyond the rounded edge. */
+    main.brand-home .brand-hero {
+      grid-template-rows: minmax(0,1fr) !important;
+      align-items: stretch !important;
+      padding: 22px !important;
+    }
+    main.brand-home .brand-hero > div,
+    main.brand-home .brand-hero > figure { min-height: 0 !important; max-height: 100% !important; }
+    main.brand-home .brand-hero > figure {
+      height: 100% !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+    main.brand-home .brand-hero > figure > img {
+      display: block !important;
+      width: auto !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      border-radius: 24px !important;
+      clip-path: inset(0 round 24px) !important;
+      object-fit: contain !important;
+    }
+
+    /* Restore the separate colored installation panel and journey cards. */
+    main.brand-home .brand-real-homes { background: #dfeadb !important; }
+    main.brand-home .brand-process { background: #dcebf0 !important; }
+    main.brand-home .brand-process ol { align-items: stretch !important; gap: 16px !important; }
+    main.brand-home .brand-process li {
+      padding: 24px 18px !important;
+      border-radius: 22px !important;
+      border: 1px solid rgba(65,89,82,.18) !important;
+      background: #dfeadb !important;
+    }
+    main.brand-home .brand-process li:nth-child(2) { background: #f3ddc5 !important; }
+    main.brand-home .brand-process li:nth-child(3) { background: #e7f0f4 !important; }
+    main.brand-home .brand-process li:nth-child(4) { background: #383d3f !important; }
+    main.brand-home .brand-process li:nth-child(4) :is(h3,p,svg) { color: #fff !important; }
+
+    /* Restore the compact closing band; a natural-height photo must never
+       expand this footer call-to-action back into another hero. */
+    main.brand-home .brand-contact-band {
+      height: 390px !important;
+      min-height: 0 !important;
+      grid-template-rows: minmax(0,1fr) !important;
+      padding: 20px !important;
+      gap: 20px !important;
       align-items: center !important;
     }
-    main :is(.model-photo-carousel-controls,.installation-carousel__controls) {
-      justify-content: center !important;
-      margin-top: 16px !important;
+    main.brand-home .brand-contact-band > div { padding: 12px 20px !important; min-height: 0 !important; }
+    main.brand-home .brand-contact-band h2 { font-size: clamp(30px,2.2vw,36px) !important; line-height: 1.08 !important; margin-bottom: 12px !important; }
+    main.brand-home .brand-contact-band .brand-kicker { margin-bottom: 8px !important; }
+    main.brand-home .brand-contact-band > div > p:not(.brand-kicker) { margin-bottom: 14px !important; }
+    main.brand-home .brand-contact-band > img {
+      width: auto !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 348px !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      justify-self: center !important;
+      border-radius: 24px !important;
+      clip-path: inset(0 round 24px) !important;
+      object-fit: contain !important;
+      background: transparent !important;
     }
   }
 }
 
 /* MOBILE_PANEL_COLORS_START */
-@layer desktop-panels { @media (min-width:901px) {
+@layer desktop-restoration { @media (min-width:901px) {
 main[data-design-page="about-us"] > section:nth-of-type(6) { background-color: rgb(231, 240, 244) !important; background-image: none !important; }
 main[data-design-page="build-down-installations"] > section:nth-of-type(1) { background-color: rgb(56, 61, 63) !important; background-image: none !important; }
 main[data-design-page="compare"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }

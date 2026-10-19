@@ -1,3 +1,4 @@
+@layer desktop-restoration;
 /* Stiltz of Florida desktop system v12. Shared responsive header/footer refinements. */
 :root {
     --ds-canvas:#e8eee9; --ds-shell:#f6f7f2; --ds-paper:#fbfcf9;
