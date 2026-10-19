@@ -72,6 +72,11 @@
       max-width: 32ch !important;
       margin-inline: auto !important;
     }
+    main :is(.variant-hero,.alta-hero,.duo-classic-hero) { background-color: #f2f5f1 !important; }
+    main :is(.variant-media,.alta-gallery,.duo-classic-media,.trio-full-door-option,
+      .duo-white-finish-option,.three-story-detail-gallery,.three-story-enclosure) {
+      background-color: #e7f0f4 !important;
+    }
     main :is(.variant-media,.alta-gallery,.duo-classic-media,.trio-full-door-option) {
       gap: 28px !important;
       align-items: center !important;
@@ -82,3 +87,51 @@
     }
   }
 }
+
+/* MOBILE_PANEL_COLORS_START */
+@layer desktop-panels { @media (min-width:901px) {
+main[data-design-page="about-us"] > section:nth-of-type(6) { background-color: rgb(231, 240, 244) !important; background-image: none !important; }
+main[data-design-page="build-down-installations"] > section:nth-of-type(1) { background-color: rgb(56, 61, 63) !important; background-image: none !important; }
+main[data-design-page="compare"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="compare"] > section:nth-of-type(3) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="custom-colors"] > section:nth-of-type(1) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="factory-brochures"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="factory-brochures"] > section:nth-of-type(3) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="gallery-of-installs-florida"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="good-housekeeping-seal"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="meet-the-team"] > section:nth-of-type(3) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="meet-the-team"] > section:nth-of-type(4) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-alta-new-model"] > section:nth-of-type(4) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-alta-new-model"] > section:nth-of-type(5) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-classic"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-classic"] > section:nth-of-type(6) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-classic"] > section:nth-of-type(7) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-thru-car"] > section:nth-of-type(1) { background-color: rgb(242, 245, 241) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-thru-car"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-thru-car"] > section:nth-of-type(4) { background-color: rgb(231, 240, 244) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-thru-car"] > section:nth-of-type(5) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-thru-car"] > section:nth-of-type(6) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-vista"] > section:nth-of-type(1) { background-color: rgb(242, 245, 241) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-vista"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-vista"] > section:nth-of-type(4) { background-color: rgb(231, 240, 244) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-vista"] > section:nth-of-type(5) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-duo-vista"] > section:nth-of-type(6) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="stiltz-news"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-new-model"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-new-model"] > section:nth-of-type(6) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-new-model"] > section:nth-of-type(7) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-thru-car"] > section:nth-of-type(1) { background-color: rgb(242, 245, 241) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-thru-car"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-thru-car"] > section:nth-of-type(4) { background-color: rgb(231, 240, 244) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-thru-car"] > section:nth-of-type(5) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="stiltz-trio-alta-thru-car"] > section:nth-of-type(6) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="testimonials"] > section:nth-of-type(3) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="trio-alta-three-story"] > section:nth-of-type(1) { background-color: rgb(242, 245, 241) !important; background-image: none !important; }
+main[data-design-page="trio-alta-three-story"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="trio-alta-three-story"] > section:nth-of-type(4) { background-color: rgb(231, 240, 244) !important; background-image: none !important; }
+main[data-design-page="trio-alta-three-story"] > section:nth-of-type(8) { background-color: rgb(243, 221, 197) !important; background-image: none !important; }
+main[data-design-page="trio-alta-three-story"] > section:nth-of-type(9) { background-color: rgb(220, 235, 240) !important; background-image: none !important; }
+main[data-design-page="videos"] > section:nth-of-type(2) { background-color: rgb(223, 234, 219) !important; background-image: none !important; }
+main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(56, 61, 63) !important; background-image: none !important; }
+} }
+/* MOBILE_PANEL_COLORS_END */
