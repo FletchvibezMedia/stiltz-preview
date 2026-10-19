@@ -56,7 +56,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
        h1Size:parseFloat(getComputedStyle(main.querySelector('h1')).fontSize),installationsBackground:getComputedStyle(main.querySelector('.brand-real-homes')).backgroundColor,
        stepColors:[...main.querySelectorAll('.brand-process li')].map(e=>getComputedStyle(e).backgroundColor)};
      }
-     return {issues,home,mainBackground:getComputedStyle(main).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
+     return {issues,home,mainBackground:getComputedStyle(main).backgroundColor,canvasBackground:getComputedStyle(document.body).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
     });
     if(viewport.width>900){
      const reference=surfaceReference.find(r=>r.route===(route||'home'));
@@ -70,9 +70,10 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
       if(h.closingHeight>400||h.closingPhotoHeight>350)report.issues.push({kind:'homepage-closing-too-tall',...h});
       if(h.installationsBackground!=='rgb(223, 234, 219)')report.issues.push({kind:'homepage-installations-panel-missing'});
       if(h.stepColors.length!==4||new Set(h.stepColors).size!==4||h.stepColors.includes('rgba(0, 0, 0, 0)'))report.issues.push({kind:'homepage-journey-cards-missing'});
-      const expected=Math.min(76,Math.max(48,viewport.width*.043));
+      const expected=Math.min(56,Math.max(48,viewport.width*.038));
       if(Math.abs(h.h1Size-expected)>.2)report.issues.push({kind:'homepage-type-changed',expected,actual:h.h1Size});
      }
+     if(report.canvasBackground!=='rgb(241, 233, 220)')report.issues.push({kind:'missing-beige-canvas',actual:report.canvasBackground});
      if(report.mainBackground!=='rgb(241, 233, 220)')report.issues.push({kind:'missing-beige-shell',actual:report.mainBackground});
      if(report.mainWidth<Math.min(viewport.width-72,2100)-2)report.issues.push({kind:'narrow-beige-shell',width:report.mainWidth,viewport:viewport.width});
     }

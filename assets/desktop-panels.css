@@ -2,6 +2,7 @@
    section layouts and approved mobile rules remain in desktop-system.css. */
 @layer desktop-restoration {
   @media (min-width: 901px) {
+    html, body { background: #f1e9dc !important; }
     main { background: #f1e9dc !important; }
     main:is(.variant-page,.alta-page,.duo-classic-page) { gap: 18px !important; }
 
@@ -49,7 +50,7 @@
     }
     main.brand-home .brand-process li:nth-child(2) { background: #f3ddc5 !important; }
     main.brand-home .brand-process li:nth-child(3) { background: #e7f0f4 !important; }
-    main.brand-home .brand-process li:nth-child(4) { background: #383d3f !important; }
+    main.brand-home .brand-process li:nth-child(4) { background: #383d3f !important; color: #fff !important; }
     main.brand-home .brand-process li:nth-child(4) :is(h3,p,svg) { color: #fff !important; }
 
     /* Restore the compact closing band; a natural-height photo must never
