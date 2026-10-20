@@ -57,6 +57,11 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
        stepColors:[...main.querySelectorAll('.brand-process li')].map(e=>getComputedStyle(e).backgroundColor)};
      }
      const cardSelector = '.installation-assurance > article,.installation-steps > article,.about-credentials > article,.about-principles > article,.coastal-reasons > article,.costs-factor-grid > article,.variant-facts > article,.alta-features > article,.duo-classic-feature-grid > article,.gh-meaning > div > article,.finance-details > ul > li,.brand-model,.compare-model-card,.curated-model-card,.video-library-card';
+     if(innerWidth>900){
+      for(const e of main.querySelectorAll('.curated-models,.compare-model-grid,.testimonial-stories,.video-library-grid-section,.news-list,.team-directory,.about-credentials,.about-principles,.coastal-reasons,.costs-factors,.finance-details,.variant-facts,.alta-features,.duo-classic-feature-grid,.gh-meaning,.faq-list,.article-body')){
+       if(getComputedStyle(e).backgroundColor!=='rgb(241, 233, 220)')issues.push({kind:'collection-hides-beige-base',node:label(e),actual:getComputedStyle(e).backgroundColor});
+      }
+     }
      const cards=[...main.querySelectorAll(cardSelector)].map(e=>({node:label(e),background:getComputedStyle(e).backgroundColor,radius:parseFloat(getComputedStyle(e).borderTopLeftRadius)}));
      if(innerWidth>900){
       const palette=['rgb(223, 234, 219)','rgb(220, 235, 240)','rgb(243, 221, 197)','rgb(56, 61, 63)'];
@@ -74,7 +79,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
     if(viewport.width>900){
      const reference=surfaceReference.find(r=>r.route===(route||'home'));
      for(const panel of reference.panels){
-      if(panel.background!=='rgba(0, 0, 0, 0)'&&report.panels[panel.index-1]!==panel.background)report.issues.push({kind:'desktop-panel-color',panel:panel.class,expected:panel.background,actual:report.panels[panel.index-1]});
+      if(!/(?:^|\s)(?:curated-models|compare-model-grid|testimonial-stories|video-library-grid-section|news-list|team-directory|about-credentials|about-principles|coastal-reasons|costs-factors|finance-details|variant-facts|alta-features|duo-classic-feature-grid|gh-meaning|faq-list|article-body)(?:\s|$)/.test(panel.class)&&panel.background!=='rgba(0, 0, 0, 0)'&&report.panels[panel.index-1]!==panel.background)report.issues.push({kind:'desktop-panel-color',panel:panel.class,expected:panel.background,actual:report.panels[panel.index-1]});
      }
      if(report.home){
       const h=report.home;

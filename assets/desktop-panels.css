@@ -186,3 +186,28 @@ main[data-design-page="videos"] > section:nth-of-type(2) { background-color: rgb
 main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(56, 61, 63) !important; background-image: none !important; }
 } }
 /* MOBILE_PANEL_COLORS_END */
+
+/* Continuous beige page base. Collection wrappers are layout, while their
+   individual cards carry the color. Keep this after the mobile-color map. */
+@layer desktop-restoration {
+ @media (min-width:901px) {
+  html,body,main { background:#f1e9dc !important; }
+  html body main[class] :is(.curated-models,.compare-model-grid,.testimonial-stories,
+    .video-library-grid-section,.news-list,.team-directory,.team-group,
+    .about-credentials,.about-principles,.coastal-reasons,.costs-factors,
+    .finance-details,.variant-facts,.alta-features,.duo-classic-feature-grid,
+    .gh-meaning,.faq-list,.article-body) {
+    background:#f1e9dc !important;
+    background-image:none !important;
+  }
+  main .curated-models { gap:24px !important; }
+  main :is(.compare-model-grid,.testimonial-stories,.video-library-grid,
+    .about-credentials,.about-principles,.coastal-reasons,.costs-factor-grid,
+    .variant-facts,.alta-features,.duo-classic-feature-grid) { gap:20px !important; }
+  main .article-hero { background:#dfeadb !important; }
+  main .faq-list details { background:#e7f0f4 !important; border-radius:22px !important; }
+  main .faq-list details:nth-of-type(3n+2) { background:#dfeadb !important; }
+  main .faq-list details:nth-of-type(3n+3) { background:#f3ddc5 !important; }
+  main .brand-hero li svg { color:#383d3f !important; stroke:currentColor !important; }
+ }
+}
