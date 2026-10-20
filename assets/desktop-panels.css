@@ -192,13 +192,15 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
 @layer desktop-restoration {
  @media (min-width:901px) {
   html,body,main { background:#f1e9dc !important; }
-  html body main[class] :is(.curated-models,.compare-model-grid,.testimonial-stories,
+  html body main[class] :is(.brand-models,.curated-models,.compare-model-grid,.testimonial-stories,
     .video-library-grid-section,.news-list,.team-directory,.team-group,
     .about-credentials,.about-principles,.coastal-reasons,.costs-factors,
     .finance-details,.variant-facts,.alta-features,.duo-classic-feature-grid,
     .gh-meaning,.faq-list,.article-body) {
     background:#f1e9dc !important;
     background-image:none !important;
+    border:0 !important;
+    box-shadow:none !important;
   }
   main .curated-models { gap:24px !important; }
   main :is(.compare-model-grid,.testimonial-stories,.video-library-grid,

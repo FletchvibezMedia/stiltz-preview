@@ -58,7 +58,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
      }
      const cardSelector = '.installation-assurance > article,.installation-steps > article,.about-credentials > article,.about-principles > article,.coastal-reasons > article,.costs-factor-grid > article,.variant-facts > article,.alta-features > article,.duo-classic-feature-grid > article,.gh-meaning > div > article,.finance-details > ul > li,.brand-model,.compare-model-card,.curated-model-card,.video-library-card';
      if(innerWidth>900){
-      for(const e of main.querySelectorAll('.curated-models,.compare-model-grid,.testimonial-stories,.video-library-grid-section,.news-list,.team-directory,.about-credentials,.about-principles,.coastal-reasons,.costs-factors,.finance-details,.variant-facts,.alta-features,.duo-classic-feature-grid,.gh-meaning,.faq-list,.article-body')){
+      for(const e of main.querySelectorAll('.brand-models,.curated-models,.compare-model-grid,.testimonial-stories,.video-library-grid-section,.news-list,.team-directory,.about-credentials,.about-principles,.coastal-reasons,.costs-factors,.finance-details,.variant-facts,.alta-features,.duo-classic-feature-grid,.gh-meaning,.faq-list,.article-body')){
        if(getComputedStyle(e).backgroundColor!=='rgb(241, 233, 220)')issues.push({kind:'collection-hides-beige-base',node:label(e),actual:getComputedStyle(e).backgroundColor});
       }
      }
