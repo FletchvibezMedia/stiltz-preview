@@ -2,8 +2,8 @@
    section layouts and approved mobile rules remain in desktop-system.css. */
 @layer desktop-restoration {
   @media (min-width: 901px) {
-    html, body { background: #f1e9dc !important; }
-    main { background: #f1e9dc !important; }
+    html, body { background: #f3ddc5 !important; }
+    main { background: #f3ddc5 !important; }
     main:is(.variant-page,.alta-page,.duo-classic-page) { gap: 18px !important; }
 
     /* Keep the already approved color panels without flattening their surface. */
@@ -87,7 +87,7 @@
 @layer desktop-restoration {
  @media (min-width:901px) {
   /* Keep a single continuous beige canvas behind every page's panels. */
-  html, body, main[data-design-page] { background-color:#f1e9dc !important; background-image:none !important; }
+  html, body, main[data-design-page] { background-color:#f3ddc5 !important; background-image:none !important; }
 
   /* Installation information stays in separate, visible colored boxes. */
   main .installation-assurance { gap:18px !important; }
@@ -191,13 +191,13 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
    individual cards carry the color. Keep this after the mobile-color map. */
 @layer desktop-restoration {
  @media (min-width:901px) {
-  html,body,main { background:#f1e9dc !important; }
+  html,body,main { background:#f3ddc5 !important; }
   html body main[class] :is(.brand-models,.curated-models,.compare-model-grid,.testimonial-stories,
     .video-library-grid-section,.news-list,.team-directory,.team-group,
     .about-credentials,.about-principles,.coastal-reasons,.costs-factors,
     .finance-details,.variant-facts,.alta-features,.duo-classic-feature-grid,
     .gh-meaning,.faq-list,.article-body) {
-    background:#f1e9dc !important;
+    background:#f3ddc5 !important;
     background-image:none !important;
     border:0 !important;
     box-shadow:none !important;
@@ -224,7 +224,7 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
     margin:24px auto !important;
     padding:24px 0 !important;
     box-sizing:border-box !important;
-    background:#f1e9dc !important;
+    background:#f3ddc5 !important;
     border:1px solid rgba(65,89,82,.24) !important;
     border-radius:38px !important;
     box-shadow:0 18px 48px rgba(31,47,41,.10) !important;
@@ -239,7 +239,7 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
     border:0 !important;
     border-radius:0 !important;
     box-shadow:none !important;
-    background:#f1e9dc !important;
+    background:#f3ddc5 !important;
     gap:24px !important;
   }
   .desktop-page-shell > main > section {
@@ -255,5 +255,27 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
     box-sizing:border-box !important;
   }
   .desktop-page-shell > footer.site-footer { margin-top:0 !important; }
+ }
+}
+
+/* Reference beige and the approved News palette, desktop only. */
+@layer desktop-restoration {
+ @media (min-width:901px) {
+  main :is(.curated-model-card,.compare-model-card) {
+    background:#8ea50b !important;
+    color:#202628 !important;
+  }
+  main :is(.curated-model-card,.compare-model-card):nth-of-type(3n+2) {
+    background:#e56e02 !important;
+  }
+  main :is(.curated-model-card,.compare-model-card):nth-of-type(3n) {
+    background:#383d3f !important;
+    color:#fff !important;
+  }
+  main .curated-model-copy, main .curated-model-copy *,
+  main .compare-model-content,
+  main .compare-model-content :is(h2,h3,p,dt,dd,span,li,svg) {
+    color:inherit !important;
+  }
  }
 }
