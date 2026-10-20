@@ -56,6 +56,7 @@ jobs:
           node scripts/build-desktop-panels.cjs _site
           node scripts/verify-model-layout.cjs _site
           node scripts/verify-site-layout.cjs _site
+          node scripts/verify-social-gallery.cjs _site
       - name: Save model screenshots
         if: always()
         uses: actions/upload-artifact@v4

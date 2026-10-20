@@ -1,0 +1,52 @@
+(() => {
+  if (window.stiltzSocialGalleryReady) return;
+  window.stiltzSocialGalleryReady = true;
+  const gallery = document.querySelector('.native-social-gallery');
+  if (!gallery) return;
+  const posts = JSON.parse(gallery.querySelector('[data-social-posts]').textContent);
+  const dialog = document.createElement('dialog');
+  dialog.className = 'native-social-dialog';
+  dialog.setAttribute('aria-labelledby', 'native-social-post-title');
+  dialog.innerHTML = '<button type="button" class="native-social-close" aria-label="Close video">×</button><div class="native-social-dialog-layout"><div class="native-social-player"><video controls playsinline preload="none"></video></div><div class="native-social-copy"><h2 id="native-social-post-title"></h2><span class="native-social-account">@stiltz_of_florida</span><p class="native-social-caption"></p><a class="native-social-original" target="_blank" rel="noopener noreferrer">View original Instagram post ↗</a></div></div>';
+  document.body.append(dialog);
+  const video = dialog.querySelector('video');
+  let trigger;
+  let previousOverflow;
+  gallery.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-social-post]');
+    if (!button || !gallery.contains(button)) return;
+    const post = posts.find(post => post.id === button.dataset.socialPost);
+    if (!post) return;
+    trigger = button;
+    dialog.querySelector('h2').textContent = post.title;
+    dialog.querySelector('.native-social-caption').textContent = post.caption;
+    dialog.querySelector('.native-social-original').href = post.url;
+    video.setAttribute('aria-label', post.title);
+    video.poster = new URL(post.poster, document.baseURI).href;
+    video.src = new URL(post.video, document.baseURI).href;
+    dialog.querySelector('.native-social-error')?.remove();
+    previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialog.showModal();
+    dialog.querySelector('.native-social-close').focus();
+    video.play().catch(() => { /* Native controls remain available if autoplay is blocked. */ });
+  });
+  dialog.querySelector('.native-social-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) { const r=dialog.getBoundingClientRect(); if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom) dialog.close(); } });
+  dialog.addEventListener('close', () => {
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    document.body.style.overflow = previousOverflow;
+    trigger?.focus({preventScroll:true});
+  });
+  video.addEventListener('error', () => {
+    if (!dialog.open || !video.hasAttribute('src')) return;
+    if (dialog.querySelector('.native-social-error')) return;
+    const message = document.createElement('p');
+    message.className = 'native-social-error';
+    message.setAttribute('role', 'alert');
+    message.textContent = 'This video could not load. Please close it and try again.';
+    dialog.querySelector('.native-social-copy').prepend(message);
+  });
+})();

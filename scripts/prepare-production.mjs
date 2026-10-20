@@ -38,6 +38,14 @@ function renderOfficialNews(feed) {
 
 const officialNews = loadOfficialNews();
 
+const socialPosts = JSON.parse(fs.readFileSync('assets/instagram/posts.json', 'utf8')).posts;
+if (socialPosts.length !== 6) throw new Error('The native social gallery requires exactly six posts');
+function renderNativeSocialGallery() {
+  const cards = socialPosts.map(post => `<button type="button" class="native-social-card" data-social-post="${escapeHtml(post.id)}" aria-label="Play video: ${escapeHtml(post.title)}" aria-haspopup="dialog"><span class="native-social-preview"><img src="${escapeHtml(post.poster)}" alt="${escapeHtml(post.title)}" loading="lazy" width="540" height="960"><span class="native-social-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch video</span></span><span class="native-social-title">${escapeHtml(post.title)}</span></button>`).join('');
+  return `<div class="native-social-grid">${cards}</div><script type="application/json" data-social-posts>${JSON.stringify(socialPosts).replaceAll('<', '\\u003c')}</script>`;
+}
+
+
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const file = path.join(dir, entry.name);
@@ -56,6 +64,8 @@ const approvedAssetOverrides = [
   ['assets/desktop-system.css', 'desktop-system.css'],
   ['assets/desktop-panels.css', 'desktop-panels.css'],
   ['assets/desktop-shell.js', 'desktop-shell.js'],
+  ['assets/native-social-gallery.css', 'native-social-gallery.css'],
+  ['assets/native-social-gallery.js', 'native-social-gallery.js'],
   ['assets/team/bill-bell.jpg', 'images/team/current/bill-bell.jpg'],
   ['assets/duo-alta/duo-alta-thru-car-straight.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/duo-thru-car/duo-thru-car-hero-straight.jpg', 'images/models/duo-thru-car/verified-hero.jpg'],
@@ -113,6 +123,8 @@ for (const [from, to] of approvedAssetOverrides) {
   fs.mkdirSync(path.dirname(destinationAsset), { recursive: true });
   fs.copyFileSync(sourceAsset, destinationAsset);
 }
+
+fs.cpSync(path.resolve('assets/instagram'), path.join(output, 'instagram'), { recursive: true });
 
 const runtimePatch = '<script>(function(){if(!location.hostname.endsWith("github.io"))return;var prefix="/stiltz-preview";function patch(node,attr){var value=node.getAttribute(attr);if(value&&value.charAt(0)==="/"&&value.indexOf(prefix+"/")!==0)node.setAttribute(attr,prefix+value)}function scan(root){if(!root.querySelectorAll)return;root.querySelectorAll("a[href],img[src],source[src],script[src]").forEach(function(node){patch(node,node.tagName==="A"?"href":"src")})}document.addEventListener("DOMContentLoaded",function(){scan(document);new MutationObserver(function(records){records.forEach(function(record){if(record.type==="attributes")patch(record.target,record.attributeName);else record.addedNodes.forEach(scan)})}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["href","src"]})})}())</script>';
 
@@ -319,7 +331,9 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   html = html.replace(/static-navigation\.js\?v=[^"']+/i, `static-navigation.js?v=${buildStamp}`);
   html = html.replace(/(<script src=(\"|')static-navigation\.js[^>]*><\/script>)/i, `$1${runtimePatch}`);
   if (html.includes('<behold-widget')) {
-    html = html.replace('</head>', `<script type="module" src="https://w.behold.so/widget.js" data-behold-widget></script>\n<style>.instagram-feed-widget{background:#e7efec;border:1px solid #aebfba;border-radius:28px;padding:20px;box-shadow:0 16px 38px rgba(37,48,47,.10);overflow:hidden}.instagram-feed-widget behold-widget{display:block;width:100%;min-height:300px}@media(max-width:640px){.instagram-feed-widget{border-radius:22px;padding:12px}}</style>\n</head>`);
+    html = html.replace(/<behold-widget[^>]*><\/behold-widget>/g, renderNativeSocialGallery());
+    html = html.replace('class="instagram-feed-widget"', 'class="instagram-feed-widget native-social-gallery"');
+    html = html.replace('</head>', '<link rel="stylesheet" href="native-social-gallery.css?v=native-social-v1">\n<script src="native-social-gallery.js?v=native-social-v1" defer></script>\n</head>');
   }
   if (file.includes('/compare/')) html = html.replaceAll('loading="lazy"', 'loading="eager"');
   html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v43">\n</head>`);
