@@ -31,12 +31,13 @@
     dialog.querySelector('.native-social-close').focus();
     video.play().catch(() => { /* Native controls remain available if autoplay is blocked. */ });
   });
-  dialog.querySelector('.native-social-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', (event) => { if (event.target === dialog) { const r=dialog.getBoundingClientRect(); if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom) dialog.close(); } });
+  const stopVideo = () => { video.pause(); video.removeAttribute('src'); video.load(); };
+  const close = () => { stopVideo(); dialog.close(); };
+  dialog.addEventListener('cancel', stopVideo);
+  dialog.querySelector('.native-social-close').addEventListener('click', close);
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) { const r=dialog.getBoundingClientRect(); if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom) close(); } });
   dialog.addEventListener('close', () => {
-    video.pause();
-    video.removeAttribute('src');
-    video.load();
+    stopVideo();
     document.body.style.overflow = previousOverflow;
     trigger?.focus({preventScroll:true});
   });

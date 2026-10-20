@@ -32,7 +32,7 @@ const server=http.createServer((req,res)=>{
     if(i===0)await page.screenshot({path:`layout-checks/social/player-${width}.png`});
     if(i%2===0)await page.keyboard.press('Escape');else await dialog.getByRole('button',{name:'Close video'}).click();
     await dialog.waitFor({state:'hidden'});assert(await button.evaluate(b=>document.activeElement===b));
-    assert(await dialog.locator('video').evaluate(v=>v.paused&&!v.hasAttribute('src')));
+    await page.waitForFunction(()=>{const v=document.querySelector('.native-social-dialog video');return v.paused&&!v.hasAttribute('src');});
     reports.push({width,id:posts[i].id,...media});
    }
    await page.close();
