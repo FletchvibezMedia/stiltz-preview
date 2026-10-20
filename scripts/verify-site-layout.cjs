@@ -56,7 +56,20 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
        h1Size:parseFloat(getComputedStyle(main.querySelector('h1')).fontSize),installationsBackground:getComputedStyle(main.querySelector('.brand-real-homes')).backgroundColor,
        stepColors:[...main.querySelectorAll('.brand-process li')].map(e=>getComputedStyle(e).backgroundColor)};
      }
-     return {issues,home,mainBackground:getComputedStyle(main).backgroundColor,canvasBackground:getComputedStyle(document.body).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
+     const cardSelector = '.installation-assurance > article,.installation-steps > article,.about-credentials > article,.about-principles > article,.coastal-reasons > article,.costs-factor-grid > article,.variant-facts > article,.alta-features > article,.duo-classic-feature-grid > article,.gh-meaning > div > article,.finance-details > ul > li,.compare-model-card,.curated-model-card,.video-library-card';
+     const cards=[...main.querySelectorAll(cardSelector)].map(e=>({node:label(e),background:getComputedStyle(e).backgroundColor,radius:parseFloat(getComputedStyle(e).borderTopLeftRadius)}));
+     if(innerWidth>900){
+      const palette=['rgb(223, 234, 219)','rgb(220, 235, 240)','rgb(243, 221, 197)','rgb(56, 61, 63)'];
+      for(const card of cards){
+       if(!palette.includes(card.background))issues.push({kind:'missing-info-card-color',...card});
+       if(card.radius<20)issues.push({kind:'info-card-not-rounded',...card});
+      }
+      for(const selector of ['.installation-roadmap','.installation-prep','.installation-financing']){
+       const section=main.querySelector(selector);
+       if(section&&getComputedStyle(section).backgroundColor==='rgba(0, 0, 0, 0)')issues.push({kind:'missing-installation-panel',selector});
+      }
+     }
+     return {issues,home,cards,mainBackground:getComputedStyle(main).backgroundColor,canvasBackground:getComputedStyle(document.body).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
     });
     if(viewport.width>900){
      const reference=surfaceReference.find(r=>r.route===(route||'home'));
