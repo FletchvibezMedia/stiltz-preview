@@ -56,7 +56,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
        h1Size:parseFloat(getComputedStyle(main.querySelector('h1')).fontSize),installationsBackground:getComputedStyle(main.querySelector('.brand-real-homes')).backgroundColor,
        stepColors:[...main.querySelectorAll('.brand-process li')].map(e=>getComputedStyle(e).backgroundColor)};
      }
-     const cardSelector = '.installation-assurance > article,.installation-steps > article,.about-credentials > article,.about-principles > article,.coastal-reasons > article,.costs-factor-grid > article,.variant-facts > article,.alta-features > article,.duo-classic-feature-grid > article,.gh-meaning > div > article,.finance-details > ul > li,.compare-model-card,.curated-model-card,.video-library-card';
+     const cardSelector = '.installation-assurance > article,.installation-steps > article,.about-credentials > article,.about-principles > article,.coastal-reasons > article,.costs-factor-grid > article,.variant-facts > article,.alta-features > article,.duo-classic-feature-grid > article,.gh-meaning > div > article,.finance-details > ul > li,.brand-model,.compare-model-card,.curated-model-card,.video-library-card';
      const cards=[...main.querySelectorAll(cardSelector)].map(e=>({node:label(e),background:getComputedStyle(e).backgroundColor,radius:parseFloat(getComputedStyle(e).borderTopLeftRadius)}));
      if(innerWidth>900){
       const palette=['rgb(223, 234, 219)','rgb(220, 235, 240)','rgb(243, 221, 197)','rgb(56, 61, 63)'];

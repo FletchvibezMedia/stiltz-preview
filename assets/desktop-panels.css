@@ -107,7 +107,7 @@
     .coastal-reasons,.costs-factor-grid,.variant-facts,.alta-features,.duo-classic-feature-grid) > article,
   main .gh-meaning > div > article,
   main .finance-details > ul > li,
-  main :is(.compare-model-card,.curated-model-card,.video-library-card) {
+  main :is(.brand-model,.compare-model-card,.curated-model-card,.video-library-card) {
     background:#dfeadb !important;
     border:1px solid rgba(65,89,82,.24) !important;
     border-radius:22px !important;
@@ -117,12 +117,12 @@
     .coastal-reasons,.costs-factor-grid) > article:nth-child(3n+2),
   main .gh-meaning > div > article:nth-child(3n+2),
   main .finance-details > ul > li:nth-child(3n+2),
-  main :is(.compare-model-card,.curated-model-card,.video-library-card):nth-of-type(3n+2) { background:#dcebf0 !important; }
+  main :is(.brand-model,.compare-model-card,.curated-model-card,.video-library-card):nth-of-type(3n+2) { background:#dcebf0 !important; }
   main :is(.installation-assurance,.installation-steps,.about-credentials,.about-principles,
     .coastal-reasons,.costs-factor-grid,.variant-facts,.alta-features,.duo-classic-feature-grid) > article:nth-child(3n+3),
   main .gh-meaning > div > article:nth-child(3n+3),
   main .finance-details > ul > li:nth-child(3n+3),
-  main :is(.compare-model-card,.curated-model-card,.video-library-card):nth-of-type(3n+3) { background:#f3ddc5 !important; }
+  main :is(.brand-model,.compare-model-card,.curated-model-card,.video-library-card):nth-of-type(3n+3) { background:#f3ddc5 !important; }
 
   /* Existing dark cards retain their white foreground as a paired treatment. */
   main :is(.about-principles,.variant-facts,.alta-features,.duo-classic-feature-grid) > article:nth-child(3n+2),
