@@ -211,3 +211,47 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
   main .brand-hero li svg { color:#383d3f !important; stroke:currentColor !important; }
  }
 }
+
+/* One centered desktop page shell includes the header, all content and footer. */
+@layer desktop-restoration {
+ @media (min-width:901px) {
+  html,body { background:#fbfcf9 !important; }
+  .desktop-page-shell {
+    width:min(calc(100% - 64px),1600px) !important;
+    max-width:1600px !important;
+    margin:24px auto !important;
+    padding:24px 0 !important;
+    box-sizing:border-box !important;
+    background:#f1e9dc !important;
+    border:1px solid rgba(65,89,82,.24) !important;
+    border-radius:38px !important;
+    box-shadow:0 18px 48px rgba(31,47,41,.10) !important;
+    overflow:clip !important;
+  }
+  .desktop-page-shell > main {
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:24px !important;
+    box-sizing:border-box !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    background:#f1e9dc !important;
+    gap:24px !important;
+  }
+  .desktop-page-shell > main > section {
+    width:100% !important;
+    max-width:none !important;
+    margin-inline:0 !important;
+    box-sizing:border-box !important;
+  }
+  .desktop-page-shell > :is(header.site-header,footer.site-footer) {
+    width:calc(100% - 48px) !important;
+    max-width:none !important;
+    margin:0 auto !important;
+    box-sizing:border-box !important;
+  }
+  .desktop-page-shell > footer.site-footer { margin-top:0 !important; }
+ }
+}

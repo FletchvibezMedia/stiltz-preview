@@ -74,7 +74,16 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
        if(section&&getComputedStyle(section).backgroundColor==='rgba(0, 0, 0, 0)')issues.push({kind:'missing-installation-panel',selector});
       }
      }
-     return {issues,home,cards,mainBackground:getComputedStyle(main).backgroundColor,canvasBackground:getComputedStyle(document.body).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
+     const shell=document.querySelector('.desktop-page-shell');
+     const shellReport=shell?{width:shell.getBoundingClientRect().width,background:getComputedStyle(shell).backgroundColor,radius:parseFloat(getComputedStyle(shell).borderTopLeftRadius),includesAll:['header.site-header','main','footer.site-footer'].every(s=>document.querySelector(s)?.parentElement===shell)}:null;
+     if(innerWidth>900){
+      if(!shellReport||!shellReport.includesAll)issues.push({kind:'missing-single-page-shell',shell:shellReport});
+      else {
+       if(shellReport.background!=='rgb(241, 233, 220)'||shellReport.radius<32)issues.push({kind:'invalid-page-shell',shell:shellReport});
+       if(Math.abs(shellReport.width-Math.min(innerWidth-64,1600))>2)issues.push({kind:'inconsistent-page-shell-width',shell:shellReport});
+      }
+     } else if(shell)issues.push({kind:'desktop-shell-affects-mobile'});
+     return {issues,home,cards,shell:shellReport,mainBackground:getComputedStyle(main).backgroundColor,canvasBackground:getComputedStyle(document.body).backgroundColor,mainWidth:main.getBoundingClientRect().width,panels:[...main.querySelectorAll(':scope>section')].map(e=>getComputedStyle(e).backgroundColor),images:imgs.length};
     });
     if(viewport.width>900){
      const reference=surfaceReference.find(r=>r.route===(route||'home'));
@@ -91,9 +100,9 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(new URL(r
       const expected=Math.min(56,Math.max(48,viewport.width*.038));
       if(Math.abs(h.h1Size-expected)>.2)report.issues.push({kind:'homepage-type-changed',expected,actual:h.h1Size});
      }
-     if(report.canvasBackground!=='rgb(241, 233, 220)')report.issues.push({kind:'missing-beige-canvas',actual:report.canvasBackground});
+     if(report.canvasBackground!=='rgb(251, 252, 249)')report.issues.push({kind:'missing-beige-canvas',actual:report.canvasBackground});
      if(report.mainBackground!=='rgb(241, 233, 220)')report.issues.push({kind:'missing-beige-shell',actual:report.mainBackground});
-     if(report.mainWidth<Math.min(viewport.width-72,2100)-2)report.issues.push({kind:'narrow-beige-shell',width:report.mainWidth,viewport:viewport.width});
+     if(Math.abs(report.mainWidth-(Math.min(viewport.width-64,1600)-2))>2)report.issues.push({kind:'narrow-beige-shell',width:report.mainWidth,viewport:viewport.width});
     }
     // Exercise desktop gallery navigation rather than only checking initial images.
     for(const carousel of await page.locator('.model-photo-carousel,.installation-carousel').all()){

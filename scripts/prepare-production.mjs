@@ -55,6 +55,7 @@ const approvedAssetOverrides = [
   ['assets/rescue-overrides.css', 'rescue-overrides.css'],
   ['assets/desktop-system.css', 'desktop-system.css'],
   ['assets/desktop-panels.css', 'desktop-panels.css'],
+  ['assets/desktop-shell.js', 'desktop-shell.js'],
   ['assets/team/bill-bell.jpg', 'images/team/current/bill-bell.jpg'],
   ['assets/duo-alta/duo-alta-thru-car-straight.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/duo-thru-car/duo-thru-car-hero-straight.jpg', 'images/models/duo-thru-car/verified-hero.jpg'],
@@ -323,7 +324,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (file.includes('/compare/')) html = html.replaceAll('loading="lazy"', 'loading="eager"');
   html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v43">\n</head>`);
   html = html.replace('<main ', '<main data-design-page="'+(route === '/' ? 'home' : route.split('/').filter(Boolean).join('-'))+'" ');
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-panels.css?v=desktop-panels-v5">\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-panels.css?v=desktop-panels-v6">\n<script src="desktop-shell.js?v=desktop-shell-v1" defer></script>\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }
