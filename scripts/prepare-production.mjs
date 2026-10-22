@@ -304,6 +304,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
       .replace('aria-label="Custom Paint home lift photo gallery"', 'aria-label="Custom Paint home lift photo gallery"');
   }
   if (route === '/meet-the-team/') {
+    html = html.replaceAll('Sean Blaine', 'Shawn Blaine');
     const billCard = '<article class="team-card"><div class="team-portrait"><img src="images/team/current/bill-bell.jpg?v=bill-bell-v3" alt="Bill Bell" loading="lazy"></div><div class="team-card-caption"><h3>Bill Bell</h3><p>Certified Sub Contractor</p></div></article>';
     html = html.replace(
       /(<section class="team-group"><h3>Construction<\/h3><div class="team-grid">[\s\S]*?)(<\/div><\/section>)/,
