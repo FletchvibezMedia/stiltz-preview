@@ -310,6 +310,18 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
       /(<section class="team-group"><h3>Construction<\/h3><div class="team-grid">[\s\S]*?)(<\/div><\/section>)/,
       `$1${billCard}$2`,
     );
+    const teamTitles = new Map([
+      ['Ricardo Howden', 'CFO/Director of Operation and Human Resources'],
+      ['Shawn Blaine', 'Certified Subcontractor'],
+      ['Bill Bell', 'Certified Subcontractor'],
+      ['Joe White', 'Sales Consultant'],
+      ['Nathan Batten', 'Sales Consultant'],
+    ]);
+    for (const [name, title] of teamTitles) {
+      const caption = new RegExp('(<h3>' + name + '</h3><p>)[^<]*(</p>)');
+      if (!caption.test(html)) throw new Error('Missing team caption: ' + name);
+      html = html.replace(caption, (_match, start, end) => start + title + end);
+    }
   }
   if (route === '/stiltz-news/') {
     html = html.replace(/<main class="news-page">[\s\S]*?<\/main>(?=<footer)/, renderOfficialNews(officialNews));
