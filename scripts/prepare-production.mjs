@@ -351,7 +351,7 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   if (file.includes('/compare/')) html = html.replaceAll('loading="lazy"', 'loading="eager"');
   html = html.replace('</head>', `<link rel="stylesheet" href="desktop-system.css?v=desktop-system-v43">\n</head>`);
   html = html.replace('<main ', '<main data-design-page="'+(route === '/' ? 'home' : route.split('/').filter(Boolean).join('-'))+'" ');
-  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-panels.css?v=desktop-panels-v7">\n<script src="desktop-shell.js?v=desktop-shell-v1" defer></script>\n</head>`);
+  html = html.replace('</head>', `<link rel="stylesheet" href="desktop-panels.css?v=desktop-panels-v8">\n<script src="desktop-shell.js?v=desktop-shell-v1" defer></script>\n</head>`);
   html = html.replace('</head>', `<link rel="canonical" href="${canonical}">\n</head>`);
   fs.writeFileSync(file, html);
 }

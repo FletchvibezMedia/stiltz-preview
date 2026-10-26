@@ -279,3 +279,27 @@ main[data-design-page="home"] > section:nth-of-type(7) { background-color: rgb(5
   }
  }
 }
+
+/* The roadmap lives inside the centered shell, not a full-viewport section.
+   Bound its gutters so large monitors cannot collapse the content columns. */
+@layer desktop-restoration {
+ @media (min-width:901px) {
+  main.installation-page .installation-roadmap {
+    padding:54px !important;
+    grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr) !important;
+    gap:clamp(28px,3vw,54px) !important;
+    align-items:start !important;
+  }
+  main.installation-page .installation-roadmap > div {
+    width:100% !important;
+    min-width:0 !important;
+  }
+  main.installation-page .installation-steps { gap:16px !important; }
+  main.installation-page .installation-steps > article {
+    min-width:0 !important;
+    grid-template-columns:44px minmax(0,1fr) !important;
+    align-items:start !important;
+  }
+  main.installation-page .installation-steps > article > div { min-width:0 !important; }
+ }
+}
