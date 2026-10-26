@@ -48,7 +48,7 @@ jobs:
       - name: Install layout check browser
         run: |
           npm install --no-save --prefix /tmp/stiltz-layout playwright@1.58.2
-          /tmp/stiltz-layout/node_modules/.bin/playwright install --with-deps chromium
+          /tmp/stiltz-layout/node_modules/.bin/playwright install chromium
       - name: Check model layouts before publishing
         env:
           NODE_PATH: /tmp/stiltz-layout/node_modules
