@@ -364,6 +364,13 @@ fs.writeFileSync(path.join(output, 'sitemap.xml'), [
   '</urlset>', ''
 ].join('\n'));
 fs.writeFileSync(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+const notFoundHtml = [
+  '<!doctype html>',
+  '<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Page Not Found | Stiltz of Florida</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;padding:2rem;background:#f2eee7;color:#15232d;font-family:Arial,sans-serif}.wrap{max-width:42rem;text-align:center}.code{font-size:.85rem;letter-spacing:.16em;font-weight:700}.wrap h1{font-size:clamp(2.4rem,7vw,5rem);margin:.35rem 0}.wrap p{font-size:1.1rem;line-height:1.6}.wrap a{display:inline-block;margin-top:1rem;padding:.9rem 1.2rem;border-radius:.45rem;background:#15232d;color:#fff;text-decoration:none;font-weight:700}</style></head>',
+  '<body><main class="wrap"><p class="code">404</p><h1>That page is not here.</h1><p>The address may have changed, or the page no longer exists. Visit Stiltz of Florida to explore current home-elevator information.</p><a href="/">Back to Stiltz of Florida</a></main></body></html>',
+  ''
+].join('\n');
+fs.writeFileSync(path.join(output, '404.html'), notFoundHtml);
 fs.writeFileSync(path.join(output, 'CNAME'), 'stiltzofflorida.com\n');
 fs.writeFileSync(path.join(output, '.nojekyll'), '');
 console.log(JSON.stringify({ output, pages: routes.length }, null, 2));
