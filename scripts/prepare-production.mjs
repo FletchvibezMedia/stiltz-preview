@@ -67,6 +67,7 @@ const approvedAssetOverrides = [
   ['assets/native-social-gallery.css', 'native-social-gallery.css'],
   ['assets/native-social-gallery.js', 'native-social-gallery.js'],
   ['assets/team/bill-bell.jpg', 'images/team/current/bill-bell.jpg'],
+  ['assets/team/todd-sutton.jpg', 'images/team/current/todd-sutton.jpg'],
   ['assets/duo-alta/duo-alta-thru-car-straight.jpg', 'images/models/duo-alta/professional-02.jpg'],
   ['assets/duo-thru-car/duo-thru-car-hero-straight.jpg', 'images/models/duo-thru-car/verified-hero.jpg'],
   ['assets/duo-classic/duo-classic-hero-straight.jpg', 'images/models/duo-classic/drive-hero.jpg'],
@@ -305,6 +306,10 @@ for (const file of walk(output).filter((file) => file.endsWith('index.html'))) {
   }
   if (route === '/meet-the-team/') {
     html = html.replaceAll('Sean Blaine', 'Shawn Blaine');
+    const toddCard = '<article class="team-card"><div class="team-portrait"><img src="images/team/current/todd-sutton.jpg" alt="Todd Sutton, Stiltz of Florida" loading="lazy"></div><div class="team-card-caption"><h3>Todd Sutton</h3><p>Sales Representative</p></div></article>';
+    const salesGroup = /(<section class="team-group"><h3>Sales<\/h3><div class="team-grid">[\s\S]*?)(<\/div><\/section>)/;
+    if (!salesGroup.test(html)) throw new Error('Missing Sales team group');
+    html = html.replace(salesGroup, (_match, start, end) => start + toddCard + end);
     const billCard = '<article class="team-card"><div class="team-portrait"><img src="images/team/current/bill-bell.jpg?v=bill-bell-v3" alt="Bill Bell" loading="lazy"></div><div class="team-card-caption"><h3>Bill Bell</h3><p>Certified Sub Contractor</p></div></article>';
     html = html.replace(
       /(<section class="team-group"><h3>Construction<\/h3><div class="team-grid">[\s\S]*?)(<\/div><\/section>)/,
